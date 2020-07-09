@@ -10,15 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var Button_normal: UIButton!
-    @IBOutlet var View_1: UIView!
-    @IBOutlet var View_2: UIView!
-    @IBOutlet var View_3: UIView!
-    @IBOutlet var View_4: UIView!
-    @IBOutlet var View_5: UIView!
-    @IBOutlet var View_6: UIView!
-    @IBOutlet var View_7: UIView!
-    @IBOutlet var View_8: UIView!
+//    @IBOutlet var Button_1: UIButton!
+//    @IBOutlet var Button_2: UIButton!
+//    @IBOutlet var Button_3: UIButton!
+//    @IBOutlet var Button_4: UIButton!
+//    @IBOutlet var Button_5: UIButton!
+//    @IBOutlet var Button_6: UIButton!
+//    @IBOutlet var Button_7: UIButton!
+//    @IBOutlet var Button_8: UIButton!
+//    @IBOutlet var Button_9: UIButton!
+    
     
     let brown = UIColor(named: "Dynamic_brown")
     let button = UIColor(named: "Dynamic_button")
@@ -26,43 +27,33 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
-        Button_normal.layer.cornerRadius = 8
-//        Button_normal.layer.borderWidth = 2
-//        Button_normal.layer.borderColor = brown?.cgColor
+//        Button_1.layer.cornerRadius = 8
+//        Button_1.clipsToBounds = true
+//
+//        Button_2.layer.cornerRadius = 8
+//        Button_2.clipsToBounds = true
+//
+//        Button_3.layer.cornerRadius = 8
+//        Button_3.clipsToBounds = true
+//
+//        Button_4.layer.cornerRadius = 8
+//        Button_4.clipsToBounds = true
+//
+//        Button_5.layer.cornerRadius = 8
+//        Button_5.clipsToBounds = true
+//
+//        Button_6.layer.cornerRadius = 8
+//        Button_6.clipsToBounds = true
+//
+//        Button_7.layer.cornerRadius = 8
+//        Button_7.clipsToBounds = true
+//
+//        Button_8.layer.cornerRadius = 8
+//        Button_8.clipsToBounds = true
+//
+//        Button_9.layer.cornerRadius = 8
+//        Button_9.clipsToBounds = true
 
-        View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-//
-        View_2.layer.cornerRadius = 18
-//        View_2.layer.borderWidth = 2
-//        View_2.layer.borderColor = brown?.cgColor
-//
-        View_3.layer.cornerRadius = 18
-//        View_3.layer.borderWidth = 2
-//        View_3.layer.borderColor = brown?.cgColor
-//
-        View_4.layer.cornerRadius = 18
-//        View_4.layer.borderWidth = 2
-//        View_4.layer.borderColor = brown?.cgColor
-//
-        View_5.layer.cornerRadius = 18
-//        View_5.layer.borderWidth = 2
-//        View_5.layer.borderColor = brown?.cgColor
-//
-        View_6.layer.cornerRadius = 18
-//        View_6.layer.borderWidth = 2
-//        View_6.layer.borderColor = brown?.cgColor
-//
-        View_7.layer.cornerRadius = 18
-//        View_7.layer.borderWidth = 2
-//        View_7.layer.borderColor = brown?.cgColor
-//
-        View_8.layer.cornerRadius = 18
-//        View_8.layer.borderWidth = 2
-//        View_8.layer.borderColor = brown?.cgColor
-        
         //66, 119, 214
         super.viewDidLoad()
         // Do any additional setup after loading the view.
