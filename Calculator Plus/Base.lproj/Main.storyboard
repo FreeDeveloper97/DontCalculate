@@ -7591,7 +7591,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-Xg-rXD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-Xg-rXD">
                                 <rect key="frame" x="47.5" y="64" width="280" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Qjy-yS-KGV"/>
@@ -8793,6 +8793,7 @@
         <image name="final_8_1.png" width="75.590553283691406" height="56.692913055419922"/>
         <image name="final_8_2.png" width="75.590553283691406" height="56.692913055419922"/>
         <image name="test_1.png" width="818" height="166"/>
+        <image name="test_2.jpg" width="180.27691650390625" height="180.27691650390625"/>
         <image name="test_2.png" width="818" height="166"/>
         <image name="test_3.jpg" width="170.30769348144531" height="170.30769348144531"/>
         <image name="test_4.jpg" width="144" height="144"/>
