@@ -44,25 +44,10 @@ class View_8_1_ViewController: UIViewController {
     override func viewDidLoad() {
         
         View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-        
         View_2.layer.cornerRadius = 18
-//        View_2.layer.borderWidth = 2
-//        View_2.layer.borderColor = brown?.cgColor
-
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_outlet.layer.cornerRadius = 13
-//        Button_plus_outlet.layer.borderWidth = 2
-//        Button_plus_outlet.layer.borderColor = button?.cgColor
-
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
         Button_kakao_outlet.layer.cornerRadius = 13
         
         Text_M.keyboardType = .numberPad
@@ -81,15 +66,15 @@ class View_8_1_ViewController: UIViewController {
         if(CARD != "")
         {
             MINUS += Int(CARD)!
-            Show_card.text = "누적금액 : " + String(MINUS) + "원"
+            Show_card.text = "누적금액 : " + inputComma(innum: MINUS) + "원"
             Text_card.text = ""
             if(detail == "")
             {
-                detail = "- " + String(CARD) + " 원"
+                detail = "- " + inputComma(innum: Int(CARD)!) + " 원"
             }
             else if(detail != "")
             {
-                detail += "\n- " + String(CARD) + " 원"
+                detail += "\n- " + inputComma(innum: Int(CARD)!) + " 원"
             }
         }
     }
@@ -101,18 +86,18 @@ class View_8_1_ViewController: UIViewController {
         if(check())
         {
             KAKAO_PRINT = M + "월 카드대금납부"
-            KAKAO_PRINT += "\n\nA 현재 : " + NOW + " 원"
-            KAKAO_PRINT += "\nB 수입 : " + Plus + " 원"
-            KAKAO_PRINT += "\nC 지출 : -" + String(MINUS) + " 원"
+            KAKAO_PRINT += "\n\nA 현재 : " + inputComma(innum: Int(NOW)!) + " 원"
+            KAKAO_PRINT += "\nB 수입 : " + inputComma(innum: Int(Plus)!) + " 원"
+            KAKAO_PRINT += "\nC 지출 : -" + inputComma(innum: MINUS) + " 원"
             
             PLUS = Int(NOW)! + Int(Plus)!
-            Result_1.text = String(PLUS) + " 원"
-            Result_2.text = "- " + String(MINUS) + " 원"
-            Result_3.text = String(PLUS - MINUS) + " 원"
+            Result_1.text = inputComma(innum: PLUS) + " 원"
+            Result_2.text = "- " + inputComma(innum: MINUS) + " 원"
+            Result_3.text = inputComma(innum: PLUS-MINUS) + " 원"
             
             KAKAO_PRINT += "\n\n결과"
-            KAKAO_PRINT += "\n A + B : " + String(PLUS) + " 원"
-            KAKAO_PRINT += "\n A + B - C : " + String(PLUS - MINUS) + " 원"
+            KAKAO_PRINT += "\n A + B : " + inputComma(innum: PLUS) + " 원"
+            KAKAO_PRINT += "\n A + B - C : " + inputComma(innum: (PLUS-MINUS)) + " 원"
             KAKAO_PRINT += "\n\n지출 상세내역\n" + detail
         }
     }
@@ -188,6 +173,16 @@ class View_8_1_ViewController: UIViewController {
             M = "?"
         }
         return true
+    }
+    
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
     
     

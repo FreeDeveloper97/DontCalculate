@@ -53,37 +53,13 @@ class View_1_2_ViewController: UIViewController {
     override func viewDidLoad() {
         
         View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-        
         View_2.layer.cornerRadius = 18
-//        View_2.layer.borderWidth = 2
-//        View_2.layer.borderColor = brown?.cgColor
-        
         Button_plus_1_outlet.layer.cornerRadius = 13
-//        Button_plus_1_outlet.layer.borderWidth = 2
-//        Button_plus_1_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_2_outlet.layer.cornerRadius = 13
-//        Button_plus_2_outlet.layer.borderWidth = 2
-//        Button_plus_2_outlet.layer.borderColor = button?.cgColor
-
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-
         Button_detail_outlet.layer.cornerRadius = 13
-//        Button_detail_outlet.layer.borderWidth = 2
-//        Button_detail_outlet.layer.borderColor = button?.cgColor
-        
         Kakao_outlet.layer.cornerRadius = 13
-//        Kakao_outlet.layer.borderWidth = 2
-//        Kakao_outlet.layer.borderColor = kakao?.cgColor
-        
         Text_1_money.keyboardType = .numberPad
         Text_1_num.keyboardType = .numberPad
         Text_2_money.keyboardType = .numberPad
@@ -102,14 +78,14 @@ class View_1_2_ViewController: UIViewController {
         {
             MONEY_1 += Int(Money_1)!
             Text_1_money.text = ""
-            Text_1_sum.text = "누적금액 : " + String(MONEY_1) + "원"
+            Text_1_sum.text = "누적금액 : " + inputComma(innum: MONEY_1) + "원"
             if(DETAIL_1 == "")
             {
-                DETAIL_1 = Money_1 + " 원"
+                DETAIL_1 = inputComma(innum: Int(Money_1)!) + " 원"
             }
             else if (DETAIL_1 != "")
             {
-                DETAIL_1 += "\n" + Money_1 + " 원"
+                DETAIL_1 += "\n" + inputComma(innum: Int(Money_1)!) + " 원"
             }
         }
     }
@@ -120,14 +96,14 @@ class View_1_2_ViewController: UIViewController {
         {
             MONEY_2 += Int(Money_2)!
             Text_2_money.text = ""
-            Text_2_sum.text = "누적금액 : " + String(MONEY_2) + "원"
+            Text_2_sum.text = "누적금액 : " + inputComma(innum: MONEY_2) + "원"
             if(DETAIL_2 == "")
             {
-                DETAIL_2 = Money_2 + " 원"
+                DETAIL_2 = inputComma(innum: Int(Money_2)!) + " 원"
             }
             else if (DETAIL_2 != "")
             {
-                DETAIL_2 += "\n" + Money_2 + " 원"
+                DETAIL_2 += "\n" + inputComma(innum: Int(Money_2)!) + " 원"
             }
         }
     }
@@ -145,22 +121,22 @@ class View_1_2_ViewController: UIViewController {
         N_2 = Text_2_num.text!
         if(check())
         {
-            kakao_print = "더치페이1 총액 : " + String(MONEY_1) + " 원"
+            kakao_print = "더치페이1 총액 : " + inputComma(innum: MONEY_1) + " 원"
             kakao_print += "\n더치페이1 계산인원 : " + N_1 + " 명"
             RESULT_1 = MONEY_1 / Int(N_1)!
-            kakao_print += "\n더치페이1 결과 : " + String(RESULT_1) + " 원"
-            Result_1.text = String(RESULT_1) + " 원"
+            kakao_print += "\n더치페이1 결과 : " + inputComma(innum: RESULT_1) + " 원"
+            Result_1.text = inputComma(innum: RESULT_1) + " 원"
             
-            kakao_print += "\n\n더치페이2 총액 : " + String(MONEY_2) + " 원"
+            kakao_print += "\n\n더치페이2 총액 : " + inputComma(innum: MONEY_2) + " 원"
             kakao_print += "\n더치페이2 계산인원 : " + N_2 + " 명"
             RESULT_2 = MONEY_2 / Int(N_2)!
-            kakao_print += "\n더치페이2 결과 : " + String(RESULT_2) + " 원"
-            Result_2.text = String(RESULT_2) + " 원"
+            kakao_print += "\n더치페이2 결과 : " + inputComma(innum: RESULT_2) + " 원"
+            Result_2.text = inputComma(innum: RESULT_2) + " 원"
             
-            kakao_print += "\n\n더치페이1 : " + String(RESULT_1) + " 원"
-            kakao_print += "\n더치페이2 : " + String(RESULT_2) + " 원"
-            kakao_print += "\n둘다해당 : " + String(RESULT_1 + RESULT_2) + " 원"
-            Result_3.text = String(RESULT_1 + RESULT_2) + " 원"
+            kakao_print += "\n\n더치페이1 : " + inputComma(innum: RESULT_1) + " 원"
+            kakao_print += "\n더치페이2 : " + inputComma(innum: RESULT_2) + " 원"
+            kakao_print += "\n둘다해당 : " + inputComma(innum: (RESULT_1+RESULT_2)) + " 원"
+            Result_3.text = inputComma(innum: (RESULT_1+RESULT_2)) + " 원"
         }
     }
     
@@ -242,15 +218,15 @@ class View_1_2_ViewController: UIViewController {
         return true
     }
     
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
+    }
+    
 
-}
-extension UIViewController {
-    func hideKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
 }

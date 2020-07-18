@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
+        NSLog("in")
         Button_normal.layer.cornerRadius = 8
 //        Button_normal.layer.borderWidth = 2
 //        Button_normal.layer.borderColor = brown?.cgColor

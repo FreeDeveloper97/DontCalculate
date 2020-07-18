@@ -50,42 +50,16 @@ class View_2_1_ViewController: UIViewController {
     override func viewDidLoad() {
         
         View_A.layer.cornerRadius = 18
-//        View_A.layer.borderWidth = 2
-//        View_A.layer.borderColor = brown?.cgColor
-
         View_B.layer.cornerRadius = 18
-//        View_B.layer.borderWidth = 2
-//        View_B.layer.borderColor = brown?.cgColor
-
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_a_outlet.layer.cornerRadius = 13
-//        Button_plus_a_outlet.layer.borderWidth = 2
-//        Button_plus_a_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_b_outlet.layer.cornerRadius = 13
-//        Button_plus_b_outlet.layer.borderWidth = 2
-//        Button_plus_b_outlet.layer.borderColor = button?.cgColor
-
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
         Kakao_outlet.layer.cornerRadius = 13
-//        Kakao_outlet.layer.borderWidth = 2
-//        Kakao_outlet.layer.borderColor = kakao?.cgColor
-        
         Text_A.keyboardType = .numberPad
         Text_B.keyboardType = .numberPad
-        
-//        Text_name_A.attributedPlaceholder = NSAttributedString(string: "이름", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        
+       
         Text_A.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        
-//        Text_name_B.attributedPlaceholder = NSAttributedString(string: "이름", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        
         Text_B.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         
         self.hideKeyboard()
@@ -97,7 +71,7 @@ class View_2_1_ViewController: UIViewController {
         if(A != "")
         {
             A_sum += Int(A)!
-            Show_a.text = "누적금액 : " + String(A_sum) + "원"
+            Show_a.text = "누적금액 : " + inputComma(innum: A_sum) + "원"
             Text_A.text = ""
         }
     }
@@ -106,7 +80,7 @@ class View_2_1_ViewController: UIViewController {
         if(B != "")
         {
             B_sum += Int(B)!
-            Show_b.text = "누적금액 : " + String(B_sum) + "원"
+            Show_b.text = "누적금액 : " + inputComma(innum: B_sum) + "원"
             Text_B.text = ""
         }
     }
@@ -124,18 +98,18 @@ class View_2_1_ViewController: UIViewController {
             {
                 B_name = Text_name_B.text!
             }
-            kakao_print = A_name + " : " + String(A_sum) + " 원"
-            kakao_print += "\n" + B_name + " : " + String(B_sum) + " 원"
+            kakao_print = A_name + " : " + inputComma(innum: A_sum) + " 원"
+            kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
             
             SUM = A_sum + B_sum
             DIV = SUM / 2
             RESULT_A = A_sum - DIV
             RESULT_B = B_sum - DIV
             
-            kakao_print += "\n\n총 사용금액 : " + String(SUM) + " 원"
-            Result_1.text = String(SUM) + " 원"
-            kakao_print += "\n더치페이금액 : " + String(DIV) + " 원"
-            Result_2.text = String(DIV) + " 원"
+            kakao_print += "\n\n총 사용금액 : " + inputComma(innum: SUM) + " 원"
+            Result_1.text = inputComma(innum: SUM) + " 원"
+            kakao_print += "\n더치페이금액 : " + inputComma(innum: DIV) + " 원"
+            Result_2.text = inputComma(innum: DIV) + " 원"
             
             bubble()
             kakao_print += "\n\n정산결과\n"
@@ -204,14 +178,14 @@ class View_2_1_ViewController: UIViewController {
     }
     func check() -> Bool
     {
-        if A_sum == 0
-        {
-            return false
-        }
-        else if B_sum == 0
-        {
-            return false
-        }
+//        if A_sum == 0
+//        {
+//            return false
+//        }
+//        else if B_sum == 0
+//        {
+//            return false
+//        }
         return true
     }
     
@@ -219,15 +193,25 @@ class View_2_1_ViewController: UIViewController {
     {
         if RESULT_A > RESULT_B
         {
-            Print = B_name + " → " + A_name + " " + String(RESULT_A) + " 원 송금"
+            Print = B_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금"
         }
         else if RESULT_A < RESULT_B
         {
-            Print = A_name + " → " + B_name + " " + String(RESULT_B) + " 원 송금"
+            Print = A_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금"
         }
         else
         {
             Print = "Error"
         }
+    }
+    
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
 }

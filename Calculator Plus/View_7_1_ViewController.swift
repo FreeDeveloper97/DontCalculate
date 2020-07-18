@@ -44,29 +44,11 @@ class View_7_1_ViewController: UIViewController{
     override func viewDidLoad() {
         
         View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
         Button_url_outlet.layer.cornerRadius = 13
-//        Button_url_outlet.layer.borderWidth = 2
-//        Button_url_outlet.layer.borderColor = brown?.cgColor
-        
         Button_detail_outlet.layer.cornerRadius = 13
-//        Button_detail_outlet.layer.borderWidth = 2
-//        Button_detail_outlet.layer.borderColor = button?.cgColor
-        
         Button_kakao_outlet.layer.cornerRadius = 13
-//        Button_kakao_outlet.layer.borderWidth = 2
-//        Button_kakao_outlet.layer.borderColor = kakao?.cgColor
-        
         Text_h.keyboardType = .decimalPad
         Text_pay.keyboardType = .numberPad
         Text_m.keyboardType = .numberPad
@@ -85,17 +67,17 @@ class View_7_1_ViewController: UIViewController{
         {
             Print_kakao = M + "월 월급계산서"
             Print_kakao += "\n\n일한시간 : " + H + " 시간"
-            Print_kakao += "\n시급 : " + PAY + " 원"
+            Print_kakao += "\n시급 : " + inputComma(innum: Int(PAY)!) + " 원"
             RESULT = Int(Double(H)! * Double(PAY)!)
-            Print_kakao += "\n\n월급결과 : " + String(RESULT) + " 원"
-            Result_1.text = String(RESULT) + " 원"
+            Print_kakao += "\n\n월급결과 : " + inputComma(innum: RESULT) + " 원"
+            Result_1.text = inputComma(innum: RESULT) + " 원"
             //상세한 네가지값을 각각 구한 후 더한다
             calculate()
             MINUS = Int(temp)
-            Print_kakao += "\n4대보험금 결과 : - " + String(MINUS) + " 원"
-            Result_2.text = "- " + String(MINUS) + " 원"
-            Print_kakao += "\n월급 최종결과 : " + String(RESULT - MINUS) + " 원"
-            Result_3.text = String(RESULT - MINUS) + " 원"
+            Print_kakao += "\n4대보험금 결과 : - " + inputComma(innum: MINUS) + " 원"
+            Result_2.text = "- " + inputComma(innum: MINUS) + " 원"
+            Print_kakao += "\n월급 최종결과 : " + inputComma(innum: (RESULT-MINUS)) + " 원"
+            Result_3.text = inputComma(innum: (RESULT-MINUS)) + " 원"
             
             Print_kakao += "\n\n※주휴수당 미포함※"
         }
@@ -106,15 +88,15 @@ class View_7_1_ViewController: UIViewController{
         {
             Result_show.text = "상세내역 :"
             Result_detail.text =
-                "\n국민연금 : " + String(Int(detail_1)) + " 원\n"
-            + "건강보험 : " + String(Int(detail_2)) + " 원\n"
-            + "장기요양 : " + String(Int(detail_3)) + " 원\n"
-            + "고용보험 : " + String(Int(detail_4)) + " 원"
+                "\n국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
+            + "건강보험 : " + inputComma(innum: Int(detail_2)) + " 원\n"
+            + "장기요양 : " + inputComma(innum: Int(detail_3)) + " 원\n"
+            + "고용보험 : " + inputComma(innum: Int(detail_4)) + " 원"
             Print_kakao += "\n\n상세내역\n"
-            + "국민연금 : " + String(Int(detail_1)) + " 원\n"
-            + "건강보험 : " + String(Int(detail_2)) + " 원\n"
-            + "장기요양 : " + String(Int(detail_3)) + " 원\n"
-            + "고용보험 : " + String(Int(detail_4)) + " 원"
+            + "국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
+            + "건강보험 : " + inputComma(innum: Int(detail_2)) + " 원\n"
+            + "장기요양 : " + inputComma(innum: Int(detail_3)) + " 원\n"
+            + "고용보험 : " + inputComma(innum: Int(detail_4)) + " 원"
         }
         
     }
@@ -203,6 +185,16 @@ class View_7_1_ViewController: UIViewController{
         detail_3 = detail_2 * 0.05125 * 2
         detail_4 = Double(RESULT) * 0.008
         temp = detail_1 + detail_2 + detail_3 + detail_4
+    }
+    
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
     
 

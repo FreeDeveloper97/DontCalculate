@@ -37,7 +37,6 @@ class View_1_1_ViewController: UIViewController {
     var RESULT = 0
     var kakao_print = ""
     var DETAIL = ""
-    var RESULT_COMMA = ""
     
     let brown = UIColor(named: "Dynamic_brown")
     let kakao = UIColor(named: "Dynamic_kakao")
@@ -46,36 +45,15 @@ class View_1_1_ViewController: UIViewController {
     override func viewDidLoad() {
         
         View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-        
         Button_plus_outlet.layer.cornerRadius = 13
-//        Button_plus_outlet.layer.borderWidth = 2
-//        Button_plus_outlet.layer.borderColor = button?.cgColor
-        
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
         View_bank.layer.cornerRadius = 18
-//        View_bank.layer.borderWidth = 2
-//        View_bank.layer.borderColor = brown?.cgColor
-
         Button_kakao_outlet.layer.cornerRadius = 13
-//        Button_kakao_outlet.layer.borderWidth = 2
-//        Button_kakao_outlet.layer.borderColor = kakao?.cgColor
-        
         Button_detail_outlet.layer.cornerRadius = 13
-//        Button_detail_outlet.layer.borderWidth = 2
-//        Button_detail_outlet.layer.borderColor = button?.cgColor
         
         Input_money.keyboardType = .numberPad
         Text_n.keyboardType = .numberPad
-        
         Input_money.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         
         Text_bank.attributedPlaceholder = NSAttributedString(string: "은행, 계좌번호 입력", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
@@ -90,14 +68,14 @@ class View_1_1_ViewController: UIViewController {
         {
             MONEY += Int(InputMoney)!
             Input_money.text = ""
-            Text_money.text = "누적금액 : " + String(MONEY) + "원"
+            Text_money.text = "누적금액 : " + inputComma(innum: MONEY) + "원"
             if(DETAIL == "")
             {
-                DETAIL = String(InputMoney) + " 원"
+                DETAIL = inputComma(innum: Int(InputMoney)!) + " 원"
             }
             else if (DETAIL != "")
             {
-                DETAIL += "\n" + String(InputMoney) + " 원"
+                DETAIL += "\n" + inputComma(innum: Int(InputMoney)!) + " 원"
             }
         }
     }
@@ -109,18 +87,16 @@ class View_1_1_ViewController: UIViewController {
         N = Text_n.text!
         if(check())
         {
-            kakao_print = "총 사용금액 : " + String(MONEY) + " 원"
+            kakao_print = "총 사용금액 : " + inputComma(innum: MONEY) + " 원"
             kakao_print += "\n더치페이 인원수 : " + N + " 명"
 
             RESULT = MONEY / Int(N)!
-            
-            inputComma()
-            Result_1.text = String(RESULT_COMMA) + " 원"
+            Result_1.text = inputComma(innum: RESULT) + " 원"
 //            Result_1.text = String(RESULT) + " 원"
             Text_bank_show.text = Text_bank.text!
             
             
-            kakao_print += "\n\n더치페이 결과 : " + String(RESULT_COMMA) + " 원"
+            kakao_print += "\n\n더치페이 결과 : " + inputComma(innum: RESULT) + " 원"
 //            kakao_print += "\n\n더치페이 결과 : " + String(RESULT) + " 원"
             kakao_print += "\n계좌 : " + Text_bank.text!
         }
@@ -200,13 +176,25 @@ class View_1_1_ViewController: UIViewController {
         return true
     }
     
-    func inputComma()
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
     {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
-        RESULT_COMMA = numberFormatter.string(from:NSNumber(value: RESULT))!
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
     
     
+}
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

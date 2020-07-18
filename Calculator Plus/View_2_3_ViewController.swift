@@ -10,9 +10,9 @@ import UIKit
 
 class View_2_3_ViewController: UIViewController {
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-          self.view.endEditing(true)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+//          self.view.endEditing(true)
+//    }
     
     @IBOutlet var View_A: UIView!
     @IBOutlet var View_B: UIView!
@@ -81,50 +81,18 @@ class View_2_3_ViewController: UIViewController {
     let button = UIColor(named: "Dynamic_button")
     
     override func viewDidLoad() {
-        
+        print("in")
         View_A.layer.cornerRadius = 18
-//        View_A.layer.borderWidth = 2
-//        View_A.layer.borderColor = brown?.cgColor
-        
         View_B.layer.cornerRadius = 18
-//        View_B.layer.borderWidth = 2
-//        View_B.layer.borderColor = brown?.cgColor
-        
         View_C.layer.cornerRadius = 18
-//        View_C.layer.borderWidth = 2
-//        View_C.layer.borderColor = brown?.cgColor
-        
         View_D.layer.cornerRadius = 18
-//        View_D.layer.borderWidth = 2
-//        View_D.layer.borderColor = brown?.cgColor
-        
         Button_plus_a.layer.cornerRadius = 13
-        //        Button_Result_outlet.layer.borderWidth = 2
-        //        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_b.layer.cornerRadius = 13
-        //        Button_Result_outlet.layer.borderWidth = 2
-        //        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_c.layer.cornerRadius = 13
-        //        Button_Result_outlet.layer.borderWidth = 2
-        //        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_plus_d.layer.cornerRadius = 13
-        //        Button_Result_outlet.layer.borderWidth = 2
-        //        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-        
         View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
         Kakao_outlet.layer.cornerRadius = 13
-//        Kakao_outlet.layer.borderWidth = 2
-//        Kakao_outlet.layer.borderColor = kakao?.cgColor
         Text_A.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         Text_B.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         Text_C.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
@@ -145,7 +113,7 @@ class View_2_3_ViewController: UIViewController {
         if(A != "")
         {
             A_sum += Int(A)!
-            Text_sum_a.text = "누적금액 : " + String(A_sum) + "원"
+            Text_sum_a.text = "누적금액 : " + inputComma(innum: A_sum) + "원"
             Text_A.text = ""
         }
     }
@@ -154,7 +122,7 @@ class View_2_3_ViewController: UIViewController {
         if(B != "")
         {
             B_sum += Int(B)!
-            Text_sum_b.text = "누적금액 : " + String(B_sum) + "원"
+            Text_sum_b.text = "누적금액 : " + inputComma(innum: B_sum) + "원"
             Text_B.text = ""
         }
     }
@@ -163,7 +131,7 @@ class View_2_3_ViewController: UIViewController {
         if(C != "")
         {
             C_sum += Int(C)!
-            Text_sum_c.text = "누적금액 : " + String(C_sum) + "원"
+            Text_sum_c.text = "누적금액 : " + inputComma(innum: C_sum) + "원"
             Text_C.text = ""
         }
     }
@@ -172,7 +140,7 @@ class View_2_3_ViewController: UIViewController {
         if(D != "")
         {
             D_sum += Int(D)!
-            Text_sum_d.text = "누적금액 : " + String(D_sum) + "원"
+            Text_sum_d.text = "누적금액 : " + inputComma(innum: D_sum) + "원"
             Text_D.text = ""
         }
     }
@@ -199,10 +167,11 @@ class View_2_3_ViewController: UIViewController {
             {
                 D_name = Text_name_d.text!
             }
-            kakao_print = A_name + " : " + A + " 원"
-            kakao_print += "\n" + B_name + " : " + B + " 원"
-            kakao_print += "\n" + C_name + " : " + C + " 원"
-            kakao_print += "\n" + D_name + " : " + D + " 원"
+            //ver1.1 수정
+            kakao_print = A_name + " : " + inputComma(innum: A_sum) + " 원"
+            kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
+            kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
+            kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
             
             SUM = A_sum + B_sum + C_sum + D_sum
             DIV = SUM / 4
@@ -211,10 +180,10 @@ class View_2_3_ViewController: UIViewController {
             RESULT_C = C_sum - DIV
             RESULT_D = D_sum - DIV
             
-            kakao_print += "\n\n총 사용금액 : " + String(SUM) + " 원"
-            Result_1.text = String(SUM) + " 원"
-            kakao_print += "\n더치페이금액 : " + String(DIV) + " 원"
-            Result_2.text = String(DIV) + " 원"
+            kakao_print += "\n\n총 사용금액 : " + inputComma(innum: SUM) + " 원"
+            Result_1.text = inputComma(innum: SUM) + " 원"
+            kakao_print += "\n더치페이금액 : " + inputComma(innum: DIV) + " 원"
+            Result_2.text = inputComma(innum: DIV) + " 원"
             
             bubble()
             kakao_print += "\n\n정산결과\n"
@@ -306,22 +275,22 @@ class View_2_3_ViewController: UIViewController {
     
     func check() -> Bool
     {
-        if A_sum == 0
-        {
-            return false
-        }
-        else if B_sum == 0
-        {
-            return false
-        }
-        else if C_sum == 0
-        {
-            return false
-        }
-        else if D_sum == 0
-        {
-            return false
-        }
+//        if A_sum == 0
+//        {
+//            return false
+//        }
+//        else if B_sum == 0
+//        {
+//            return false
+//        }
+//        else if C_sum == 0
+//        {
+//            return false
+//        }
+//        else if D_sum == 0
+//        {
+//            return false
+//        }
         return true
     }
     
@@ -363,60 +332,60 @@ class View_2_3_ViewController: UIViewController {
         {
             if RESULT_B != 0
             {
-                Print = B_name + " → " + A_name + " " + String(-RESULT_B) + " 원 송금\n"
+                Print = B_name + " → " + A_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
             }
             if RESULT_C != 0
             {
-                Print += C_name + " → " + A_name + " " + String(-RESULT_C) + " 원 송금\n"
+                Print += C_name + " → " + A_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금\n"
             }
             if RESULT_D != 0
             {
-                Print += D_name + " → " + A_name + " " + String(-RESULT_D) + " 원 송금"
+                Print += D_name + " → " + A_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
             }
         }
         else if RESULT_B > 0
         {
             if RESULT_A != 0
             {
-                Print = A_name + " → " + B_name + " " + String(-RESULT_A) + " 원 송금\n"
+                Print = A_name + " → " + B_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
             }
             if RESULT_C != 0
             {
-                Print += C_name + " → " + B_name + " " + String(-RESULT_C) + " 원 송금\n"
+                Print += C_name + " → " + B_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금\n"
             }
             if RESULT_D != 0
             {
-                Print += D_name + " → " + B_name + " " + String(-RESULT_D) + " 원 송금"
+                Print += D_name + " → " + B_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
             }
         }
         else if RESULT_C > 0
         {
             if RESULT_A != 0
             {
-                Print = A_name + " → " + C_name + " " + String(-RESULT_A) + " 원 송금\n"
+                Print = A_name + " → " + C_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
             }
             if RESULT_B != 0
             {
-                Print += B_name + " → " + C_name + " " + String(-RESULT_B) + " 원 송금\n"
+                Print += B_name + " → " + C_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
             }
             if RESULT_D != 0
             {
-                Print += D_name + " → " + C_name + " " + String(-RESULT_D) + " 원 송금"
+                Print += D_name + " → " + C_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
             }
         }
         else if RESULT_D > 0
         {
             if RESULT_A != 0
             {
-                Print = A_name + " → " + D_name + " " + String(-RESULT_A) + " 원 송금\n"
+                Print = A_name + " → " + D_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
             }
             if RESULT_B != 0
             {
-                Print += B_name + " → " + D_name + " " + String(-RESULT_B) + " 원 송금\n"
+                Print += B_name + " → " + D_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
             }
             if RESULT_C != 0
             {
-                Print += C_name + " → " + D_name + " " + String(-RESULT_C) + " 원 송금"
+                Print += C_name + " → " + D_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금"
             }
         }
     }
@@ -428,21 +397,21 @@ class View_2_3_ViewController: UIViewController {
         if array_after[0] > -(array_after[3])
         {
             let temp = array_after[0] + array_after[3]
-            Print = FOUR + " → " + ONE + " " + String(-array_after[3]) + " 원 송금\n"
-                    + THREE + " → " + ONE + " " + String(temp) + " 원 송금\n"
-                    + THREE + " → " + TWO + " " + String(array_after[1]) + " 원 송금"
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: (-array_after[3])) + " 원 송금\n"
+                + THREE + " → " + ONE + " " + inputComma(innum: temp) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금"
         }
         else if array_after[0] < -(array_after[3])
         {
             let temp = -(array_after[0] + array_after[3])
-            Print = FOUR + " → " + ONE + " " + String(array_after[0]) + " 원 송금\n"
-                    + FOUR + " → " + TWO + " " + String(temp) + " 원 송금\n"
-                    + THREE + " → " + TWO + " " + String(-array_after[2]) + " 원 송금"
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
+                    + FOUR + " → " + TWO + " " + inputComma(innum: temp) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: (-array_after[2])) + " 원 송금"
         }
         else if array_after[0] == -(array_after[3])
         {
-            Print = FOUR + " → " + ONE + " " + String(array_after[0]) + " 원 송금\n"
-                    + THREE + " → " + TWO + " " + String(array_after[1]) + " 원 송금"
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금"
         }
     }
     
@@ -451,27 +420,27 @@ class View_2_3_ViewController: UIViewController {
         //양수 셋 : 한명이 나머지 셋에게 송금
         if RESULT_A < 0
         {
-            Print = A_name + " → " + B_name + " " + String(RESULT_B) + " 원 송금\n"
-                    + A_name + " → " + C_name + " " + String(RESULT_C) + " 원 송금\n"
-                    + A_name + " → " + D_name + " " + String(RESULT_D) + " 원 송금"
+            Print = A_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + A_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금\n"
+                    + A_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
         }
         else if RESULT_B < 0
         {
-            Print = B_name + " → " + A_name + " " + String(RESULT_A) + " 원 송금\n"
-                    + B_name + " → " + C_name + " " + String(RESULT_C) + " 원 송금\n"
-                    + B_name + " → " + D_name + " " + String(RESULT_D) + " 원 송금"
+            Print = B_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + B_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금\n"
+                    + B_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
         }
         else if RESULT_C < 0
         {
-            Print = C_name + " → " + A_name + " " + String(RESULT_A) + " 원 송금\n"
-                    + C_name + " → " + B_name + " " + String(RESULT_B) + " 원 송금\n"
-                    + C_name + " → " + D_name + " " + String(RESULT_D) + " 원 송금"
+            Print = C_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + C_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + C_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
         }
         else if RESULT_D < 0
         {
-            Print = D_name + " → " + A_name + " " + String(RESULT_A) + " 원 송금\n"
-                    + D_name + " → " + B_name + " " + String(RESULT_B) + " 원 송금\n"
-                    + D_name + " → " + C_name + " " + String(RESULT_C) + " 원 송금"
+            Print = D_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + D_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + D_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금"
         }
     }
     
@@ -482,71 +451,136 @@ class View_2_3_ViewController: UIViewController {
         array_before.append(RESULT_C)
         array_before.append(RESULT_D)
         array_after = array_before.sorted(by: >)
-        
+        //ver1.1 정렬문제 해결
+        var use_A: Bool = true
+        var use_B: Bool = true
+        var use_C: Bool = true
+        var use_D: Bool = true
+        var find: Bool = true
         for i in stride(from:0, to: 4, by: 1)
         {
             var num = i+1
             if array_after[i] == RESULT_A
             {
-                switch num {
-                case 1:
-                    ONE = A_name
-                case 2:
-                    TWO = A_name
-                case 3:
-                    THREE = A_name
-                case 4:
-                    FOUR = A_name
-                default:
-                    Print = "Error"
+                if(find && use_A)
+                {
+                    print("in A")
+                    switch num {
+                    case 1:
+                        ONE = A_name
+                        use_A = false
+                        find = false
+                    case 2:
+                        TWO = A_name
+                        use_A = false
+                        find = false
+                    case 3:
+                        THREE = A_name
+                        use_A = false
+                        find = false
+                    case 4:
+                        FOUR = A_name
+                        use_A = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
                 }
             }
-            else if array_after[i] == RESULT_B
+            if array_after[i] == RESULT_B
             {
-                switch num {
-                case 1:
-                    ONE = B_name
-                case 2:
-                    TWO = B_name
-                case 3:
-                    THREE = B_name
-                case 4:
-                    FOUR = B_name
-                default:
-                    Print = "Error"
+                if(find && use_B)
+                {
+                    print("in B")
+                    switch num {
+                    case 1:
+                        ONE = B_name
+                        use_B = false
+                        find = false
+                    case 2:
+                        TWO = B_name
+                        use_B = false
+                        find = false
+                    case 3:
+                        THREE = B_name
+                        use_B = false
+                        find = false
+                    case 4:
+                        FOUR = B_name
+                        use_B = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
                 }
             }
-            else if array_after[i] == RESULT_C
+            if array_after[i] == RESULT_C
             {
-                switch num {
-                case 1:
-                    ONE = C_name
-                case 2:
-                    TWO = C_name
-                case 3:
-                    THREE = C_name
-                case 4:
-                    FOUR = C_name
-                default:
-                    Print = "Error"
+                if(find && use_C)
+                {
+                    print("in C")
+                    switch num {
+                    case 1:
+                        ONE = C_name
+                        use_C = false
+                        find = false
+                    case 2:
+                        TWO = C_name
+                        use_C = false
+                        find = false
+                    case 3:
+                        THREE = C_name
+                        use_C = false
+                        find = false
+                        break
+                    case 4:
+                        FOUR = C_name
+                        use_C = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
                 }
             }
-            else if array_after[i] == RESULT_D
+            if array_after[i] == RESULT_D
             {
-                switch num {
-                case 1:
-                    ONE = D_name
-                case 2:
-                    TWO = D_name
-                case 3:
-                    THREE = D_name
-                case 4:
-                    FOUR = D_name
-                default:
-                    Print = "Error"
+                if(find && use_D)
+                {
+                    print("in D")
+                    switch num {
+                    case 1:
+                        ONE = D_name
+                        use_D = false
+                        find = false
+                    case 2:
+                        TWO = D_name
+                        use_D = false
+                        find = false
+                    case 3:
+                        THREE = D_name
+                        use_D = false
+                        find = false
+                    case 4:
+                        FOUR = D_name
+                        use_D = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
                 }
             }
+            find = true
         }
+    }
+    
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
     
 }
