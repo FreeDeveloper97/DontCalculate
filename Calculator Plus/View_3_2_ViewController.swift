@@ -27,8 +27,17 @@ class View_3_2_ViewController: UIViewController {
     override func viewDidLoad() {
         
         View_1.layer.cornerRadius = 18
+//        View_1.layer.borderWidth = 2
+//        View_1.layer.borderColor = brown?.cgColor
+
         Button_Result_outlet.layer.cornerRadius = 13
+//        Button_Result_outlet.layer.borderWidth = 2
+//        Button_Result_outlet.layer.borderColor = button?.cgColor
+
         View_Result.layer.cornerRadius = 13
+//        View_Result.layer.borderWidth = 2
+//        View_Result.layer.borderColor = brown?.cgColor
+        
         Text_goalPoint.keyboardType = .numberPad
         Text_per.keyboardType = .decimalPad
         
@@ -42,7 +51,7 @@ class View_3_2_ViewController: UIViewController {
         if(check())
         {
             RESULT = Int(Double(GOAL)! * 100 / Double(PER)!)
-            Result_1.text = inputComma(innum: RESULT) + " 원"
+            Result_1.text = String(RESULT) + " 원"
         }
     }
     
@@ -66,16 +75,6 @@ class View_3_2_ViewController: UIViewController {
             return false
         }
         return true
-    }
-    
-    //ver1.1 콤마 추가
-    func inputComma(innum: Int) -> String
-    {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
-        return RESULT_COMMA
     }
     
 

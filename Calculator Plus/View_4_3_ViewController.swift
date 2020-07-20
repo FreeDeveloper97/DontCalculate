@@ -54,8 +54,8 @@ class View_4_3_ViewController: UIViewController {
         if(check())
         {
             RESULT = Int(Double(AFTER)! * 100 / (100 - Double(PER)!))
-            Result_1.text = inputComma(innum: RESULT) + " 원"
-            Result_2.text = "- " + inputComma(innum: (RESULT - Int(AFTER)!)) + " 원"
+            Result_1.text = String(RESULT) + " 원"
+            Result_2.text = "- " + String(RESULT - Int(AFTER)!) + " 원"
         }
     }
     
@@ -83,14 +83,5 @@ class View_4_3_ViewController: UIViewController {
         return true
     }
     
-    //ver1.1 콤마 추가
-    func inputComma(innum: Int) -> String
-    {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
-        return RESULT_COMMA
-    }
 
 }

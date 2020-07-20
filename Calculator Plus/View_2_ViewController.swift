@@ -18,7 +18,6 @@ class View_2_ViewController: UIViewController {
     let brown = UIColor(named: "Dynamic_brown")
     
     override func viewDidLoad() {
-        NSLog("in")
         
         View_2_1.layer.cornerRadius = 18
 //        View_2_1.layer.borderWidth = 2
