@@ -16,12 +16,12 @@ class View_1_1_ViewController: UIViewController {
 //    @IBOutlet var Text_money: UILabel!
 //    @IBOutlet var Text_n: UITextField!
 //    @IBOutlet var Button_Result_outlet: UIButton!
-//    @IBOutlet var Result_1: UILabel!
+    @IBOutlet var Result_1: UILabel!
 //    @IBOutlet var View_Result: UIView!
 //    @IBOutlet var Button_kakao_outlet: UIButton!
 ////    @IBOutlet var View_2: UIView!
 //    @IBOutlet var Button_detail_outlet: UIButton!
-//    @IBOutlet var Text_detail: UILabel!
+    @IBOutlet var Text_detail: UILabel!
 //    @IBOutlet var Text_show: UILabel!
 //
 //    @IBOutlet var View_bank: UIView!
@@ -31,9 +31,21 @@ class View_1_1_ViewController: UIViewController {
     
     @IBOutlet var Button_Plus: UIButton!
     @IBOutlet var Button_Result: UIButton!
-    @IBOutlet var View_Sum: UIView!
     @IBOutlet var Button_Detail: UIButton!
     @IBOutlet var Button_Kakao: UIButton!
+    @IBOutlet var Button_RESET: UIButton!
+    
+    //animation
+    @IBOutlet var View_ResultLine: UIView!
+    @IBOutlet var Label_Result1View: UILabel!
+    @IBOutlet var Label_Result2View: UILabel!
+    @IBOutlet var View_Result1Line: UIView!
+    @IBOutlet var View_Result2Line: UIView!
+    
+    //누적금액 색 변경
+    @IBOutlet var Label_Sum_show: UILabel!
+    @IBOutlet var Label_Sum: UILabel!
+    @IBOutlet var View_sumLine: UIView!
     
     
     var InputMoney = ""
@@ -46,8 +58,9 @@ class View_1_1_ViewController: UIViewController {
     
     let brown = UIColor(named: "Dynamic_brown")
     let kakao = UIColor(named: "Dynamic_kakao")
-    let button = UIColor(named: "Dynamic_button")
+    let button = UIColor(named: "button")
     let GRAY = UIColor(named: "ColorGray")
+    let REVERSE = UIColor(named: "Dynamic_reverse")
     
     
     override func viewDidLoad() {
@@ -96,9 +109,38 @@ class View_1_1_ViewController: UIViewController {
         Button_Kakao.clipsToBounds = true
         
         super.viewDidLoad()
+        
+        //animation
+        self.View_ResultLine.transform = CGAffineTransform(translationX: 0, y: -110)
+        self.Label_Result1View.alpha = 0;
+        self.Label_Result1View.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_Result2View.alpha = 0;
+        self.Label_Result2View.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_Result1Line.alpha = 0;
+        self.View_Result1Line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_Result2Line.alpha = 0;
+        self.View_Result2Line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Button_Detail.alpha = 0;
+        self.Button_Detail.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_Kakao.alpha = 0;
+        self.Button_Kakao.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.alpha = 0;
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Result_1.alpha = 0;
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Text_detail.alpha = 0;
+        self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        //누적금액 애니메이션
+        self.Label_Sum_show.textColor = self.GRAY
+        self.Label_Sum.textColor = self.GRAY
+        self.Button_Result.backgroundColor = self.GRAY
+        self.View_sumLine.backgroundColor = self.GRAY
     }
     
-//    @IBAction func Button_plus(_ sender: UIButton) {
+    @IBAction func Button_plus(_ sender: UIButton) {
 //        InputMoney = Input_money.text!
 //        if(InputMoney != "")
 //        {
@@ -114,11 +156,17 @@ class View_1_1_ViewController: UIViewController {
 //                DETAIL += "\n" + String(InputMoney) + " 원"
 //            }
 //        }
-//    }
+        
+        UIView.animate(withDuration: 0.7) {
+            self.Label_Sum_show.textColor = self.button
+            self.Label_Sum.textColor = self.button
+            self.View_sumLine.backgroundColor = self.button
+        }
+    }
     
     
     
-//    @IBAction func Button_Result(_ sender: UIButton) {
+    @IBAction func Button_Result(_ sender: UIButton) {
 //        //1. string 가져오기
 //        N = Text_n.text!
 //        if(check())
@@ -138,8 +186,34 @@ class View_1_1_ViewController: UIViewController {
 ////            kakao_print += "\n\n더치페이 결과 : " + String(RESULT) + " 원"
 //            kakao_print += "\n계좌 : " + Text_bank.text!
 //        }
-//
-//    }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.View_ResultLine.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+        UIView.animate(withDuration: 0.7) {
+            self.Label_Result1View.alpha = 1;
+            self.Label_Result1View.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Label_Result2View.alpha = 1;
+            self.Label_Result2View.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_Result1Line.alpha = 1;
+            self.View_Result1Line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_Result2Line.alpha = 1;
+            self.View_Result2Line.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+            self.Button_Detail.alpha = 1;
+            self.Button_Detail.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_Kakao.alpha = 1;
+            self.Button_Kakao.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_RESET.alpha = 1;
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_1.alpha = 1;
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Text_detail.alpha = 1;
+            self.Text_detail.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+            self.Button_Result.backgroundColor = self.button
+        }
+    }
     
 //    @IBAction func Button_detail(_ sender: UIButton) {
 //        if(RESULT != 0)

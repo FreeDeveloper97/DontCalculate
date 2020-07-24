@@ -22,14 +22,15 @@ class ViewController: UIViewController {
     
     
     let brown = UIColor(named: "Dynamic_brown")
-    let button = UIColor(named: "Dynamic_button")
+    let button = UIColor(named: "button")
     
     
     
     override func viewDidLoad() {
 //        Button_1.layer.cornerRadius = 8
 //        Button_1.clipsToBounds = true
-
+        self.navigationController?.navigationBar.tintColor = button
+        
         Button_1.setImage(UIImage(named: "test_1"), for: .normal)
         Button_2.setImage(UIImage(named: "test_2"), for: .normal)
         Button_3.setImage(UIImage(named: "test_3"), for: .normal)
