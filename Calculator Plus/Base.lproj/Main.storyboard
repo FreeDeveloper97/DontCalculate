@@ -7,6 +7,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HGGGOTHICSSI_PRO_40G.otf">
+            <string>HGGGothicssiP40g</string>
+        </array>
+        <array key="HGGGOTHICSSI_PRO_60G.otf">
+            <string>HGGGothicssiP60g</string>
+        </array>
+        <array key="HGGGOTHICSSI_PRO_80G.otf">
+            <string>HGGGothicssiP80g</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--일반 계산기-->
         <scene sceneID="Kxe-CM-le5">
@@ -6332,16 +6343,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단 더치페이" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-6Z-Qz8">
-                                <rect key="frame" x="122.5" y="84" width="130" height="24"/>
+                                <rect key="frame" x="122" y="84" width="131.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Hw4-MO-ETL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HGGGothicssiP80g" family="HGGGothicssi_Pro" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBR-7R-vhc">
-                                <rect key="frame" x="67.5" y="139" width="240" height="1"/>
+                                <rect key="frame" x="67.5" y="138.5" width="240" height="1"/>
                                 <color key="backgroundColor" name="button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="5bm-qd-ZCC"/>
@@ -6349,7 +6360,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-rT-sMZ">
-                                <rect key="frame" x="132.5" y="220" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="219.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Ktd-Aj-lRl"/>
                                     <constraint firstAttribute="width" constant="110" id="SFO-8u-rYl"/>
@@ -6360,13 +6371,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 얼마 보내주면 돼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-rX-c5D">
-                                <rect key="frame" x="128.5" y="113" width="118" height="16"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <rect key="frame" x="128" y="113" width="119.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="HGGGothicssiP40g" family="HGGGothicssi_Pro" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdf-e8-Afz">
-                                <rect key="frame" x="132.5" y="406" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="404.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="3Tb-ff-jxY"/>
                                     <constraint firstAttribute="width" constant="110" id="WrR-sg-IpI"/>
@@ -6377,14 +6388,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일반" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ5-sk-Vmg">
-                                <rect key="frame" x="172.5" y="320" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="173" y="319.5" width="29.5" height="20"/>
+                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="따로 따로" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-ZT-kBu">
-                                <rect key="frame" x="155.5" y="506" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="155.5" y="504.5" width="64" height="20"/>
+                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -6668,31 +6679,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jy5-n9-ffv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용금액" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07U-HZ-WsL">
-                                                <rect key="frame" x="32" y="28" width="59" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="28" width="59" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0G-uU-tU4">
-                                                <rect key="frame" x="138" y="27" width="182" height="22"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="금액입력후 +버튼 클릭" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0G-uU-tU4">
+                                                <rect key="frame" x="138" y="27" width="182" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="KVf-F6-V5H"/>
+                                                    <constraint firstAttribute="height" constant="21" id="KVf-F6-V5H"/>
                                                 </constraints>
                                                 <color key="textColor" name="Dynamic_reverse"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-ay-UqM">
-                                                <rect key="frame" x="328" y="28" width="15" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="328" y="28" width="15" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2K-py-SPu">
-                                                <rect key="frame" x="118" y="57" width="225" height="1"/>
+                                                <rect key="frame" x="118" y="56" width="225" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="225" id="GmO-EU-C8r"/>
@@ -6700,7 +6711,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrC-9b-5NT">
-                                                <rect key="frame" x="165" y="74" width="45" height="45"/>
+                                                <rect key="frame" x="165" y="73" width="45" height="45"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="Ee1-ol-XuS"/>
@@ -6715,22 +6726,22 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나눌인원수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8w-Ld-3A5">
-                                                <rect key="frame" x="32" y="192" width="74" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="190" width="74" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSR-zK-2r7">
-                                                <rect key="frame" x="139" y="191" width="181" height="22"/>
+                                                <rect key="frame" x="139" y="189" width="181" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="5D5-At-5ht"/>
+                                                    <constraint firstAttribute="height" constant="21" id="5D5-At-5ht"/>
                                                 </constraints>
                                                 <color key="textColor" name="Dynamic_reverse"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wb2-gY-Zvd">
-                                                <rect key="frame" x="118" y="221" width="225" height="1"/>
+                                                <rect key="frame" x="118" y="218" width="225" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Re7-2H-OfN"/>
@@ -6738,22 +6749,22 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WN4-FT-V9Z">
-                                                <rect key="frame" x="32" y="253" width="59" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="250" width="59" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3U-tt-HaQ">
-                                                <rect key="frame" x="118" y="249" width="225" height="25"/>
+                                                <rect key="frame" x="118" y="246" width="225" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="et3-Nt-eNE"/>
+                                                    <constraint firstAttribute="height" constant="21" id="et3-Nt-eNE"/>
                                                 </constraints>
                                                 <color key="textColor" name="Dynamic_reverse"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-f3-DZc">
-                                                <rect key="frame" x="118" y="282" width="225" height="1"/>
+                                                <rect key="frame" x="118" y="275" width="225" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="8Xl-P5-GkV"/>
@@ -6761,7 +6772,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woc-JV-c5J">
-                                                <rect key="frame" x="165" y="315" width="45" height="45"/>
+                                                <rect key="frame" x="165" y="308" width="45" height="45"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="1ad-3O-ZAw"/>
@@ -6776,7 +6787,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJP-fx-vWc">
-                                                <rect key="frame" x="32" y="392" width="311" height="3"/>
+                                                <rect key="frame" x="32" y="385" width="311" height="3"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="311" id="Q4g-Qi-qHb"/>
@@ -6784,22 +6795,22 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더치페이 결과" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3E-jy-KTP">
-                                                <rect key="frame" x="32" y="411" width="93" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="404" width="93" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16,000 원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWx-br-Edb">
-                                                <rect key="frame" x="268.5" y="411" width="74.5" height="21"/>
+                                                <rect key="frame" x="271.5" y="404" width="71.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="6ex-aY-PQq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="button"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-pn-OJd">
-                                                <rect key="frame" x="148" y="440" width="195" height="1"/>
+                                                <rect key="frame" x="148" y="433" width="195" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="7Jm-bX-p66"/>
@@ -6807,22 +6818,22 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgI-cP-Tb8">
-                                                <rect key="frame" x="32" y="456" width="30" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="448" width="29.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국민 937702-00-027565" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11c-OS-Oyd">
-                                                <rect key="frame" x="146.5" y="456" width="196.5" height="21"/>
+                                                <rect key="frame" x="163" y="449" width="180" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="x4V-Oo-a32"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="button"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-KJ-qYm">
-                                                <rect key="frame" x="148" y="485" width="195" height="1"/>
+                                                <rect key="frame" x="148" y="478" width="195" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="195" id="5XD-RY-GEW"/>
@@ -6830,7 +6841,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIF-Ta-0wZ">
-                                                <rect key="frame" x="32" y="502" width="311" height="3"/>
+                                                <rect key="frame" x="32" y="495" width="311" height="3"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="311" id="MEH-By-Pzi"/>
@@ -6838,7 +6849,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDd-A0-MGf">
-                                                <rect key="frame" x="53.5" y="517" width="268" height="44"/>
+                                                <rect key="frame" x="53.5" y="510" width="268" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTf-CV-sru">
                                                         <rect key="frame" x="4" y="4" width="90" height="36"/>
@@ -6846,6 +6857,7 @@
                                                             <constraint firstAttribute="width" constant="90" id="e5i-GC-ZvW"/>
                                                             <constraint firstAttribute="height" constant="36" id="yeC-OQ-4NI"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="HGGGothicssiP40g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                         <state key="normal" title="Show Detail">
                                                             <color key="titleColor" name="Dynamic_reverse"/>
                                                         </state>
@@ -6856,6 +6868,7 @@
                                                             <constraint firstAttribute="height" constant="36" id="7O6-Py-ZVs"/>
                                                             <constraint firstAttribute="width" constant="90" id="pc9-BQ-3sk"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="HGGGothicssiP40g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                         <state key="normal" title="Kakao Talk">
                                                             <color key="titleColor" name="Dynamic_reverse"/>
                                                         </state>
@@ -6873,29 +6886,30 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-Kv-aKk">
-                                                <rect key="frame" x="142.5" y="565" width="90" height="36"/>
+                                                <rect key="frame" x="142.5" y="558" width="90" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="4ET-VS-y46"/>
                                                     <constraint firstAttribute="height" constant="36" id="h3h-MH-QVq"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP40g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <state key="normal" title="RESET">
                                                     <color key="titleColor" name="ColorGray"/>
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32,000 원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGG-3J-ct6">
-                                                <rect key="frame" x="266" y="131" width="77" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="271.5" y="130" width="71.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="button"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcK-P6-5Wh">
-                                                <rect key="frame" x="32" y="131" width="59" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="32" y="130" width="59" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="button"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZO-aV-qC3">
-                                                <rect key="frame" x="118" y="160" width="225" height="1"/>
+                                                <rect key="frame" x="118" y="158" width="225" height="1"/>
                                                 <color key="backgroundColor" name="button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="5Le-v2-pmd"/>
@@ -6903,8 +6917,8 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdX-qC-o05">
-                                                <rect key="frame" x="328" y="192" width="15" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="328" y="190" width="15" height="20"/>
+                                                <fontDescription key="fontDescription" name="HGGGothicssiP60g" family="HGGGothicssi_Pro" pointSize="17"/>
                                                 <color key="textColor" name="Dynamic_reverse"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

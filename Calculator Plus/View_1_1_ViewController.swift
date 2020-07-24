@@ -82,7 +82,7 @@ class View_1_1_ViewController: UIViewController {
 //        Input_money.keyboardType = .numberPad
 //        Text_n.keyboardType = .numberPad
 //
-        Input_money.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: GRAY?.cgColor])
+//        Input_money.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: GRAY?.cgColor])
 //
 //        Text_bank.attributedPlaceholder = NSAttributedString(string: "은행, 계좌번호 입력", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
 //
@@ -157,7 +157,7 @@ class View_1_1_ViewController: UIViewController {
 //            }
 //        }
         
-        UIView.animate(withDuration: 0.7) {
+        UIView.animate(withDuration: 0.5) {
             self.Label_Sum_show.textColor = self.button
             self.Label_Sum.textColor = self.button
             self.View_sumLine.backgroundColor = self.button

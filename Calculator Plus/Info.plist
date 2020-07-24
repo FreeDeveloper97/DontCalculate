@@ -43,11 +43,12 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>custom_1.ttf</string>
-		<string>custom_2.ttf</string>
-		<string>custom_3.ttf</string>
-		<string>custom_4.ttf</string>
-		<string>custom_5.otf</string>
+		<string>HGGGOTHICSSI_PRO_00G.otf</string>
+		<string>HGGGOTHICSSI_PRO_20G.otf</string>
+		<string>HGGGOTHICSSI_PRO_40G.otf</string>
+		<string>HGGGOTHICSSI_PRO_60G.otf</string>
+		<string>HGGGOTHICSSI_PRO_80G.otf</string>
+		<string>HGGGOTHICSSI_PRO_99G.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
