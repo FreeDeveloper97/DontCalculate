@@ -10,42 +10,41 @@ import UIKit
 
 class View_1_1_ViewController: UIViewController {
     
-//    @IBOutlet var View_1: UIView!
     @IBOutlet var Input_money: UITextField!
-//    @IBOutlet var Button_plus_outlet: UIButton!
-//    @IBOutlet var Text_money: UILabel!
-//    @IBOutlet var Text_n: UITextField!
-//    @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var Result_1: UILabel!
-//    @IBOutlet var View_Result: UIView!
-//    @IBOutlet var Button_kakao_outlet: UIButton!
-////    @IBOutlet var View_2: UIView!
-//    @IBOutlet var Button_detail_outlet: UIButton!
-    @IBOutlet var Text_detail: UILabel!
-//    @IBOutlet var Text_show: UILabel!
-//
-//    @IBOutlet var View_bank: UIView!
-//    @IBOutlet var Text_bank: UITextField!
-//
-//    @IBOutlet var Text_bank_show: UILabel!
-    
-    @IBOutlet var Button_Plus: UIButton!
-    @IBOutlet var Button_Result: UIButton!
-    @IBOutlet var Button_Detail: UIButton!
-    @IBOutlet var Button_Kakao: UIButton!
-    @IBOutlet var Button_RESET: UIButton!
+    @IBOutlet var Button_plus_outlet: UIButton!
+    @IBOutlet var Text_n: UITextField!
+    @IBOutlet var Text_bank: UITextField!
     
     //animation
-    @IBOutlet var View_ResultLine: UIView!
-    @IBOutlet var Label_Result1View: UILabel!
-    @IBOutlet var Label_Result2View: UILabel!
-    @IBOutlet var View_Result1Line: UIView!
-    @IBOutlet var View_Result2Line: UIView!
+    @IBOutlet weak var Label_money_show: UILabel!
+    @IBOutlet var Text_money: UILabel!
+    @IBOutlet weak var View_money_line: UIView!
     
-    //누적금액 색 변경
-    @IBOutlet var Label_Sum_show: UILabel!
-    @IBOutlet var Label_Sum: UILabel!
-    @IBOutlet var View_sumLine: UIView!
+    @IBOutlet var Button_Result_outlet: UIButton!
+    
+    @IBOutlet weak var Label_result1_show: UILabel!
+    @IBOutlet var Result_1: UILabel!
+    @IBOutlet weak var View_result1_line: UIView!
+    
+    
+    @IBOutlet weak var Label_result2_show: UILabel!
+    @IBOutlet var Result_2: UILabel!
+    @IBOutlet weak var View_result2_line: UIView!
+    
+    
+    @IBOutlet var Label_result3_show: UILabel!
+    @IBOutlet var Result_3: UILabel!
+    @IBOutlet weak var View_result3_line: UIView!
+    
+    @IBOutlet weak var View_Line: UIView!
+    
+    @IBOutlet var Button_detail_outlet: UIButton!
+    @IBOutlet var Button_kakao_outlet: UIButton!
+    @IBOutlet weak var Button_RESET: UIButton!
+    
+    
+    @IBOutlet weak var View_Buttons: UIView!
+    
     
     
     var InputMoney = ""
@@ -54,247 +53,283 @@ class View_1_1_ViewController: UIViewController {
     var RESULT = 0
     var kakao_print = ""
     var DETAIL = ""
-    var RESULT_COMMA = ""
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let kakao = UIColor(named: "Dynamic_kakao")
-    let button = UIColor(named: "button")
     let GRAY = UIColor(named: "ColorGray")
     let REVERSE = UIColor(named: "Dynamic_reverse")
-    
+    let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
+        Button_plus_outlet.layer.cornerRadius = 4
+        Button_Result_outlet.layer.cornerRadius = 4
+        Button_kakao_outlet.layer.cornerRadius = 4
+        Button_detail_outlet.layer.cornerRadius = 4
         
-//        View_1.layer.cornerRadius = 18
-//
-//        Button_plus_outlet.layer.cornerRadius = 13
-//
-//        Button_Result_outlet.layer.cornerRadius = 13
-//
-//        View_Result.layer.cornerRadius = 13
-//
-//        View_bank.layer.cornerRadius = 18
-//
-//        Button_kakao_outlet.layer.cornerRadius = 13
-//
-//        Button_detail_outlet.layer.cornerRadius = 13
-//
-//        Input_money.keyboardType = .numberPad
-//        Text_n.keyboardType = .numberPad
-//
-//        Input_money.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: GRAY?.cgColor])
-//
-//        Text_bank.attributedPlaceholder = NSAttributedString(string: "은행, 계좌번호 입력", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-//
+        Input_money.keyboardType = .numberPad
+        Text_n.keyboardType = .numberPad
+        
         self.hideKeyboard()
-        
-        
-        
-//        Button_Plus.layer.cornerRadius = Button_Plus.layer.frame.size.width/2
-//        Button_Plus.clipsToBounds = true
-        Button_Plus.layer.cornerRadius = 4
-        Button_Plus.clipsToBounds = true
-        
-//        Button_Result.layer.cornerRadius = Button_Result.layer.frame.size.width/2
-//        Button_Result.clipsToBounds = true
-        Button_Result.layer.cornerRadius = 4
-        Button_Result.clipsToBounds = true
-        
-//        View_Sum.layer.cornerRadius = 8
-        
-        Button_Detail.layer.cornerRadius = 4
-        Button_Detail.clipsToBounds = true
-        
-        Button_Kakao.layer.cornerRadius = 4
-        Button_Kakao.clipsToBounds = true
-        
         super.viewDidLoad()
         
+        //color
+        Label_money_show.textColor = GRAY
+        Text_money.textColor = GRAY
+        View_money_line.backgroundColor = GRAY
+        
         //animation
-        self.View_ResultLine.transform = CGAffineTransform(translationX: 0, y: -110)
-        self.Label_Result1View.alpha = 0;
-        self.Label_Result1View.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Label_Result2View.alpha = 0;
-        self.Label_Result2View.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Result1Line.alpha = 0;
-        self.View_Result1Line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Result2Line.alpha = 0;
-        self.View_Result2Line.transform = CGAffineTransform(translationX: 0, y: -10)
-        
-        self.Button_Detail.alpha = 0;
-        self.Button_Detail.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Button_Kakao.alpha = 0;
-        self.Button_Kakao.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Button_RESET.alpha = 0;
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
-        
-        self.Result_1.alpha = 0;
+        self.Label_result1_show.alpha = 0
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.alpha = 0
         self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Text_detail.alpha = 0;
-        self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.alpha = 0
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
         
-        //누적금액 애니메이션
-        self.Label_Sum_show.textColor = self.GRAY
-        self.Label_Sum.textColor = self.GRAY
-        self.Button_Result.backgroundColor = self.GRAY
-        self.View_sumLine.backgroundColor = self.GRAY
+        self.Label_result2_show.alpha = 0
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.alpha = 0
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.alpha = 0
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Label_result3_show.alpha = 0
+        self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_3.alpha = 0
+        self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result3_line.alpha = 0
+        self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.View_Line.alpha = 0
+        self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
+        
+        self.Button_RESET.alpha = 0
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+        
+        self.View_Buttons.alpha = 0
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
+        
+        self.Button_plus_outlet.backgroundColor = GRAY
+        self.Button_Result_outlet.backgroundColor = GRAY
+        //입력 반응
+        Input_money.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
+        Text_n.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
+    }
+    @objc func textFieldDidChange1(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_outlet.backgroundColor = self.BUTTON
+        })
+    }
+    
+    @objc func textFieldDidChange2(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_Result_outlet.backgroundColor = self.BUTTON
+        })
     }
     
     @IBAction func Button_plus(_ sender: UIButton) {
-//        InputMoney = Input_money.text!
-//        if(InputMoney != "")
-//        {
-//            MONEY += Int(InputMoney)!
-//            Input_money.text = ""
-//            Text_money.text = "누적금액 : " + String(MONEY) + "원"
-//            if(DETAIL == "")
-//            {
-//                DETAIL = String(InputMoney) + " 원"
-//            }
-//            else if (DETAIL != "")
-//            {
-//                DETAIL += "\n" + String(InputMoney) + " 원"
-//            }
-//        }
-        
-        UIView.animate(withDuration: 0.5) {
-            self.Label_Sum_show.textColor = self.button
-            self.Label_Sum.textColor = self.button
-            self.View_sumLine.backgroundColor = self.button
+        InputMoney = Input_money.text!
+        if(InputMoney != "")
+        {
+            MONEY += Int(InputMoney)!
+            Input_money.text = ""
+            Text_money.text = inputComma(innum: MONEY) + " 원"
+            if(DETAIL == "")
+            {
+                DETAIL = inputComma(innum: Int(InputMoney)!) + " 원"
+            }
+            else if (DETAIL != "")
+            {
+                DETAIL += "\n" + inputComma(innum: Int(InputMoney)!) + " 원"
+            }
         }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Label_money_show.textColor = self.BUTTON
+            self.Text_money.textColor = self.BUTTON
+            self.View_money_line.backgroundColor = self.BUTTON
+        })
     }
     
     
     
     @IBAction func Button_Result(_ sender: UIButton) {
-//        //1. string 가져오기
-//        N = Text_n.text!
-//        if(check())
-//        {
-//            kakao_print = "총 사용금액 : " + String(MONEY) + " 원"
-//            kakao_print += "\n더치페이 인원수 : " + N + " 명"
-//
-//            RESULT = MONEY / Int(N)!
-//
-//            inputComma()
-//            Result_1.text = String(RESULT_COMMA) + " 원"
-////            Result_1.text = String(RESULT) + " 원"
-//            Text_bank_show.text = Text_bank.text!
-//
-//
-//            kakao_print += "\n\n더치페이 결과 : " + String(RESULT_COMMA) + " 원"
-////            kakao_print += "\n\n더치페이 결과 : " + String(RESULT) + " 원"
-//            kakao_print += "\n계좌 : " + Text_bank.text!
-//        }
-        
-        UIView.animate(withDuration: 0.5) {
-            self.View_ResultLine.transform = CGAffineTransform(translationX: 0, y: 0)
+        //1. string 가져오기
+        N = Text_n.text!
+        if(check())
+        {
+            kakao_print = "총 사용금액 : " + inputComma(innum: MONEY) + " 원"
+            kakao_print += "\n더치페이 인원수 : " + N + " 명"
+
+            RESULT = MONEY / Int(N)!
+            Result_1.text = inputComma(innum: RESULT) + " 원"
+            Result_2.text = Text_bank.text!
+
+
+            kakao_print += "\n\n더치페이 결과 : " + inputComma(innum: RESULT) + " 원"
+            kakao_print += "\n계좌 : " + Text_bank.text!
         }
-        UIView.animate(withDuration: 0.7) {
-            self.Label_Result1View.alpha = 1;
-            self.Label_Result1View.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Label_Result2View.alpha = 1;
-            self.Label_Result2View.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_Result1Line.alpha = 1;
-            self.View_Result1Line.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_Result2Line.alpha = 1;
-            self.View_Result2Line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Button_Detail.alpha = 1;
-            self.Button_Detail.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_Kakao.alpha = 1;
-            self.Button_Kakao.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_RESET.alpha = 1;
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_1.alpha = 1;
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_Line.alpha = 1
+            self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
+        })
+
+        UIView.animate(withDuration: 0.7, animations: {
+            self.Label_result1_show.alpha = 1
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_1.alpha = 1
             self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Text_detail.alpha = 1;
-            self.Text_detail.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_result1_line.alpha = 1
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
             
-            self.Button_Result.backgroundColor = self.button
+            self.Label_result2_show.alpha = 1
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_2.alpha = 1
+            self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_result2_line.alpha = 1
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+            self.Button_RESET.alpha = 1
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+            
+            self.View_Buttons.alpha = 1
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
+        })
+
+    }
+    
+    @IBAction func Button_detail(_ sender: UIButton) {
+        if(RESULT != 0)
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.View_Line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result3_show.alpha = 1
+                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_3.alpha = 1
+                self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result3_line.alpha = 1
+                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
+
+                self.Result_3.text = self.DETAIL
+                self.kakao_print += "\n\n상세내역\n" + self.DETAIL
+            })
         }
     }
     
-//    @IBAction func Button_detail(_ sender: UIButton) {
-//        if(RESULT != 0)
-//        {
-//            Text_show.text = "상세내역 :"
-//            Text_detail.text = "\n" + DETAIL
-//            kakao_print += "\n\n상세내역\n" + DETAIL
-//        }
-//    }
     
+    @IBAction func Button_kakao(_ sender: UIButton) {
+        if kakao_print != ""
+        {
+
+            let template = KMTTextTemplate { (KMTTextTemplateBuilder) in
+                KMTTextTemplateBuilder.text = self.kakao_print
+                //KMTTextTemplateBuilder.buttonTitle = "Title"
+                KMTTextTemplateBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
+                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
+                })
+            }
+
+            // 서버에서 콜백으로 받을 정보
+            let serverCallbackArgs = ["user_id": "FDEE",
+                                      "product_id": "415849"]
+
+            // 카카오링크 실행
+            KLKTalkLinkCenter.shared().sendDefault(with: template, serverCallbackArgs: serverCallbackArgs, success: { (warningMsg, argumentMsg) in
+
+                // 성공
+                print("warning message: \(String(describing: warningMsg))")
+                print("argument message: \(String(describing: argumentMsg))")
+
+            }, failure: { (error) in
+
+                // 실패
+                UIAlertController.showMessage(error.localizedDescription)
+                print("error \(error)")
+            })
+
+        }
+    }
     
-//    @IBAction func Button_kakao(_ sender: UIButton) {
-//        if kakao_print != ""
-//        {
-//
-//            let template = KMTTextTemplate { (KMTTextTemplateBuilder) in
-//                KMTTextTemplateBuilder.text = self.kakao_print
-//                //KMTTextTemplateBuilder.buttonTitle = "Title"
-//                KMTTextTemplateBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-//                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
-//                })
-//            }
-//
-//            // 서버에서 콜백으로 받을 정보
-//            let serverCallbackArgs = ["user_id": "FDEE",
-//                                      "product_id": "415849"]
-//
-//            // 카카오링크 실행
-//            KLKTalkLinkCenter.shared().sendDefault(with: template, serverCallbackArgs: serverCallbackArgs, success: { (warningMsg, argumentMsg) in
-//
-//                // 성공
-//                print("warning message: \(String(describing: warningMsg))")
-//                print("argument message: \(String(describing: argumentMsg))")
-//
-//            }, failure: { (error) in
-//
-//                // 실패
-//                UIAlertController.showMessage(error.localizedDescription)
-//                print("error \(error)")
-//            })
-//
-//        }
-//    }
+    @IBAction func Button_reset(_ sender: UIButton) {
+        InputMoney = ""
+        MONEY = 0
+        N = ""
+        RESULT = 0
+        kakao_print = ""
+        DETAIL = ""
+        Input_money.text = ""
+        Text_money.text = "원"
+        Text_n.text = ""
+        Result_1.text = ""
+        Result_3.text = ""
+        Result_2.text = ""
+        Text_bank.text = ""
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Label_result1_show.alpha = 0
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_1.alpha = 0
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result1_line.alpha = 0
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            
+            self.Label_result2_show.alpha = 0
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_2.alpha = 0
+            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result2_line.alpha = 0
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            
+            self.Label_result3_show.alpha = 0
+            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_3.alpha = 0
+            self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result3_line.alpha = 0
+            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            
+            self.View_Line.alpha = 0
+            self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
+            
+            self.Button_RESET.alpha = 0
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+            
+            self.View_Buttons.alpha = 0
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
+            
+            self.Label_money_show.textColor = self.GRAY
+            self.Text_money.textColor = self.GRAY
+            self.View_money_line.backgroundColor = self.GRAY
+            
+            self.Button_plus_outlet.backgroundColor = self.GRAY
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+        })
+        
+    }
     
-//    @IBAction func Button_reset(_ sender: UIButton) {
-//        InputMoney = ""
-//        MONEY = 0
-//        N = ""
-//        RESULT = 0
-//        kakao_print = ""
-//        DETAIL = ""
-//        Input_money.text = ""
-//        Text_money.text = "누적금액 : 0원"
-//        Text_n.text = ""
-//        Result_1.text = ""
-//        Text_detail.text = ""
-//        Text_show.text = ""
-//        Text_bank.text = ""
-//        Text_bank_show.text = ""
-//    }
+    func check() -> Bool
+    {
+        if Text_money.text == "원"
+        {
+            return false
+        }
+        else if N == ""
+        {
+            return false
+        }
+        return true
+    }
     
-//    func check() -> Bool
-//    {
-//        if Text_money.text == "누적금액 : 0원"
-//        {
-//            return false
-//        }
-//        else if N == ""
-//        {
-//            return false
-//        }
-//        return true
-//    }
-//
-//    func inputComma()
-//    {
-//        let numberFormatter = NumberFormatter()
-//        numberFormatter.numberStyle = .decimal
-//
-//        RESULT_COMMA = numberFormatter.string(from:NSNumber(value: RESULT))!
-//    }
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
+    }
     
     
 }
