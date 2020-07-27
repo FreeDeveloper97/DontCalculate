@@ -139,12 +139,14 @@ class View_1_1_ViewController: UIViewController {
             {
                 DETAIL += "\n" + inputComma(innum: Int(InputMoney)!) + " 원"
             }
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_money_show.textColor = self.BUTTON
+                self.Text_money.textColor = self.BUTTON
+                self.View_money_line.backgroundColor = self.BUTTON
+            })
         }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Label_money_show.textColor = self.BUTTON
-            self.Text_money.textColor = self.BUTTON
-            self.View_money_line.backgroundColor = self.BUTTON
-        })
+        
     }
     
     
@@ -164,34 +166,34 @@ class View_1_1_ViewController: UIViewController {
 
             kakao_print += "\n\n더치페이 결과 : " + inputComma(innum: RESULT) + " 원"
             kakao_print += "\n계좌 : " + Text_bank.text!
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.View_Line.alpha = 1
+                self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
+            })
+
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result1_show.alpha = 1
+                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_1.alpha = 1
+                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result1_line.alpha = 1
+                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Label_result2_show.alpha = 1
+                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_2.alpha = 1
+                self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result2_line.alpha = 1
+                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Button_RESET.alpha = 1
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+                
+                self.View_Buttons.alpha = 1
+                self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
+            })
         }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.View_Line.alpha = 1
-            self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
-        })
-
-        UIView.animate(withDuration: 0.7, animations: {
-            self.Label_result1_show.alpha = 1
-            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_1.alpha = 1
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result1_line.alpha = 1
-            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Label_result2_show.alpha = 1
-            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_2.alpha = 1
-            self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result2_line.alpha = 1
-            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Button_RESET.alpha = 1
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
-            
-            self.View_Buttons.alpha = 1
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
-        })
-
     }
     
     @IBAction func Button_detail(_ sender: UIButton) {
@@ -330,6 +332,14 @@ class View_1_1_ViewController: UIViewController {
         let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
         return RESULT_COMMA
     }
-    
-    
+}
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
