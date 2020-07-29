@@ -480,7 +480,7 @@ class View_2_4_ViewController: UIViewController {
         {
             if array_after[1] > -(array_after[2])
             {
-                var temp = array_after[0] + array_after[4]
+                let temp = array_after[0] + array_after[4]
                 Print = FIVE + " → " + ONE + " " + inputComma(innum: (-array_after[4])) + " 원 송금\n"
                     + FOUR + " → " + ONE + " " + inputComma(innum: temp) + " 원 송금\n"
                         + FOUR + " → " + TWO + " " + inputComma(innum: (-temp-array_after[3])) + " 원 송금\n"
@@ -494,7 +494,7 @@ class View_2_4_ViewController: UIViewController {
             }
             else if array_after[1] < -(array_after[2])
             {
-                var temp = array_after[0] + array_after[3] + array_after[4]
+                let temp = array_after[0] + array_after[3] + array_after[4]
                 Print = FIVE + " → " + ONE + " " + inputComma(innum: (-array_after[4])) + " 원 송금\n"
                         + FOUR + " → " + ONE + " " + inputComma(innum: (-array_after[3])) + " 원 송금\n"
                         + THREE + " → " + ONE + " " + inputComma(innum: temp) + " 원 송금\n"
@@ -503,7 +503,7 @@ class View_2_4_ViewController: UIViewController {
         }
         else if array_after[0] < -(array_after[4])
         {
-            var temp = -(array_after[0] + array_after[4])
+            let temp = -(array_after[0] + array_after[4])
             Print = FIVE + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
                     + FIVE + " → " + TWO + " " + inputComma(innum: temp) + " 원 송금\n"
                     + FOUR + " → " + TWO + " " + inputComma(innum: (-array_after[3])) + " 원 송금\n"
@@ -526,7 +526,7 @@ class View_2_4_ViewController: UIViewController {
         {
             if array_after[2] < -(array_after[3])
             {
-                var temp = -(array_after[0] + array_after[4])
+                let temp = -(array_after[0] + array_after[4])
                 Print = FIVE + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
                         + FIVE + " → " + TWO + " " + inputComma(innum: temp) + " 원 송금\n"
                         + FOUR + " → " + TWO + " " + inputComma(innum: (array_after[1]-temp)) + " 원 송금\n"
@@ -534,7 +534,7 @@ class View_2_4_ViewController: UIViewController {
             }
             else if array_after[2] > -(array_after[3])
             {
-                var temp = -(array_after[0] + array_after[1] + array_after[4])
+                let temp = -(array_after[0] + array_after[1] + array_after[4])
                 Print = FIVE + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
                         + FIVE + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금\n"
                         + FIVE + " → " + THREE + " " + inputComma(innum: temp) + " 원 송금\n"
@@ -549,7 +549,7 @@ class View_2_4_ViewController: UIViewController {
         }
         else if array_after[0] > -(array_after[4])
         {
-            var temp = array_after[0] + array_after[4]
+            let temp = array_after[0] + array_after[4]
             Print = FIVE + " → " + ONE + " " + inputComma(innum: (-array_after[4])) + " 원 송금\n"
                 + FOUR + " → " + ONE + " " + inputComma(innum: temp) + " 원 송금\n"
                     + FOUR + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금\n"

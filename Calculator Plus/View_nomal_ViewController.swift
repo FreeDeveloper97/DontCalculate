@@ -246,7 +246,7 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func DEL(_ sender: UIButton) {
-        var del_number = Text_result_2.text!
+        let del_number = Text_result_2.text!
         let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
         Text_result_2.text = String(del_number[range])  // Hello, playgroun
     }

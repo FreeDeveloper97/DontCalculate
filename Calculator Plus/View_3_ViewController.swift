@@ -10,36 +10,22 @@ import UIKit
 
 class View_3_ViewController: UIViewController {
 
-    @IBOutlet var View_3_1: UIView!
-    @IBOutlet var View_3_2: UIView!
     
-    let brown = UIColor(named: "Dynamic_brown")
+    @IBOutlet weak var Button_1: UIButton!
+    @IBOutlet weak var Button_2: UIButton!
+    
     
     override func viewDidLoad() {
-        
-        View_3_1.layer.cornerRadius = 18
-//        View_3_1.layer.borderWidth = 2
-//        View_3_1.layer.borderColor = brown?.cgColor
-        
-        View_3_2.layer.cornerRadius = 18
-//        View_3_2.layer.borderWidth = 2
-//        View_3_2.layer.borderColor = brown?.cgColor
-        
+    
+        Button_1.alpha = 0
+        Button_2.alpha = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            self.Button_1.alpha = 1
+        })
+        UIView.animate(withDuration: 0.6, animations: {
+            self.Button_2.alpha = 1
+        })
         
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

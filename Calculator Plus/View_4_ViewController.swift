@@ -10,39 +10,27 @@ import UIKit
 
 class View_4_ViewController: UIViewController {
 
-    @IBOutlet var View_4_1: UIView!
-    @IBOutlet var View_4_2: UIView!
-    @IBOutlet var View_4_3: UIView!
+    @IBOutlet weak var Button_1: UIButton!
+    @IBOutlet weak var Button_2: UIButton!
+    @IBOutlet weak var Button_3: UIButton!
     
-    let brown = UIColor(named: "Dynamic_brown")
+
     
     override func viewDidLoad() {
-        
-        View_4_1.layer.cornerRadius = 18
-//        View_4_1.layer.borderWidth = 2
-//        View_4_1.layer.borderColor = brown?.cgColor
-        
-        View_4_2.layer.cornerRadius = 18
-//        View_4_2.layer.borderWidth = 2
-//        View_4_2.layer.borderColor = brown?.cgColor
-        
-        View_4_3.layer.cornerRadius = 18
-//        View_4_3.layer.borderWidth = 2
-//        View_4_3.layer.borderColor = brown?.cgColor
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        Button_1.alpha = 0
+        Button_2.alpha = 0
+        Button_3.alpha = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            self.Button_1.alpha = 1
+        })
+        UIView.animate(withDuration: 0.6, animations: {
+            self.Button_2.alpha = 1
+        })
+        UIView.animate(withDuration: 0.8, animations: {
+            self.Button_3.alpha = 1
+        })
+        
+        super.viewDidLoad()
     }
-    */
-
 }

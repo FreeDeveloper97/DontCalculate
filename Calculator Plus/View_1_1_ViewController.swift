@@ -42,10 +42,9 @@ class View_1_1_ViewController: UIViewController {
     @IBOutlet var Button_kakao_outlet: UIButton!
     @IBOutlet weak var Button_RESET: UIButton!
     
-    
     @IBOutlet weak var View_Buttons: UIView!
     
-    
+    @IBOutlet weak var View_View: UIView!
     
     var InputMoney = ""
     var MONEY = 0
@@ -53,12 +52,21 @@ class View_1_1_ViewController: UIViewController {
     var RESULT = 0
     var kakao_print = ""
     var DETAIL = ""
+    //detail 버튼 클릭 저장
+    var detailShow: Bool = true
+    var detailCount: Int = 0
     
     let GRAY = UIColor(named: "ColorGray")
     let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
+        
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
+        
         Button_plus_outlet.layer.cornerRadius = 4
         Button_Result_outlet.layer.cornerRadius = 4
         Button_kakao_outlet.layer.cornerRadius = 4
@@ -119,9 +127,20 @@ class View_1_1_ViewController: UIViewController {
     }
     
     @objc func textFieldDidChange2(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_Result_outlet.backgroundColor = self.BUTTON
-        })
+        N = Text_n.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
+        
     }
     
     @IBAction func Button_plus(_ sender: UIButton) {
@@ -144,6 +163,7 @@ class View_1_1_ViewController: UIViewController {
                 self.Label_money_show.textColor = self.BUTTON
                 self.Text_money.textColor = self.BUTTON
                 self.View_money_line.backgroundColor = self.BUTTON
+                self.Button_plus_outlet.backgroundColor = self.GRAY
             })
         }
         
@@ -170,6 +190,7 @@ class View_1_1_ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_Line.alpha = 1
                 self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
+                self.Button_Result_outlet.backgroundColor = self.GRAY
             })
 
             UIView.animate(withDuration: 0.7, animations: {
@@ -199,24 +220,50 @@ class View_1_1_ViewController: UIViewController {
     @IBAction func Button_detail(_ sender: UIButton) {
         if(RESULT != 0)
         {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.View_Line.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            if(detailShow == true)
+            {
+                if(detailCount == 0)
+                {
+                    self.Result_3.text = self.DETAIL
+                    self.kakao_print += "\n\n상세내역\n" + self.DETAIL
+                    detailCount = detailCount + 1
+                }
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.View_Line.transform = CGAffineTransform(translationX: 0, y: 0)
+                    self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+                    
+                    self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
+                })
                 
-                self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
-            
-            UIView.animate(withDuration: 0.7, animations: {
-                self.Label_result3_show.alpha = 1
-                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Result_3.alpha = 1
-                self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.View_result3_line.alpha = 1
-                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
-
-                self.Result_3.text = self.DETAIL
-                self.kakao_print += "\n\n상세내역\n" + self.DETAIL
-            })
+                UIView.animate(withDuration: 0.7, animations: {
+                    self.Label_result3_show.alpha = 1
+                    self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                    self.Result_3.alpha = 1
+                    self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
+                    self.View_result3_line.alpha = 1
+                    self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                })
+                detailShow = false
+            }
+            else
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
+                    self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+                    
+                    self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
+                })
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Label_result3_show.alpha = 0
+                    self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+                    self.Result_3.alpha = 0
+                    self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+                    self.View_result3_line.alpha = 0
+                    self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+                })
+                detailShow = true
+            }
         }
     }
     
@@ -268,6 +315,9 @@ class View_1_1_ViewController: UIViewController {
         Result_3.text = ""
         Result_2.text = ""
         Text_bank.text = ""
+        
+        detailShow = true
+        detailCount = 0
         
         UIView.animate(withDuration: 0.5, animations: {
             self.Label_result1_show.alpha = 0
