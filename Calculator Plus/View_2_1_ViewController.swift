@@ -161,6 +161,14 @@ class View_2_1_ViewController: UIViewController {
                 self.Show_a.textColor = self.BUTTON
                 self.View_sum1_line.backgroundColor = self.BUTTON
             })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     @IBAction func Button_plus_b(_ sender: UIButton) {
@@ -185,6 +193,7 @@ class View_2_1_ViewController: UIViewController {
                     self.Button_Result_outlet.backgroundColor = self.BUTTON
                 })
             }
+            self.view.endEditing(true)
         }
     }
     
@@ -218,39 +227,41 @@ class View_2_1_ViewController: UIViewController {
             kakao_print += "\n\n정산결과\n"
             kakao_print += Print
             Result_3.text = Print
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result1_show.alpha = 1
+                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_1.alpha = 1
+                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result1_line.alpha = 1
+                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Label_result2_show.alpha = 1
+                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_2.alpha = 1
+                self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result2_line.alpha = 1
+                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Label_result3_show.alpha = 1
+                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_3.alpha = 1
+                self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result3_line.alpha = 1
+                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Kakao_outlet.alpha = 1
+                self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.alpha = 1
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            self.view.endEditing(true)
         }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_Result_outlet.backgroundColor = self.GRAY
-        })
-        
-        UIView.animate(withDuration: 0.7, animations: {
-            self.Label_result1_show.alpha = 1
-            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_1.alpha = 1
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result1_line.alpha = 1
-            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Label_result2_show.alpha = 1
-            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_2.alpha = 1
-            self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result2_line.alpha = 1
-            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Label_result3_show.alpha = 1
-            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_3.alpha = 1
-            self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result3_line.alpha = 1
-            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            self.Kakao_outlet.alpha = 1
-            self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_RESET.alpha = 1
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
-        })
                 
     }
     
@@ -357,15 +368,15 @@ class View_2_1_ViewController: UIViewController {
     }
     func check() -> Bool
     {
-//        if A_sum == 0
-//        {
-//            return false
-//        }
-//        else if B_sum == 0
-//        {
-//            return false
-//        }
-        return true
+        if(A_sum != 0)
+        {
+            return true
+        }
+        if(B_sum != 0)
+        {
+            return true
+        }
+        return false
     }
     
     func bubble()

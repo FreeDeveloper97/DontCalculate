@@ -144,6 +144,9 @@ class View_1_1_ViewController: UIViewController {
     }
     
     @IBAction func Button_plus(_ sender: UIButton) {
+        kakao_print = ""
+        detailCount = 0
+        detailShow = true
         InputMoney = Input_money.text!
         if(InputMoney != "")
         {
@@ -165,6 +168,7 @@ class View_1_1_ViewController: UIViewController {
                 self.View_money_line.backgroundColor = self.BUTTON
                 self.Button_plus_outlet.backgroundColor = self.GRAY
             })
+            self.view.endEditing(true)
         }
         
     }
@@ -213,7 +217,15 @@ class View_1_1_ViewController: UIViewController {
                 
                 self.View_Buttons.alpha = 1
                 self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
+                
+                self.Label_result3_show.alpha = 0
+                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.Result_3.alpha = 0
+                self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.View_result3_line.alpha = 0
+                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
             })
+            self.view.endEditing(true)
         }
     }
     

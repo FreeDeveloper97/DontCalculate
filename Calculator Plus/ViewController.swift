@@ -59,35 +59,35 @@ class ViewController: UIViewController {
             self.Button_1.alpha = 1
             self.Button_1.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.55, animations: {
+        UIView.animate(withDuration: 0.6, animations: {
             self.Button_2.alpha = 1
             self.Button_2.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.Button_3.alpha = 1
             self.Button_3.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.65, animations: {
+        UIView.animate(withDuration: 0.8, animations: {
             self.Button_4.alpha = 1
             self.Button_4.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.7, animations: {
+        UIView.animate(withDuration: 0.9, animations: {
             self.Button_5.alpha = 1
             self.Button_5.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.75, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.Button_6.alpha = 1
             self.Button_6.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.8, animations: {
+        UIView.animate(withDuration: 1.1, animations: {
             self.Button_7.alpha = 1
             self.Button_7.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.85, animations: {
+        UIView.animate(withDuration: 1.2, animations: {
             self.Button_8.alpha = 1
             self.Button_8.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-        UIView.animate(withDuration: 0.9, animations: {
+        UIView.animate(withDuration: 1.3, animations: {
             self.Button_9.alpha = 1
             self.Button_9.transform = CGAffineTransform(translationX: 0, y: 0)
         })

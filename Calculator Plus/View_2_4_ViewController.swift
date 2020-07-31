@@ -9,23 +9,20 @@
 import UIKit
 
 class View_2_4_ViewController: UIViewController {
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-          self.view.endEditing(true)
-    }
     
-    @IBOutlet var View_A: UIView!
-    @IBOutlet var View_B: UIView!
-    @IBOutlet var View_C: UIView!
-    @IBOutlet var View_D: UIView!
-    @IBOutlet var View_E: UIView!
+    @IBOutlet var Text_name_a: UITextField!
+    @IBOutlet var Text_name_b: UITextField!
+    @IBOutlet var Text_name_c: UITextField!
+    @IBOutlet var Text_name_d: UITextField!
+    @IBOutlet var Text_name_e: UITextField!
     @IBOutlet var Text_A: UITextField!
     @IBOutlet var Text_B: UITextField!
     @IBOutlet var Text_C: UITextField!
     @IBOutlet var Text_D: UITextField!
     @IBOutlet var Text_E: UITextField!
+    
+    
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
     @IBOutlet var Kakao_outlet: UIButton!
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var Result_2: UILabel!
@@ -41,11 +38,9 @@ class View_2_4_ViewController: UIViewController {
     @IBOutlet var Text_sum_c: UILabel!
     @IBOutlet var Text_sum_d: UILabel!
     @IBOutlet var Text_sum_e: UILabel!
-    @IBOutlet var Text_name_a: UITextField!
-    @IBOutlet var Text_name_b: UITextField!
-    @IBOutlet var Text_name_c: UITextField!
-    @IBOutlet var Text_name_d: UITextField!
-    @IBOutlet var Text_name_e: UITextField!
+    
+    //animation
+    
     
     
     
@@ -90,32 +85,20 @@ class View_2_4_ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        View_A.layer.cornerRadius = 18
-        View_B.layer.cornerRadius = 18
-        View_C.layer.cornerRadius = 18
-        View_D.layer.cornerRadius = 18
-        View_E.layer.cornerRadius = 18
-        Button_plus_a.layer.cornerRadius = 13
-        Button_plus_b.layer.cornerRadius = 13
-        Button_plus_c.layer.cornerRadius = 13
-        Button_plus_d.layer.cornerRadius = 13
-        Button_plus_e.layer.cornerRadius = 13
+        Button_plus_a.layer.cornerRadius = 4
+        Button_plus_b.layer.cornerRadius = 4
+        Button_plus_c.layer.cornerRadius = 4
+        Button_plus_d.layer.cornerRadius = 4
+        Button_plus_e.layer.cornerRadius = 4
         
-        Button_Result_outlet.layer.cornerRadius = 13
-        View_Result.layer.cornerRadius = 13
-        Kakao_outlet.layer.cornerRadius = 13
+        Button_Result_outlet.layer.cornerRadius = 4
+        Kakao_outlet.layer.cornerRadius = 4
         
         Text_A.keyboardType = .numberPad
         Text_B.keyboardType = .numberPad
         Text_C.keyboardType = .numberPad
         Text_D.keyboardType = .numberPad
         Text_E.keyboardType = .numberPad
-        
-        Text_A.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        Text_B.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        Text_C.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        Text_D.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
-        Text_E.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         
         self.hideKeyboard()
         super.viewDidLoad()
@@ -126,7 +109,7 @@ class View_2_4_ViewController: UIViewController {
         if(A != "")
         {
             A_sum += Int(A)!
-            Text_sum_a.text = "누적금액 : " + inputComma(innum: A_sum) + "원"
+            Text_sum_a.text = inputComma(innum: A_sum) + " 원"
             Text_A.text = ""
         }
     }
@@ -135,7 +118,7 @@ class View_2_4_ViewController: UIViewController {
         if(B != "")
         {
             B_sum += Int(B)!
-            Text_sum_b.text = "누적금액 : " + inputComma(innum: B_sum) + "원"
+            Text_sum_b.text = inputComma(innum: B_sum) + " 원"
             Text_B.text = ""
         }
     }
@@ -144,7 +127,7 @@ class View_2_4_ViewController: UIViewController {
         if(C != "")
         {
             C_sum += Int(C)!
-            Text_sum_c.text = "누적금액 : " + inputComma(innum: C_sum) + "원"
+            Text_sum_c.text = inputComma(innum: C_sum) + " 원"
             Text_C.text = ""
         }
     }
@@ -153,7 +136,7 @@ class View_2_4_ViewController: UIViewController {
         if(D != "")
         {
             D_sum += Int(D)!
-            Text_sum_d.text = "누적금액 : " + inputComma(innum: D_sum) + "원"
+            Text_sum_d.text = inputComma(innum: D_sum) + " 원"
             Text_D.text = ""
         }
     }
@@ -162,7 +145,7 @@ class View_2_4_ViewController: UIViewController {
         if(E != "")
         {
             E_sum += Int(E)!
-            Text_sum_e.text = "누적금액 : " + inputComma(innum: E_sum) + "원"
+            Text_sum_e.text = inputComma(innum: E_sum) + " 원"
             Text_E.text = ""
         }
     }
@@ -294,11 +277,11 @@ class View_2_4_ViewController: UIViewController {
         Text_C.text = ""
         Text_D.text = ""
         Text_E.text = ""
-        Text_sum_a.text = "누적금액 : 0원"
-        Text_sum_b.text = "누적금액 : 0원"
-        Text_sum_c.text = "누적금액 : 0원"
-        Text_sum_d.text = "누적금액 : 0원"
-        Text_sum_e.text = "누적금액 : 0원"
+        Text_sum_a.text = "원"
+        Text_sum_b.text = "원"
+        Text_sum_c.text = "원"
+        Text_sum_d.text = "원"
+        Text_sum_e.text = "원"
         Result_1.text = ""
         Result_2.text = ""
         Result_3.text = ""
@@ -311,26 +294,7 @@ class View_2_4_ViewController: UIViewController {
     
     func check() -> Bool
     {
-//        if A_sum == 0
-//        {
-//            return false
-//        }
-//        else if B_sum == 0
-//        {
-//            return false
-//        }
-//        else if C_sum == 0
-//        {
-//            return false
-//        }
-//        else if D_sum == 0
-//        {
-//            return false
-//        }
-//        else if E_sum == 0
-//        {
-//            return false
-//        }
+
         return true
     }
     

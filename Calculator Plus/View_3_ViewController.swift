@@ -16,7 +16,10 @@ class View_3_ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-    
+        Button_1.layer.cornerRadius = 4
+        Button_1.clipsToBounds = true
+        Button_2.layer.cornerRadius = 4
+        Button_2.clipsToBounds = true
         Button_1.alpha = 0
         Button_2.alpha = 0
         UIView.animate(withDuration: 0.4, animations: {

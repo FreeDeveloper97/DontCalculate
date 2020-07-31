@@ -179,6 +179,9 @@ class View_1_2_ViewController: UIViewController {
     }
     
     @IBAction func Button_plus_1(_ sender: UIButton) {
+        kakao_print = ""
+        detailCount = 0
+        detailShow = true
         Money_1 = Text_1_money.text!
         if(Money_1 != "")
         {
@@ -200,10 +203,14 @@ class View_1_2_ViewController: UIViewController {
                 self.View_sum1_line.backgroundColor = self.BUTTON
                 self.Button_plus_1_outlet.backgroundColor = self.GRAY
             })
+            self.view.endEditing(true)
         }
     }
     
     @IBAction func Button_plus_2(_ sender: UIButton) {
+        kakao_print = ""
+        detailCount = 0
+        detailShow = true
         Money_2 = Text_2_money.text!
         if(Money_2 != "")
         {
@@ -225,6 +232,7 @@ class View_1_2_ViewController: UIViewController {
                 self.View_sum2_line.backgroundColor = self.BUTTON
                 self.Button_plus_2_outlet.backgroundColor = self.GRAY
             })
+            self.view.endEditing(true)
         }
     }
     
@@ -265,11 +273,11 @@ class View_1_2_ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.Text_show.alpha = 0
-                self.Text_show.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.Text_show.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Text_detail.alpha = 0
-                self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.Text_detail.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.View_result4_line.alpha = 0
-                self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             detailShow = true
         }
@@ -330,7 +338,15 @@ class View_1_2_ViewController: UIViewController {
                 self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
                 self.Button_RESET.alpha = 1
                 self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+                
+                self.Text_show.alpha = 0
+                self.Text_show.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.Text_detail.alpha = 0
+                self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.View_result4_line.alpha = 0
+                self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
             })
+            self.view.endEditing(true)
         }
     }
     
