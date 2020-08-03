@@ -39,13 +39,13 @@ class View_2_ViewController: UIViewController {
         UIView.animate(withDuration: 0.4, animations: {
             self.Button_1.alpha = 1
         })
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.45, animations: {
             self.Button_2.alpha = 1
         })
-        UIView.animate(withDuration: 0.8, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.Button_3.alpha = 1
         })
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 0.55, animations: {
             self.Button_4.alpha = 1
         })
         super.viewDidLoad()

@@ -9,16 +9,30 @@
 import UIKit
 
 class View_5_2_ViewController: UIViewController {
-
-    @IBOutlet var View_1: UIView!
+    
     @IBOutlet var Text_start: UITextField!
     @IBOutlet var Text_dday: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
+    
+    @IBOutlet weak var Label_result1_show: UILabel!
+    @IBOutlet weak var Label_result2_show: UILabel!
+    @IBOutlet weak var Label_result3_show: UILabel!
+    @IBOutlet weak var Label_result4_show: UILabel!
+    
     @IBOutlet var Result_day: UILabel!
     @IBOutlet var Result_H: UILabel!
     @IBOutlet var Result_M: UILabel!
     @IBOutlet var Result_S: UILabel!
+    
+    @IBOutlet weak var View_result1_line: UIView!
+    @IBOutlet weak var View_result2_line: UIView!
+    @IBOutlet weak var View_result3_line: UIView!
+    @IBOutlet weak var View_result4_line: UIView!
+    
+    @IBOutlet weak var View_line: UIView!
+    @IBOutlet weak var Button_RESET: UIButton!
+    
+    @IBOutlet weak var View_View: UIView!
     
     private var datePicker: UIDatePicker?
     
@@ -27,22 +41,17 @@ class View_5_2_ViewController: UIViewController {
     var temp = 0
     var plus = 0.0
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let button = UIColor(named: "Dynamic_button")
+    let GRAY = UIColor(named: "ColorGray")
+    let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
         
-        View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-
-        Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-
-        View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
+        
+        Button_Result_outlet.layer.cornerRadius = 4
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -55,27 +64,111 @@ class View_5_2_ViewController: UIViewController {
         Text_dday.keyboardType = .numberPad
         
         self.hideKeyboard()
-        
         super.viewDidLoad()
-
+        
+        //animation
+        self.Label_result1_show.alpha = 0
+        self.Label_result2_show.alpha = 0
+        self.Label_result3_show.alpha = 0
+        self.Label_result4_show.alpha = 0
+        self.Result_day.alpha = 0
+        self.Result_H.alpha = 0
+        self.Result_M.alpha = 0
+        self.Result_S.alpha = 0
+        self.View_result1_line.alpha = 0
+        self.View_result2_line.alpha = 0
+        self.View_result3_line.alpha = 0
+        self.View_result4_line.alpha = 0
+        self.Button_RESET.alpha = 0
+        
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result4_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_day.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_H.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_M.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_S.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
+        //color
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+        //action
+        Text_dday.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        START = Text_start.text!
+        DDAY = Text_dday.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
     }
     
     @IBAction func Button_Result(_ sender: UIButton) {
         START = Text_start.text!
         DDAY = Text_dday.text!
-        temp = Int(DDAY)!
-        plus = Double(temp * 86400)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let startDay = dateFormatter.date(from: START)!
-        let endDay = startDay.addingTimeInterval(plus)
-        Result_day.text = dateFormatter.string(from: endDay) + " 일"
-        temp = temp*24
-        Result_H.text = String(temp) + " H"
-        temp = temp * 60
-        Result_M.text = String(temp) + " M"
-        temp = temp * 60
-        Result_S.text = String(temp) + " S"
+        if(check())
+        {
+            temp = Int(DDAY)!
+            plus = Double(temp * 86400)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let startDay = dateFormatter.date(from: START)!
+            let endDay = startDay.addingTimeInterval(plus)
+            Result_day.text = dateFormatter.string(from: endDay) + " 일"
+            temp = temp*24
+            Result_H.text = inputComma(innum: temp) + " H"
+            temp = temp * 60
+            Result_M.text = inputComma(innum: temp) + " M"
+            temp = temp * 60
+            Result_S.text = inputComma(innum: temp) + " S"
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result1_show.alpha = 1
+                self.Label_result2_show.alpha = 1
+                self.Label_result3_show.alpha = 1
+                self.Label_result4_show.alpha = 1
+                self.Result_day.alpha = 1
+                self.Result_H.alpha = 1
+                self.Result_M.alpha = 1
+                self.Result_S.alpha = 1
+                self.View_result1_line.alpha = 1
+                self.View_result2_line.alpha = 1
+                self.View_result3_line.alpha = 1
+                self.View_result4_line.alpha = 1
+                self.Button_RESET.alpha = 1
+                
+                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Label_result4_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_day.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_H.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_M.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_S.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            self.view.endEditing(true)
+        }
+        
     }
     
     @IBAction func Button_reset(_ sender: UIButton) {
@@ -89,6 +182,41 @@ class View_5_2_ViewController: UIViewController {
         Result_H.text = "H"
         Result_M.text = "M"
         Result_S.text = "S"
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            //animation
+            self.Label_result1_show.alpha = 0
+            self.Label_result2_show.alpha = 0
+            self.Label_result3_show.alpha = 0
+            self.Label_result4_show.alpha = 0
+            self.Result_day.alpha = 0
+            self.Result_H.alpha = 0
+            self.Result_M.alpha = 0
+            self.Result_S.alpha = 0
+            self.View_result1_line.alpha = 0
+            self.View_result2_line.alpha = 0
+            self.View_result3_line.alpha = 0
+            self.View_result4_line.alpha = 0
+            self.Button_RESET.alpha = 0
+            
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result4_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_day.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_H.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_M.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_S.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+            
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
+            //color
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+        })
     }
     
     
@@ -104,6 +232,14 @@ class View_5_2_ViewController: UIViewController {
         {
             Text_start.text = dateFormatter.string(from: datePicker.date)
         }
+        START = Text_start.text!
+        DDAY = Text_dday.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
     }
     
     func textFieldDidBeginEditting(_ textField: UITextField)
@@ -112,6 +248,29 @@ class View_5_2_ViewController: UIViewController {
         {
             datePicker?.datePickerMode = .date
         }
+    }
+    
+    func check() -> Bool
+    {
+        if(START == "")
+        {
+            return false
+        }
+        if(DDAY == "")
+        {
+            return false
+        }
+        return true
+    }
+    
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
     }
 
 }

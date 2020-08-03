@@ -15,33 +15,56 @@ class View_2_4_ViewController: UIViewController {
     @IBOutlet var Text_name_c: UITextField!
     @IBOutlet var Text_name_d: UITextField!
     @IBOutlet var Text_name_e: UITextField!
+    
     @IBOutlet var Text_A: UITextField!
     @IBOutlet var Text_B: UITextField!
     @IBOutlet var Text_C: UITextField!
     @IBOutlet var Text_D: UITextField!
     @IBOutlet var Text_E: UITextField!
     
-    
-    @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var Kakao_outlet: UIButton!
-    @IBOutlet var Result_1: UILabel!
-    @IBOutlet var Result_2: UILabel!
-    @IBOutlet var Result_3: UILabel!
-    
+    //animation
     @IBOutlet var Button_plus_a: UIButton!
     @IBOutlet var Button_plus_b: UIButton!
     @IBOutlet var Button_plus_c: UIButton!
     @IBOutlet var Button_plus_d: UIButton!
     @IBOutlet var Button_plus_e: UIButton!
+    
+    @IBOutlet weak var Label_sum1_show: UILabel!
+    @IBOutlet weak var Label_sum2_show: UILabel!
+    @IBOutlet weak var Label_sum3_show: UILabel!
+    @IBOutlet weak var Label_sum4_show: UILabel!
+    @IBOutlet weak var Label_sum5_show: UILabel!
+    
     @IBOutlet var Text_sum_a: UILabel!
     @IBOutlet var Text_sum_b: UILabel!
     @IBOutlet var Text_sum_c: UILabel!
     @IBOutlet var Text_sum_d: UILabel!
     @IBOutlet var Text_sum_e: UILabel!
     
-    //animation
+    @IBOutlet weak var View_sum1_line: UIView!
+    @IBOutlet weak var View_sum2_line: UIView!
+    @IBOutlet weak var View_sum3_line: UIView!
+    @IBOutlet weak var View_sum4_line: UIView!
+    @IBOutlet weak var View_sum5_line: UIView!
     
+    @IBOutlet weak var Label_result1_show: UILabel!
+    @IBOutlet weak var Label_result2_show: UILabel!
+    @IBOutlet weak var Label_result3_show: UILabel!
     
+    @IBOutlet var Result_1: UILabel!
+    @IBOutlet var Result_2: UILabel!
+    @IBOutlet var Result_3: UILabel!
+    
+    @IBOutlet weak var View_result1_line: UIView!
+    @IBOutlet weak var View_result2_line: UIView!
+    @IBOutlet weak var View_result3_line: UIView!
+    
+    @IBOutlet weak var View_line: UIView!
+    @IBOutlet var Button_Result_outlet: UIButton!
+    @IBOutlet var Kakao_outlet: UIButton!
+    @IBOutlet weak var Button_RESET: UIButton!
+    
+    @IBOutlet weak var View_View: UIView!
     
     
     var A = ""
@@ -78,19 +101,22 @@ class View_2_4_ViewController: UIViewController {
     var D_name = "D"
     var E_name = "E"
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let kakao = UIColor(named: "Dynamic_kakao")
-    let button = UIColor(named: "Dynamic_button")
-    
+    let GRAY = UIColor(named: "ColorGray")
+    let REVERSE = UIColor(named: "Dynamic_reverse")
+    let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
+        
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
         
         Button_plus_a.layer.cornerRadius = 4
         Button_plus_b.layer.cornerRadius = 4
         Button_plus_c.layer.cornerRadius = 4
         Button_plus_d.layer.cornerRadius = 4
         Button_plus_e.layer.cornerRadius = 4
-        
         Button_Result_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
         
@@ -102,6 +128,90 @@ class View_2_4_ViewController: UIViewController {
         
         self.hideKeyboard()
         super.viewDidLoad()
+        
+        //animation
+        self.Label_result1_show.alpha = 0
+        self.Label_result2_show.alpha = 0
+        self.Label_result3_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.Result_2.alpha = 0
+        self.Result_3.alpha = 0
+        self.View_result1_line.alpha = 0
+        self.View_result2_line.alpha = 0
+        self.View_result3_line.alpha = 0
+        self.Kakao_outlet.alpha = 0
+        self.Button_RESET.alpha = 0
+        
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
+        self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        //color
+        self.Button_plus_a.backgroundColor = self.GRAY
+        self.Button_plus_b.backgroundColor = self.GRAY
+        self.Button_plus_c.backgroundColor = self.GRAY
+        self.Button_plus_d.backgroundColor = self.GRAY
+        self.Button_plus_e.backgroundColor = self.GRAY
+        self.Label_sum1_show.textColor = self.GRAY
+        self.Label_sum2_show.textColor = self.GRAY
+        self.Label_sum3_show.textColor = self.GRAY
+        self.Label_sum4_show.textColor = self.GRAY
+        self.Label_sum5_show.textColor = self.GRAY
+        self.Text_sum_a.textColor = self.GRAY
+        self.Text_sum_b.textColor = self.GRAY
+        self.Text_sum_c.textColor = self.GRAY
+        self.Text_sum_d.textColor = self.GRAY
+        self.Text_sum_e.textColor = self.GRAY
+        self.View_sum1_line.backgroundColor = self.GRAY
+        self.View_sum2_line.backgroundColor = self.GRAY
+        self.View_sum3_line.backgroundColor = self.GRAY
+        self.View_sum4_line.backgroundColor = self.GRAY
+        self.View_sum5_line.backgroundColor = self.GRAY
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+        //action
+        Text_A.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
+        Text_B.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
+        Text_C.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
+        Text_D.addTarget(self, action: #selector(textFieldDidChange4(textField:)), for: UIControl.Event.editingChanged)
+        Text_E.addTarget(self, action: #selector(textFieldDidChange5(textField:)), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange1(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_a.backgroundColor = self.BUTTON
+        })
+    }
+    
+    @objc func textFieldDidChange2(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_b.backgroundColor = self.BUTTON
+        })
+    }
+    
+    @objc func textFieldDidChange3(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_c.backgroundColor = self.BUTTON
+        })
+    }
+    
+    @objc func textFieldDidChange4(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_d.backgroundColor = self.BUTTON
+        })
+    }
+    
+    @objc func textFieldDidChange5(textField: UITextField){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_plus_e.backgroundColor = self.BUTTON
+        })
     }
     
     @IBAction func Button_plus_a(_ sender: UIButton) {
@@ -111,6 +221,21 @@ class View_2_4_ViewController: UIViewController {
             A_sum += Int(A)!
             Text_sum_a.text = inputComma(innum: A_sum) + " 원"
             Text_A.text = ""
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_sum1_show.textColor = self.BUTTON
+                self.Text_sum_a.textColor = self.BUTTON
+                self.View_sum1_line.backgroundColor = self.BUTTON
+                self.Button_plus_a.backgroundColor = self.GRAY
+            })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     @IBAction func Button_plus_b(_ sender: UIButton) {
@@ -120,6 +245,21 @@ class View_2_4_ViewController: UIViewController {
             B_sum += Int(B)!
             Text_sum_b.text = inputComma(innum: B_sum) + " 원"
             Text_B.text = ""
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_sum2_show.textColor = self.BUTTON
+                self.Text_sum_b.textColor = self.BUTTON
+                self.View_sum2_line.backgroundColor = self.BUTTON
+                self.Button_plus_b.backgroundColor = self.GRAY
+            })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     @IBAction func Button_plus_c(_ sender: UIButton) {
@@ -129,6 +269,21 @@ class View_2_4_ViewController: UIViewController {
             C_sum += Int(C)!
             Text_sum_c.text = inputComma(innum: C_sum) + " 원"
             Text_C.text = ""
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_sum3_show.textColor = self.BUTTON
+                self.Text_sum_c.textColor = self.BUTTON
+                self.View_sum3_line.backgroundColor = self.BUTTON
+                self.Button_plus_c.backgroundColor = self.GRAY
+            })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     @IBAction func Button_plus_d(_ sender: UIButton) {
@@ -138,6 +293,21 @@ class View_2_4_ViewController: UIViewController {
             D_sum += Int(D)!
             Text_sum_d.text = inputComma(innum: D_sum) + " 원"
             Text_D.text = ""
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_sum4_show.textColor = self.BUTTON
+                self.Text_sum_d.textColor = self.BUTTON
+                self.View_sum4_line.backgroundColor = self.BUTTON
+                self.Button_plus_d.backgroundColor = self.GRAY
+            })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     @IBAction func Button_plus_e(_ sender: UIButton) {
@@ -147,6 +317,21 @@ class View_2_4_ViewController: UIViewController {
             E_sum += Int(E)!
             Text_sum_e.text = inputComma(innum: E_sum) + " 원"
             Text_E.text = ""
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Label_sum5_show.textColor = self.BUTTON
+                self.Text_sum_e.textColor = self.BUTTON
+                self.View_sum5_line.backgroundColor = self.BUTTON
+                self.Button_plus_e.backgroundColor = self.GRAY
+            })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            self.view.endEditing(true)
         }
     }
     
@@ -203,6 +388,39 @@ class View_2_4_ViewController: UIViewController {
             array_before = []
             array_after = []
             State = 0
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result1_show.alpha = 1
+                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_1.alpha = 1
+                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result1_line.alpha = 1
+                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Label_result2_show.alpha = 1
+                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_2.alpha = 1
+                self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result2_line.alpha = 1
+                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Label_result3_show.alpha = 1
+                self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_3.alpha = 1
+                self.Result_3.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result3_line.alpha = 1
+                self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                
+                self.Kakao_outlet.alpha = 1
+                self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.alpha = 1
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
         }
     }
     
@@ -290,12 +508,81 @@ class View_2_4_ViewController: UIViewController {
         Text_name_c.text = ""
         Text_name_d.text = ""
         Text_name_e.text = ""
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            //animation
+            self.Label_result1_show.alpha = 0
+            self.Label_result2_show.alpha = 0
+            self.Label_result3_show.alpha = 0
+            self.Result_1.alpha = 0
+            self.Result_2.alpha = 0
+            self.Result_3.alpha = 0
+            self.View_result1_line.alpha = 0
+            self.View_result2_line.alpha = 0
+            self.View_result3_line.alpha = 0
+            self.Kakao_outlet.alpha = 0
+            self.Button_RESET.alpha = 0
+            
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
+            self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+            //color
+            self.Button_plus_a.backgroundColor = self.GRAY
+            self.Button_plus_b.backgroundColor = self.GRAY
+            self.Button_plus_c.backgroundColor = self.GRAY
+            self.Button_plus_d.backgroundColor = self.GRAY
+            self.Button_plus_e.backgroundColor = self.GRAY
+            self.Label_sum1_show.textColor = self.GRAY
+            self.Label_sum2_show.textColor = self.GRAY
+            self.Label_sum3_show.textColor = self.GRAY
+            self.Label_sum4_show.textColor = self.GRAY
+            self.Label_sum5_show.textColor = self.GRAY
+            self.Text_sum_a.textColor = self.GRAY
+            self.Text_sum_b.textColor = self.GRAY
+            self.Text_sum_c.textColor = self.GRAY
+            self.Text_sum_d.textColor = self.GRAY
+            self.Text_sum_e.textColor = self.GRAY
+            self.View_sum1_line.backgroundColor = self.GRAY
+            self.View_sum2_line.backgroundColor = self.GRAY
+            self.View_sum3_line.backgroundColor = self.GRAY
+            self.View_sum4_line.backgroundColor = self.GRAY
+            self.View_sum5_line.backgroundColor = self.GRAY
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+        })
     }
     
     func check() -> Bool
     {
-
-        return true
+        if(A_sum != 0)
+        {
+            return true
+        }
+        if(B_sum != 0)
+        {
+            return true
+        }
+        if(C_sum != 0)
+        {
+            return true
+        }
+        if(D_sum != 0)
+        {
+            return true
+        }
+        if(E_sum != 0)
+        {
+            return true
+        }
+        return false
     }
     
     func bubble()

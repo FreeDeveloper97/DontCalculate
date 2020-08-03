@@ -10,18 +10,15 @@ import UIKit
 
 class View_7_1_ViewController: UIViewController{
 
-    @IBOutlet var View_1: UIView!
+    @IBOutlet var Text_m: UITextField!
     @IBOutlet var Text_h: UITextField!
     @IBOutlet var Text_pay: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
     @IBOutlet var Button_url_outlet: UIButton!
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var Result_2: UILabel!
     @IBOutlet var Result_3: UILabel!
-    @IBOutlet var Text_m: UITextField!
-    @IBOutlet var Result_show: UILabel!
-    @IBOutlet var Result_detail: UILabel!
+    @IBOutlet var Result_4: UILabel!
     @IBOutlet var Button_detail_outlet: UIButton!
     @IBOutlet var Button_kakao_outlet: UIButton!
     
@@ -43,17 +40,13 @@ class View_7_1_ViewController: UIViewController{
     
     override func viewDidLoad() {
         
-        View_1.layer.cornerRadius = 18
-        Button_Result_outlet.layer.cornerRadius = 13
-        View_Result.layer.cornerRadius = 13
-        Button_url_outlet.layer.cornerRadius = 13
-        Button_detail_outlet.layer.cornerRadius = 13
-        Button_kakao_outlet.layer.cornerRadius = 13
+        Button_Result_outlet.layer.cornerRadius = 4
+        Button_url_outlet.layer.cornerRadius = 4
+        Button_detail_outlet.layer.cornerRadius = 4
+        Button_kakao_outlet.layer.cornerRadius = 4
         Text_h.keyboardType = .decimalPad
         Text_pay.keyboardType = .numberPad
         Text_m.keyboardType = .numberPad
-        
-        Text_pay.attributedPlaceholder = NSAttributedString(string: "최저 : 8590", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         
         self.hideKeyboard()
         super.viewDidLoad()
@@ -86,9 +79,8 @@ class View_7_1_ViewController: UIViewController{
     @IBAction func Button_detail(_ sender: UIButton) {
         if(temp != 0.0)
         {
-            Result_show.text = "상세내역 :"
-            Result_detail.text =
-                "\n국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
+            Result_4.text =
+                "국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
             + "건강보험 : " + inputComma(innum: Int(detail_2)) + " 원\n"
             + "장기요양 : " + inputComma(innum: Int(detail_3)) + " 원\n"
             + "고용보험 : " + inputComma(innum: Int(detail_4)) + " 원"
@@ -174,8 +166,7 @@ class View_7_1_ViewController: UIViewController{
         Result_1.text = "원"
         Result_2.text = "원"
         Result_3.text = "원"
-        Result_show.text = ""
-        Result_detail.text = ""
+        Result_4.text = "원\n원\n원\n원"
     }
     
     func calculate()

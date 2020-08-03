@@ -35,6 +35,11 @@ class View_nomal_ViewController: UIViewController {
     @IBOutlet var Text_result_1: UILabel!
     @IBOutlet var Text_result_2: UILabel!
     
+    @IBOutlet weak var View_line1: UIView!
+    @IBOutlet weak var View_line2: UIView!
+    
+    @IBOutlet var View_View: UIView!
+    
     var type = ""
     var count = 0
     var PLUS = 0
@@ -52,31 +57,44 @@ class View_nomal_ViewController: UIViewController {
     var sum_int = 0
     var sum_str = ""
     
+    let GRAY = UIColor(named: "ColorGray_light")
+    let REVERSE = UIColor(named: "Dynamic_reverse")
+    let BUTTON = UIColor(named: "button")
+    
     
     override func viewDidLoad() {
-        Button_AC.layer.cornerRadius = 8
-        Button_DEL.layer.cornerRadius = 8
-        Button_div.layer.cornerRadius = 8
-        Button_mul.layer.cornerRadius = 8
         
-        Button_7.layer.cornerRadius = 8
-        Button_8.layer.cornerRadius = 8
-        Button_9.layer.cornerRadius = 8
-        Button_min.layer.cornerRadius = 8
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
         
-        Button_4.layer.cornerRadius = 8
-        Button_5.layer.cornerRadius = 8
-        Button_6.layer.cornerRadius = 8
-        Button_plus.layer.cornerRadius = 8
+        Button_AC.layer.cornerRadius = 4
+        Button_DEL.layer.cornerRadius = 4
+        Button_div.layer.cornerRadius = 4
+        Button_mul.layer.cornerRadius = 4
         
-        Button_1.layer.cornerRadius = 8
-        Button_2.layer.cornerRadius = 8
-        Button_3.layer.cornerRadius = 8
-        Button_0.layer.cornerRadius = 8
-        Button_dot.layer.cornerRadius = 8
-        Button_Result.layer.cornerRadius = 8
+        Button_7.layer.cornerRadius = 4
+        Button_8.layer.cornerRadius = 4
+        Button_9.layer.cornerRadius = 4
+        Button_min.layer.cornerRadius = 4
+        
+        Button_4.layer.cornerRadius = 4
+        Button_5.layer.cornerRadius = 4
+        Button_6.layer.cornerRadius = 4
+        Button_plus.layer.cornerRadius = 4
+        
+        Button_1.layer.cornerRadius = 4
+        Button_2.layer.cornerRadius = 4
+        Button_3.layer.cornerRadius = 4
+        Button_0.layer.cornerRadius = 4
+        Button_dot.layer.cornerRadius = 4
+        Button_Result.layer.cornerRadius = 4
 
         super.viewDidLoad()
+        
+        self.View_line1.alpha = 0
+        self.View_line2.alpha = 0
     }
     
     @IBAction func button(sender: UIButton) {
@@ -84,53 +102,69 @@ class View_nomal_ViewController: UIViewController {
         var result = Text_result_2.text!
         result += String(digit)
         Text_result_2.text = result
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.View_line2.alpha = 1
+            self.View_line2.backgroundColor = self.BUTTON
+            self.View_line1.backgroundColor = self.GRAY
+        })
     }
     @IBAction func ENTER(_ sender: UIButton) {
         if count > 0
         {
             number = Text_result_2.text!
-            NUMBER = Double(number)!
-            history = history + Text_result_2.text!
-            Text_result_1.text = history
+            if(number != "")
+            {
+                NUMBER = Double(number)!
+                history = history + Text_result_2.text!
+                Text_result_1.text = history
+                
+                if type == "PLUS"
+                {
+                    RESULT = sum + NUMBER
+                }
+                else if type == "MINUS"
+                {
+                    RESULT = sum - NUMBER
+                }
+                else if type == "MUL"
+                {
+                    RESULT = sum * NUMBER
+                }
+                else if type == "DIV"
+                {
+                    RESULT = sum / NUMBER
+                }
+                //
+                if(doubleToInt(sum: RESULT))
+                {
+                    Text_result_2.text = String(sum_int)
+                }
+                else
+                {
+                    Text_result_2.text = String(RESULT)
+                }
+                //
+                sum = 0
+                count = 0
+                number = ""
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.View_line2.alpha = 1
+                    self.View_line2.backgroundColor = self.BUTTON
+                    self.View_line1.alpha = 0
+                })
+            }
             
-            if type == "PLUS"
-            {
-                RESULT = sum + NUMBER
-            }
-            else if type == "MINUS"
-            {
-                RESULT = sum - NUMBER
-            }
-            else if type == "MUL"
-            {
-                RESULT = sum * NUMBER
-            }
-            else if type == "DIV"
-            {
-                RESULT = sum / NUMBER
-            }
-            //
-            if(doubleToInt(sum: RESULT))
-            {
-                Text_result_2.text = String(sum_int)
-            }
-            else
-            {
-                Text_result_2.text = String(RESULT)
-            }
-            //
-            sum = 0
-            count = 0
-            number = ""
         }
         else
         {
-            Text_result_2.text = "FINISH"
+//            Text_result_2.text = "FINISH"
         }
     }
     @IBAction func PLUS(_ sender: UIButton) {
         if Text_result_2.text == "" {
-            Text_result_2.text = "Error"
+//            Text_result_2.text = "Error"
         }
         else {
             number = Text_result_2.text!
@@ -157,11 +191,17 @@ class View_nomal_ViewController: UIViewController {
             Text_result_2.text = ""
             
             type = "PLUS"
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.View_line1.alpha = 1
+                self.View_line1.backgroundColor = self.BUTTON
+                self.View_line2.backgroundColor = self.GRAY
+            })
         }
     }
     @IBAction func MINUS(_ sender: UIButton) {
         if Text_result_2.text == "" {
-            Text_result_2.text = "Error"
+//            Text_result_2.text = "Error"
         }
         else {
             number = Text_result_2.text!
@@ -187,11 +227,17 @@ class View_nomal_ViewController: UIViewController {
             Text_result_2.text = ""
             
             type = "MINUS"
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.View_line1.alpha = 1
+                self.View_line1.backgroundColor = self.BUTTON
+                self.View_line2.backgroundColor = self.GRAY
+            })
         }
     }
     @IBAction func MULTIPLE(_ sender: UIButton) {
         if Text_result_2.text == "" {
-            Text_result_2.text = "Error"
+//            Text_result_2.text = "Error"
         }
         else {
             number = Text_result_2.text!
@@ -205,21 +251,27 @@ class View_nomal_ViewController: UIViewController {
             }
             if (doubleToInt(sum: sum))
             {
-                history = String(sum_int) + " * "
+                history = String(sum_int) + " X "
             }
             else
             {
-                history = String(sum) + " * "
+                history = String(sum) + " X "
             }
             Text_result_1.text = history
             Text_result_2.text = ""
             
             type = "MUL"
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.View_line1.alpha = 1
+                self.View_line1.backgroundColor = self.BUTTON
+                self.View_line2.backgroundColor = self.GRAY
+            })
         }
     }
     @IBAction func DIV(_ sender: UIButton) {
         if Text_result_2.text == "" {
-            Text_result_2.text = "Error"
+//            Text_result_2.text = "Error"
         }
         else {
             number = Text_result_2.text!
@@ -243,12 +295,21 @@ class View_nomal_ViewController: UIViewController {
             Text_result_2.text = ""
             
             type = "DIV"
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.View_line1.alpha = 1
+                self.View_line1.backgroundColor = self.BUTTON
+                self.View_line2.backgroundColor = self.GRAY
+            })
         }
     }
     @IBAction func DEL(_ sender: UIButton) {
         let del_number = Text_result_2.text!
-        let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
-        Text_result_2.text = String(del_number[range])  // Hello, playgroun
+        if(del_number != "")
+        {
+            let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
+            Text_result_2.text = String(del_number[range])  // Hello, playgroun
+        }
     }
     @IBAction func AC(_ sender: UIButton) {
         Text_result_1.text = ""
@@ -257,6 +318,11 @@ class View_nomal_ViewController: UIViewController {
         count = 0
         history = ""
         number = ""
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.View_line1.alpha = 0
+            self.View_line2.alpha = 0
+        })
     }
     
     func cal()

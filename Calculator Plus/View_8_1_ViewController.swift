@@ -10,13 +10,10 @@ import UIKit
 
 class View_8_1_ViewController: UIViewController {
 
-    @IBOutlet var View_1: UIView!
     @IBOutlet var Text_now: UITextField!
     @IBOutlet var Text_plus: UITextField!
-    @IBOutlet var View_2: UIView!
     @IBOutlet var Text_card: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var Result_2: UILabel!
     @IBOutlet var Result_3: UILabel!
@@ -43,19 +40,14 @@ class View_8_1_ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        View_1.layer.cornerRadius = 18
-        View_2.layer.cornerRadius = 18
-        Button_Result_outlet.layer.cornerRadius = 13
-        Button_plus_outlet.layer.cornerRadius = 13
-        View_Result.layer.cornerRadius = 13
-        Button_kakao_outlet.layer.cornerRadius = 13
+        Button_Result_outlet.layer.cornerRadius = 4
+        Button_plus_outlet.layer.cornerRadius = 4
+        Button_kakao_outlet.layer.cornerRadius = 4
         
         Text_M.keyboardType = .numberPad
         Text_now.keyboardType = .numberPad
         Text_plus.keyboardType = .numberPad
         Text_card.keyboardType = .numberPad
-        
-        Text_card.attributedPlaceholder = NSAttributedString(string: "금액입력후 +버튼", attributes: [NSAttributedString.Key.foregroundColor: brown?.cgColor])
         
         self.hideKeyboard()
         super.viewDidLoad()
@@ -66,7 +58,7 @@ class View_8_1_ViewController: UIViewController {
         if(CARD != "")
         {
             MINUS += Int(CARD)!
-            Show_card.text = "누적금액 : " + inputComma(innum: MINUS) + "원"
+            Show_card.text = inputComma(innum: MINUS) + "원"
             Text_card.text = ""
             if(detail == "")
             {
@@ -146,7 +138,7 @@ class View_8_1_ViewController: UIViewController {
         Text_now.text = ""
         Text_plus.text = ""
         Text_card.text = ""
-        Show_card.text = "누적금액 : 0원"
+        Show_card.text = "원"
         Result_1.text = "원"
         Result_2.text = "원"
         Result_3.text = "원"

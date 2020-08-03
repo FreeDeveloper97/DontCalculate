@@ -10,31 +10,66 @@ import UIKit
 
 class View_3_1_ViewController: UIViewController {
     
-    @IBOutlet var View_1: UIView!
     @IBOutlet var Text_use: UITextField!
     @IBOutlet var Text_per: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
     @IBOutlet var Result_1: UILabel!
+    
+    @IBOutlet weak var Label_result_show: UILabel!
+    @IBOutlet weak var View_result_line: UIView!
+    @IBOutlet weak var View_line: UIView!
+    @IBOutlet weak var Button_RESET: UIButton!
+    
+    @IBOutlet weak var View_View: UIView!
     
     var USE = ""
     var PER = ""
     var temp = 0.0
     var RESULT = 0
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let button = UIColor(named: "Dynamic_button")
+    let GRAY = UIColor(named: "ColorGray")
+    let BUTTON = UIColor(named: "button")
 
     override func viewDidLoad() {
         
-        View_1.layer.cornerRadius = 18
-        Button_Result_outlet.layer.cornerRadius = 13
-        View_Result.layer.cornerRadius = 13
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
+        
+        Button_Result_outlet.layer.cornerRadius = 4
         Text_use.keyboardType = .numberPad
         Text_per.keyboardType = .decimalPad
         
         self.hideKeyboard()
         super.viewDidLoad()
+        
+        //animation
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+        self.Label_result_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.View_result_line.alpha = 0
+        self.Button_RESET.alpha = 0
+        self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -62)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        //action
+        Text_use.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        Text_per.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        USE = Text_use.text!
+        PER = Text_per.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
     }
     
     @IBAction func Button_Result(_ sender: UIButton) {
@@ -45,6 +80,23 @@ class View_3_1_ViewController: UIViewController {
             temp = Double(USE)! * Double(PER)! * 0.01
             RESULT = Int(temp)
             Result_1.text = inputComma(innum: RESULT) + " P"
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result_show.alpha = 1
+                self.Result_1.alpha = 1
+                self.View_result_line.alpha = 1
+                self.Button_RESET.alpha = 1
+                self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            self.view.endEditing(true)
         }
     }
     
@@ -55,7 +107,20 @@ class View_3_1_ViewController: UIViewController {
         RESULT = 0
         Text_use.text = ""
         Text_per.text = ""
-        Result_1.text = "P"
+        Result_1.text = ""
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.Label_result_show.alpha = 0
+            self.Result_1.alpha = 0
+            self.View_result_line.alpha = 0
+            self.Button_RESET.alpha = 0
+            self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -62)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        })
     }
     
     func check() -> Bool

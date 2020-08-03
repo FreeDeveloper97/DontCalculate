@@ -10,70 +10,121 @@ import UIKit
 
 class View_6_ViewController: UIViewController {
 
-    @IBOutlet var View_1: UIView!
     @IBOutlet var Text_Y_now: UITextField!
     @IBOutlet var Text_age: UITextField!
     @IBOutlet var Text_Y_to: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
-    @IBOutlet var View_Result: UIView!
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var Result_2: UILabel!
+    @IBOutlet weak var Text_born: UITextField!
     
     var NOW = ""
     var TO = ""
     var AGE = ""
+    var BORN = ""
     var SUB = 0
     var RESULT = 0
     var PRINT = ""
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let button = UIColor(named: "Dynamic_button")
+    let GRAY = UIColor(named: "ColorGray")
+    let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
         
-        View_1.layer.cornerRadius = 18
-//        View_1.layer.borderWidth = 2
-//        View_1.layer.borderColor = brown?.cgColor
-
-        Button_Result_outlet.layer.cornerRadius = 13
-//        Button_Result_outlet.layer.borderWidth = 2
-//        Button_Result_outlet.layer.borderColor = button?.cgColor
-
-        View_Result.layer.cornerRadius = 13
-//        View_Result.layer.borderWidth = 2
-//        View_Result.layer.borderColor = brown?.cgColor
-        
+        Button_Result_outlet.layer.cornerRadius = 4
         Text_Y_now.keyboardType = .numberPad
         Text_age.keyboardType = .numberPad
         Text_Y_to.keyboardType = .numberPad
         
         self.hideKeyboard()
         super.viewDidLoad()
+        
+        //animation
+        
+        //color
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+        //action
+        Text_age.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
+        Text_born.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange1(textField: UITextField){
+        Text_born.text = ""
+        NOW = Text_Y_now.text!
+        AGE = Text_age.text!
+        TO = Text_Y_to.text!
+        BORN = Text_born.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
+    }
+    @objc func textFieldDidChange2(textField: UITextField){
+        Text_age.text = ""
+        NOW = Text_Y_now.text!
+        AGE = Text_age.text!
+        TO = Text_Y_to.text!
+        BORN = Text_born.text!
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
     }
     
     @IBAction func Button_Result(_ sender: UIButton) {
         NOW = Text_Y_now.text!
         AGE = Text_age.text!
         TO = Text_Y_to.text!
+        BORN = Text_born.text!
         if(check())
         {
-            if(Int(TO)! < Int(NOW)! )
+            SUB = Int(NOW)! - Int(TO)!
+            print("년도차 : " + String(SUB))
+            if(AGE != "")
             {
-                SUB = Int(NOW)! - Int(TO)!
-                RESULT = Int(AGE)! - SUB
-                Print()
-                
-                Result_1.text = String(SUB) + "년 과거"
-                Result_2.text = PRINT
+                if(SUB > 0 ) //과거
+                {
+                    RESULT = Int(AGE)! - SUB
+                    print("나이1 : " + String(RESULT))
+                    Print()
+                    Result_1.text = "-" + String(SUB) + "년 (과거)"
+                    Result_2.text = PRINT
+                }
+                else if(SUB <= 0) //미래
+                {
+                    RESULT = Int(AGE)! - SUB
+                    print("나이2 : " + String(RESULT))
+                    Result_1.text = String(-SUB) + "년 (미래)"
+                    Result_2.text = String(RESULT) + " 살"
+                }
             }
-            else if(Int(TO)! > Int(NOW)!)
+            else if(BORN != "")
             {
-                SUB = Int(TO)! - Int(NOW)!
-                RESULT = Int(AGE)! + SUB
-                
-                Result_1.text = String(SUB) + "년 미래"
-                Result_2.text = String(RESULT) + " 살"
+                if(SUB > 0)//과거
+                {
+                    RESULT = Int(TO)! - Int(BORN)! + 1
+                    print("나이3: " + String(RESULT))
+                    Print()
+                    Result_1.text = "-" + String(SUB) + "년 (과거)"
+                    Result_2.text = PRINT
+                }
+                else if(SUB <= 0) //미래
+                {
+                    RESULT = Int(NOW)! - Int(BORN)! + 1 - SUB
+                    print("나이4 : " + String(RESULT))
+                    Result_1.text = String(-SUB) + "년 (미래)"
+                    Result_2.text = String(RESULT) + " 살"
+                }
             }
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+            
         }
     }
     
@@ -89,6 +140,7 @@ class View_6_ViewController: UIViewController {
         Text_Y_to.text = ""
         Result_1.text = "년"
         Result_2.text = "살"
+        Text_born.text = ""
     }
     
     func check() -> Bool
@@ -97,15 +149,19 @@ class View_6_ViewController: UIViewController {
         {
             return false
         }
-        else if AGE == ""
+        if TO == ""
         {
             return false
         }
-        else if TO == ""
+        if AGE != ""
         {
-            return false
+            return true
         }
-        return true
+        if BORN != ""
+        {
+            return true
+        }
+        return false
     }
     
     func Print()
@@ -145,6 +201,10 @@ class View_6_ViewController: UIViewController {
             default:
                 PRINT = String(RESULT) + " 살"
             }
+        }
+        else
+        {
+            PRINT = String(RESULT) + " 살"
         }
     }
     
