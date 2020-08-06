@@ -14,9 +14,25 @@ class View_6_ViewController: UIViewController {
     @IBOutlet var Text_age: UITextField!
     @IBOutlet var Text_Y_to: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
+    @IBOutlet var Text_born: UITextField!
+    
+    @IBOutlet var Label_choose1: UILabel!
+    @IBOutlet var Label_choose2: UILabel!
+    
+    @IBOutlet var View_line1: UIView!
+    @IBOutlet var View_line2: UIView!
+    
+    @IBOutlet var Label_result1_show: UILabel!
+    @IBOutlet var Label_result2_show: UILabel!
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var Result_2: UILabel!
-    @IBOutlet weak var Text_born: UITextField!
+    @IBOutlet var View_result1_line: UIView!
+    @IBOutlet var View_result2_line: UIView!
+    
+    @IBOutlet var View_line: UIView!
+    @IBOutlet var Button_RESET: UIButton!
+    
+    @IBOutlet var View_View: UIView!
     
     var NOW = ""
     var TO = ""
@@ -31,24 +47,101 @@ class View_6_ViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
+        
         Button_Result_outlet.layer.cornerRadius = 4
         Text_Y_now.keyboardType = .numberPad
         Text_age.keyboardType = .numberPad
         Text_Y_to.keyboardType = .numberPad
+        Text_born.keyboardType = .numberPad
         
         self.hideKeyboard()
         super.viewDidLoad()
         
         //animation
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -108)
+        self.Label_result1_show.alpha = 0
+        self.Label_result2_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.Result_2.alpha = 0
+        self.View_result1_line.alpha = 0
+        self.View_result2_line.alpha = 0
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -108)
         
         //color
         self.Button_Result_outlet.backgroundColor = self.GRAY
+        self.Label_choose1.textColor = self.GRAY
+        self.Label_choose2.textColor = self.GRAY
+        self.View_line1.backgroundColor = self.GRAY
+        self.View_line2.backgroundColor = self.GRAY
         //action
+        Text_Y_now.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
+        Text_Y_to.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
         Text_age.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_born.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
+        Text_born.text = ""
+        NOW = Text_Y_now.text!
+        AGE = Text_age.text!
+        TO = Text_Y_to.text!
+        BORN = Text_born.text!
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Label_choose1.textColor = self.BUTTON
+            self.View_line1.backgroundColor = self.BUTTON
+            self.Label_choose2.textColor = self.GRAY
+            self.View_line2.backgroundColor = self.GRAY
+        })
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
+    }
+    @objc func textFieldDidChange2(textField: UITextField){
+        Text_age.text = ""
+        NOW = Text_Y_now.text!
+        AGE = Text_age.text!
+        TO = Text_Y_to.text!
+        BORN = Text_born.text!
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Label_choose1.textColor = self.GRAY
+            self.View_line1.backgroundColor = self.GRAY
+            self.Label_choose2.textColor = self.BUTTON
+            self.View_line2.backgroundColor = self.BUTTON
+        })
+        if(check())
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
+    }
+    
+    @objc func textFieldDidChange3(textField: UITextField){
         Text_born.text = ""
         NOW = Text_Y_now.text!
         AGE = Text_age.text!
@@ -60,17 +153,10 @@ class View_6_ViewController: UIViewController {
                 self.Button_Result_outlet.backgroundColor = self.BUTTON
             })
         }
-    }
-    @objc func textFieldDidChange2(textField: UITextField){
-        Text_age.text = ""
-        NOW = Text_Y_now.text!
-        AGE = Text_age.text!
-        TO = Text_Y_to.text!
-        BORN = Text_born.text!
-        if(check())
+        else
         {
             UIView.animate(withDuration: 0.5, animations: {
-                self.Button_Result_outlet.backgroundColor = self.BUTTON
+                self.Button_Result_outlet.backgroundColor = self.GRAY
             })
         }
     }
@@ -123,8 +209,25 @@ class View_6_ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.Button_Result_outlet.backgroundColor = self.GRAY
+                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             
+            UIView.animate(withDuration: 0.7, animations: {
+                self.Label_result1_show.alpha = 1
+                self.Label_result2_show.alpha = 1
+                self.Result_1.alpha = 1
+                self.Result_2.alpha = 1
+                self.View_result1_line.alpha = 1
+                self.View_result2_line.alpha = 1
+                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            self.view.endEditing(true)
         }
     }
     
@@ -138,9 +241,32 @@ class View_6_ViewController: UIViewController {
         Text_Y_now.text = ""
         Text_age.text = ""
         Text_Y_to.text = ""
-        Result_1.text = "년"
-        Result_2.text = "살"
+//        Result_1.text = "년"
+//        Result_2.text = "살"
         Text_born.text = ""
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -108)
+            self.Label_result1_show.alpha = 0
+            self.Label_result2_show.alpha = 0
+            self.Result_1.alpha = 0
+            self.Result_2.alpha = 0
+            self.View_result1_line.alpha = 0
+            self.View_result2_line.alpha = 0
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -108)
+            
+            //color
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.Label_choose1.textColor = self.GRAY
+            self.Label_choose2.textColor = self.GRAY
+            self.View_line1.backgroundColor = self.GRAY
+            self.View_line2.backgroundColor = self.GRAY
+        })
     }
     
     func check() -> Bool

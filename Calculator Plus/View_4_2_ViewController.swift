@@ -56,7 +56,6 @@ class View_4_2_ViewController: UIViewController {
         self.Result_2.alpha = 0
         self.View_result1_line.alpha = 0
         self.View_result2_line.alpha = 0
-        self.Button_RESET.alpha = 0
         
         self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -64,8 +63,8 @@ class View_4_2_ViewController: UIViewController {
         self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -110)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -109)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -109)
         //color
         self.Button_Result_outlet.backgroundColor = self.GRAY
         //action
@@ -82,6 +81,12 @@ class View_4_2_ViewController: UIViewController {
                 self.Button_Result_outlet.backgroundColor = self.BUTTON
             })
         }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
 
@@ -96,6 +101,7 @@ class View_4_2_ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Button_Result_outlet.backgroundColor = self.GRAY
             })
             
@@ -106,7 +112,6 @@ class View_4_2_ViewController: UIViewController {
                 self.Result_2.alpha = 1
                 self.View_result1_line.alpha = 1
                 self.View_result2_line.alpha = 1
-                self.Button_RESET.alpha = 1
                 
                 self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -114,7 +119,6 @@ class View_4_2_ViewController: UIViewController {
                 self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             self.view.endEditing(true)
         }
@@ -126,8 +130,8 @@ class View_4_2_ViewController: UIViewController {
         RESULT = 0.0
         Text_before.text = ""
         Text_after.text = ""
-        Result_1.text = "%"
-        Result_2.text = "원"
+//        Result_1.text = "%"
+//        Result_2.text = "원"
         
         UIView.animate(withDuration: 0.5, animations: {
             //animation
@@ -137,7 +141,6 @@ class View_4_2_ViewController: UIViewController {
             self.Result_2.alpha = 0
             self.View_result1_line.alpha = 0
             self.View_result2_line.alpha = 0
-            self.Button_RESET.alpha = 0
             
             self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
             self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -145,8 +148,8 @@ class View_4_2_ViewController: UIViewController {
             self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
             self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
             self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -110)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -109)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -109)
             //color
             self.Button_Result_outlet.backgroundColor = self.GRAY
         })

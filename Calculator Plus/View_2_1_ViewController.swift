@@ -65,7 +65,6 @@ class View_2_1_ViewController: UIViewController {
     var B_name = "B"
     
     let GRAY = UIColor(named: "ColorGray")
-    let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
@@ -111,8 +110,7 @@ class View_2_1_ViewController: UIViewController {
         
         self.Kakao_outlet.alpha = 0
         self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Button_RESET.alpha = 0
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
         
         //색상
         self.Button_plus_a_outlet.backgroundColor = self.GRAY
@@ -135,15 +133,35 @@ class View_2_1_ViewController: UIViewController {
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_a_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_A.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_a_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_a_outlet.backgroundColor = self.GRAY
+            })
+        }
+        
     }
     
     @objc func textFieldDidChange2(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_b_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_B.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_b_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_b_outlet.backgroundColor = self.GRAY
+            })
+        }
+        
     }
     
     @IBAction func Button_plus_a(_ sender: UIButton) {
@@ -166,6 +184,12 @@ class View_2_1_ViewController: UIViewController {
             {
                 UIView.animate(withDuration: 0.5, animations: {
                     self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
+            else
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.GRAY
                 })
             }
             self.view.endEditing(true)
@@ -230,6 +254,7 @@ class View_2_1_ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Button_Result_outlet.backgroundColor = self.GRAY
             })
             
@@ -257,8 +282,6 @@ class View_2_1_ViewController: UIViewController {
                 
                 self.Kakao_outlet.alpha = 1
                 self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.alpha = 1
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             self.view.endEditing(true)
         }
@@ -314,8 +337,8 @@ class View_2_1_ViewController: UIViewController {
         Text_B.text = ""
         Show_a.text = "원"
         Show_b.text = "원"
-        Result_1.text = ""
-        Result_2.text = ""
+//        Result_1.text = ""
+//        Result_2.text = ""
         Result_3.text = ""
         Text_name_A.text = ""
         Text_name_B.text = ""
@@ -346,8 +369,7 @@ class View_2_1_ViewController: UIViewController {
             
             self.Kakao_outlet.alpha = 0
             self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Button_RESET.alpha = 0
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
             
             //색상
             self.Button_plus_a_outlet.backgroundColor = self.GRAY

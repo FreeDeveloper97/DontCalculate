@@ -80,7 +80,6 @@ class View_2_2_ViewController: UIViewController {
     var C_name = "C"
     
     let GRAY = UIColor(named: "ColorGray")
-    let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
     
@@ -130,8 +129,7 @@ class View_2_2_ViewController: UIViewController {
         
         self.Kakao_outlet.alpha = 0
         self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.Button_RESET.alpha = 0
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
         //color
         self.Button_plus_a_outlet.backgroundColor = self.GRAY
         self.Label_sum1_show.textColor = self.GRAY
@@ -157,21 +155,48 @@ class View_2_2_ViewController: UIViewController {
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_a_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_A.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_a_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_a_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
     @objc func textFieldDidChange2(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_b_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_B.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_b_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_b_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
     @objc func textFieldDidChange3(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_c_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_C.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_c_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_c_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
     @IBAction func Button_plus_a(_ sender: UIButton) {
@@ -290,6 +315,7 @@ class View_2_2_ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Button_Result_outlet.backgroundColor = self.GRAY
             })
             
@@ -317,8 +343,6 @@ class View_2_2_ViewController: UIViewController {
                 
                 self.Kakao_outlet.alpha = 1
                 self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.alpha = 1
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
         }
     }
@@ -384,8 +408,8 @@ class View_2_2_ViewController: UIViewController {
         Sum_a.text = "원"
         Sum_b.text = "원"
         Sum_c.text = "원"
-        Result_1.text = ""
-        Result_2.text = ""
+//        Result_1.text = ""
+//        Result_2.text = ""
         Result_3.text = ""
         Text_name_a.text = ""
         Text_name_b.text = ""
@@ -417,8 +441,7 @@ class View_2_2_ViewController: UIViewController {
             
             self.Kakao_outlet.alpha = 0
             self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Button_RESET.alpha = 0
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
             //color
             self.Button_plus_a_outlet.backgroundColor = self.GRAY
             self.Label_sum1_show.textColor = self.GRAY

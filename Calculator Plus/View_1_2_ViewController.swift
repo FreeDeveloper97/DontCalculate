@@ -71,7 +71,6 @@ class View_1_2_ViewController: UIViewController {
     var detailCount: Int = 0
     
     let GRAY = UIColor(named: "ColorGray")
-    let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
@@ -127,8 +126,8 @@ class View_1_2_ViewController: UIViewController {
         
         self.View_Buttons.alpha = 0
         self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
-        self.Button_RESET.alpha = 0
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+        
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -230)
         
         //색상
         self.Button_plus_1_outlet.backgroundColor = self.GRAY
@@ -150,15 +149,35 @@ class View_1_2_ViewController: UIViewController {
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_1_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_1_money.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_1_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_1_outlet.backgroundColor = self.GRAY
+            })
+        }
+        
     }
     
     @objc func textFieldDidChange2(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_2_outlet.backgroundColor = self.BUTTON
-        })
+        if(Text_2_money.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_2_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_2_outlet.backgroundColor = self.GRAY
+            })
+        }
+        
     }
     
     @objc func textFieldDidChange3(textField: UITextField){
@@ -203,6 +222,13 @@ class View_1_2_ViewController: UIViewController {
                 self.View_sum1_line.backgroundColor = self.BUTTON
                 self.Button_plus_1_outlet.backgroundColor = self.GRAY
             })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
             self.view.endEditing(true)
         }
     }
@@ -232,6 +258,13 @@ class View_1_2_ViewController: UIViewController {
                 self.View_sum2_line.backgroundColor = self.BUTTON
                 self.Button_plus_2_outlet.backgroundColor = self.GRAY
             })
+            
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
             self.view.endEditing(true)
         }
     }
@@ -309,6 +342,7 @@ class View_1_2_ViewController: UIViewController {
             //animation
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: -50)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
                 self.Button_Result_outlet.backgroundColor = self.GRAY
             })
             
@@ -336,8 +370,6 @@ class View_1_2_ViewController: UIViewController {
                 
                 self.View_Buttons.alpha = 1
                 self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
-                self.Button_RESET.alpha = 1
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
                 
                 self.Text_show.alpha = 0
                 self.Text_show.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -400,8 +432,8 @@ class View_1_2_ViewController: UIViewController {
         Text_2_money.text = ""
         Text_2_num.text = ""
         Text_2_sum.text = "원"
-        Result_1.text = ""
-        Result_2.text = ""
+//        Result_1.text = ""
+//        Result_2.text = ""
         Result_3.text = ""
         Text_detail.text = ""
         
@@ -442,8 +474,7 @@ class View_1_2_ViewController: UIViewController {
             
             self.View_Buttons.alpha = 0
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
-            self.Button_RESET.alpha = 0
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -230)
             
             //색상
             self.Button_plus_1_outlet.backgroundColor = self.GRAY

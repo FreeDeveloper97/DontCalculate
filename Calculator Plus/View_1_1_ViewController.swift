@@ -57,7 +57,6 @@ class View_1_1_ViewController: UIViewController {
     var detailCount: Int = 0
     
     let GRAY = UIColor(named: "ColorGray")
-    let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
@@ -108,8 +107,7 @@ class View_1_1_ViewController: UIViewController {
         self.View_Line.alpha = 0
         self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
         
-        self.Button_RESET.alpha = 0
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -180)
         
         self.View_Buttons.alpha = 0
         self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
@@ -121,9 +119,18 @@ class View_1_1_ViewController: UIViewController {
         Text_n.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
     }
     @objc func textFieldDidChange1(textField: UITextField){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_plus_outlet.backgroundColor = self.BUTTON
-        })
+        if(Input_money.text != "")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_outlet.backgroundColor = self.BUTTON
+            })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_plus_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
     @objc func textFieldDidChange2(textField: UITextField){
@@ -168,6 +175,14 @@ class View_1_1_ViewController: UIViewController {
                 self.View_money_line.backgroundColor = self.BUTTON
                 self.Button_plus_outlet.backgroundColor = self.GRAY
             })
+            
+            N = Text_n.text!
+            if(check())
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.Button_Result_outlet.backgroundColor = self.BUTTON
+                })
+            }
             self.view.endEditing(true)
         }
         
@@ -194,6 +209,7 @@ class View_1_1_ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_Line.alpha = 1
                 self.View_Line.transform = CGAffineTransform(translationX: 0, y: -50)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
                 self.Button_Result_outlet.backgroundColor = self.GRAY
             })
 
@@ -211,9 +227,6 @@ class View_1_1_ViewController: UIViewController {
                 self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.View_result2_line.alpha = 1
                 self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
-                
-                self.Button_RESET.alpha = 1
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
                 
                 self.View_Buttons.alpha = 1
                 self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
@@ -323,8 +336,8 @@ class View_1_1_ViewController: UIViewController {
         Input_money.text = ""
         Text_money.text = "원"
         Text_n.text = ""
-        Result_1.text = ""
-        Result_3.text = ""
+//        Result_1.text = ""
+//        Result_3.text = ""
         Result_2.text = ""
         Text_bank.text = ""
         
@@ -356,8 +369,7 @@ class View_1_1_ViewController: UIViewController {
             self.View_Line.alpha = 0
             self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
             
-            self.Button_RESET.alpha = 0
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -60)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -180)
             
             self.View_Buttons.alpha = 0
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)

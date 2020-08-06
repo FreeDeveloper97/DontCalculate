@@ -49,12 +49,11 @@ class View_3_2_ViewController: UIViewController {
         self.Label_result_show.alpha = 0
         self.Result_1.alpha = 0
         self.View_result_line.alpha = 0
-        self.Button_RESET.alpha = 0
         self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_line.transform = CGAffineTransform(translationX: 0, y: -62)
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -62)
         
         //action
         Text_goalPoint.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
@@ -70,6 +69,12 @@ class View_3_2_ViewController: UIViewController {
                 self.Button_Result_outlet.backgroundColor = self.BUTTON
             })
         }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
     }
     
     @IBAction func Button_Result(_ sender: UIButton) {
@@ -83,17 +88,16 @@ class View_3_2_ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.Button_Result_outlet.backgroundColor = self.GRAY
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             
             UIView.animate(withDuration: 0.7, animations: {
                 self.Label_result_show.alpha = 1
                 self.Result_1.alpha = 1
                 self.View_result_line.alpha = 1
-                self.Button_RESET.alpha = 1
                 self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.View_result_line.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             })
             self.view.endEditing(true)
         }
@@ -105,19 +109,18 @@ class View_3_2_ViewController: UIViewController {
         RESULT = 0
         Text_goalPoint.text = ""
         Text_per.text = ""
-        Result_1.text = ""
+//        Result_1.text = ""
         
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_Result_outlet.backgroundColor = self.GRAY
             self.Label_result_show.alpha = 0
             self.Result_1.alpha = 0
             self.View_result_line.alpha = 0
-            self.Button_RESET.alpha = 0
             self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: -10)
             self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
             self.View_result_line.transform = CGAffineTransform(translationX: 0, y: -10)
             self.View_line.transform = CGAffineTransform(translationX: 0, y: -62)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -62)
         })
     }
     
