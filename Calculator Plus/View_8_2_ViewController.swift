@@ -40,6 +40,7 @@ class View_8_2_ViewController: UIViewController {
     
     @IBOutlet var View_View: UIView!
     
+    @IBOutlet weak var View_dottedline: UIView!
     
     
     var NOW = ""
@@ -116,6 +117,9 @@ class View_8_2_ViewController: UIViewController {
         Text_plus.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_save.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_card.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
+        
+        View_dottedline.backgroundColor = UIColor.clear
+        View_dottedline.addDashedBorder()
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

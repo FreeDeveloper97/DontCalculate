@@ -53,6 +53,11 @@ class View_2_2_ViewController: UIViewController {
     @IBOutlet weak var Button_RESET: UIButton!
     
     @IBOutlet weak var View_View: UIView!
+
+    @IBOutlet weak var View_dottedline_1: UIView!
+    @IBOutlet weak var View_dottedline_2: UIView!
+    
+    
     
     
     var A = ""
@@ -151,6 +156,11 @@ class View_2_2_ViewController: UIViewController {
         Text_A.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_B.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
         Text_C.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
+        
+        View_dottedline_1.backgroundColor = UIColor.clear
+        View_dottedline_2.backgroundColor = UIColor.clear
+        View_dottedline_1.addDashedBorder()
+        View_dottedline_2.addDashedBorder()
         
     }
     

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "icon_2_2.jpg",
+      "filename" : "icon_2_2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "icon_2_2_b_test.PNG",
+      "filename" : "icon_2_2_b.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

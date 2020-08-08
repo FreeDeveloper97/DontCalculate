@@ -20,11 +20,18 @@ class ViewController: UIViewController {
     @IBOutlet var Button_8: UIButton!
     @IBOutlet var Button_9: UIButton!
     
-    let brown = UIColor(named: "Dynamic_brown")
-    let button = UIColor(named: "button")
+    let GRAY = UIColor(named: "ColorGray")
+    let BUTTON = UIColor(named: "button")
+    
+    let attrs = [
+//        NSAttributedString.Key.foregroundColor: UIColor(named: "button"),
+        NSAttributedString.Key.font: UIFont(name: "HGGGothicssiP60g", size: 15)!
+    ]
     
     override func viewDidLoad() {
-//        self.navigationController?.navigationBar.tintColor = button
+        navigationController?.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
+        navigationController?.navigationBar.barTintColor = UIColor.systemBackground
+        navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
         self.Button_1.transform = CGAffineTransform(translationX: 0, y: -20)
         self.Button_2.transform = CGAffineTransform(translationX: 0, y: -20)
         self.Button_3.transform = CGAffineTransform(translationX: 0, y: -20)
@@ -45,16 +52,7 @@ class ViewController: UIViewController {
         self.Button_8.alpha = 0
         self.Button_9.alpha = 0
         
-        Button_1.setImage(UIImage(named: "test_1"), for: .normal)
-        Button_2.setImage(UIImage(named: "test_2"), for: .normal)
-        Button_3.setImage(UIImage(named: "test_3"), for: .normal)
-        Button_4.setImage(UIImage(named: "test_4"), for: .normal)
-        Button_5.setImage(UIImage(named: "test_5"), for: .normal)
-        Button_6.setImage(UIImage(named: "test_6"), for: .normal)
-        Button_7.setImage(UIImage(named: "test_7"), for: .normal)
-        Button_8.setImage(UIImage(named: "test_8"), for: .normal)
-        Button_9.setImage(UIImage(named: "test_9"), for: .normal)
-        
+
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_1.alpha = 1
             self.Button_1.transform = CGAffineTransform(translationX: 0, y: 0)

@@ -14,6 +14,7 @@ class View_1_ViewController: UIViewController {
     @IBOutlet weak var Button_2: UIButton!
     
     override func viewDidLoad() {
+//        navigationController?.isNavigationBarHidden = false
         Button_1.layer.cornerRadius = 4
         Button_1.clipsToBounds = true
         Button_2.layer.cornerRadius = 4
@@ -21,8 +22,6 @@ class View_1_ViewController: UIViewController {
         Button_1.alpha = 0
         Button_2.alpha = 0
         
-        Button_1.setImage(UIImage(named: "icon_2"), for: .normal)
-        Button_2.setImage(UIImage(named: "icon_2_2"), for: .normal)
         UIView.animate(withDuration: 0.4, animations: {
             self.Button_1.alpha = 1
         })

@@ -66,6 +66,14 @@ class View_2_4_ViewController: UIViewController {
     
     @IBOutlet weak var View_View: UIView!
     
+    @IBOutlet weak var View_dottedline_1: UIView!
+    @IBOutlet weak var View_dottedline_2: UIView!
+    @IBOutlet weak var View_dottedline_3: UIView!
+    @IBOutlet weak var View_dottedline_4: UIView!
+    
+    
+    
+    
     
     var A = ""
     var B = ""
@@ -180,6 +188,15 @@ class View_2_4_ViewController: UIViewController {
         Text_C.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
         Text_D.addTarget(self, action: #selector(textFieldDidChange4(textField:)), for: UIControl.Event.editingChanged)
         Text_E.addTarget(self, action: #selector(textFieldDidChange5(textField:)), for: UIControl.Event.editingChanged)
+        
+        View_dottedline_1.backgroundColor = UIColor.clear
+        View_dottedline_2.backgroundColor = UIColor.clear
+        View_dottedline_3.backgroundColor = UIColor.clear
+        View_dottedline_4.backgroundColor = UIColor.clear
+        View_dottedline_1.addDashedBorder()
+        View_dottedline_2.addDashedBorder()
+        View_dottedline_3.addDashedBorder()
+        View_dottedline_4.addDashedBorder()
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

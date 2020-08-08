@@ -51,6 +51,9 @@ class View_2_1_ViewController: UIViewController {
     
     @IBOutlet var View_View: UIView!
     
+    @IBOutlet var View_dottedline: UIView!
+    
+    
     var A = ""
     var B = ""
     var SUM = 0
@@ -130,6 +133,9 @@ class View_2_1_ViewController: UIViewController {
         //입력 반응
         Text_A.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_B.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
+        
+        View_dottedline.backgroundColor = UIColor.clear
+        View_dottedline.addDashedBorder()
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

@@ -54,6 +54,9 @@ class View_1_2_ViewController: UIViewController {
     
     @IBOutlet var View_View: UIView!
     
+    @IBOutlet var View_dottedline: UIView!
+    
+    
     var Money_1 = ""
     var MONEY_1 = 0
     var N_1 = ""
@@ -72,6 +75,8 @@ class View_1_2_ViewController: UIViewController {
     
     let GRAY = UIColor(named: "ColorGray")
     let BUTTON = UIColor(named: "button")
+    
+    
     
     override func viewDidLoad() {
         
@@ -146,6 +151,10 @@ class View_1_2_ViewController: UIViewController {
         Text_1_money.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_2_money.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
         Text_2_num.addTarget(self, action: #selector(textFieldDidChange3(textField:)), for: UIControl.Event.editingChanged)
+        
+        View_dottedline.backgroundColor = UIColor.clear
+        View_dottedline.addDashedBorder()
+        
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

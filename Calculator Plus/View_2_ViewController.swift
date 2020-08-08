@@ -32,10 +32,6 @@ class View_2_ViewController: UIViewController {
         Button_3.alpha = 0
         Button_4.alpha = 0
         
-        Button_1.setImage(UIImage(named: "icon_3"), for: .normal)
-        Button_2.setImage(UIImage(named: "icon_3"), for: .normal)
-        Button_3.setImage(UIImage(named: "icon_3"), for: .normal)
-        Button_4.setImage(UIImage(named: "icon_3"), for: .normal)
         UIView.animate(withDuration: 0.4, animations: {
             self.Button_1.alpha = 1
         })
