@@ -40,27 +40,29 @@ class View_nomal_ViewController: UIViewController {
     
     @IBOutlet var View_View: UIView!
     
-    var type = ""
-    var count = 0
-    var PLUS = 0
-    var MINUS = 1
-    var MUL = 2
-    var DIV = 3
-    var sum = 0.0
-    var RESULT = 0.0
+    var type: String = ""
+    var count: Int = 0
+    var PLUS: Int = 0
+    var MINUS: Int = 1
+    var MUL: Int = 2
+    var DIV: Int = 3
+    var sum: Double = 0
+    var RESULT: Double = 0
     
-    var history = ""
-    var number = ""
+    var history: String = ""
+    var number: String = ""
     
-    var NUMBER = 0.0
+    var NUMBER: Double = 0
     
-    var sum_int = 0
-    var sum_str = ""
+    var sum_int: Int = 0
+    var sum_str: String = ""
     
     let GRAY = UIColor(named: "ColorGray_light")
     let REVERSE = UIColor(named: "Dynamic_reverse")
     let BUTTON = UIColor(named: "button")
     
+    var Commpa: Bool = false
+    var temp: Int = 0
     
     override func viewDidLoad() {
         
@@ -90,6 +92,8 @@ class View_nomal_ViewController: UIViewController {
         Button_0.layer.cornerRadius = 4
         Button_dot.layer.cornerRadius = 4
         Button_Result.layer.cornerRadius = 4
+        
+//        Text_result_2.text="0"
 
         super.viewDidLoad()
         
@@ -100,8 +104,25 @@ class View_nomal_ViewController: UIViewController {
     @IBAction func button(sender: UIButton) {
         let digit = sender.currentTitle!
         var result = Text_result_2.text!
-        result += String(digit)
-        Text_result_2.text = result
+        if(String(digit) == ".")
+        {
+            Commpa = true
+            Button_dot.isUserInteractionEnabled = false
+        }
+        if(Commpa == false)
+        {
+            result += String(digit)
+            //쉼표 없애기
+            result = result.replacingOccurrences(of: ",", with: "")
+            temp = Int(result)!
+            //쉼표 추가하기
+            Text_result_2.text = inputComma(innum: temp)
+        }
+        else
+        {
+            result += String(digit)
+            Text_result_2.text = result
+        }
         
         UIView.animate(withDuration: 0.3, animations: {
             self.View_line2.alpha = 1
@@ -110,13 +131,23 @@ class View_nomal_ViewController: UIViewController {
         })
     }
     @IBAction func ENTER(_ sender: UIButton) {
+        buttonsDisable()
+        Commpa = false
         if count > 0
         {
             number = Text_result_2.text!
+            number = number.replacingOccurrences(of: ",", with: "")
             if(number != "")
             {
                 NUMBER = Double(number)!
-                history = history + Text_result_2.text!
+                if(doubleToInt(sum: NUMBER))
+                {
+                    history = history + inputComma(innum: sum_int)
+                }
+                else
+                {
+                    history = history + doubleInputComma(input: NUMBER)
+                }
                 Text_result_1.text = history
                 
                 if type == "PLUS"
@@ -138,11 +169,11 @@ class View_nomal_ViewController: UIViewController {
                 //
                 if(doubleToInt(sum: RESULT))
                 {
-                    Text_result_2.text = String(sum_int)
+                    Text_result_2.text = inputComma(innum: sum_int)
                 }
                 else
                 {
-                    Text_result_2.text = String(RESULT)
+                    Text_result_2.text = doubleInputComma(input: RESULT)
                 }
                 //
                 sum = 0
@@ -163,11 +194,14 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func PLUS(_ sender: UIButton) {
-        if Text_result_2.text == "" {
-//            Text_result_2.text = "Error"
-        }
+        buttonsEnable()
+        Commpa = false
+        Button_dot.isUserInteractionEnabled = true
+        if Text_result_2.text == "" {}
         else {
             number = Text_result_2.text!
+            //쉼표 없애기
+            number = number.replacingOccurrences(of: ",", with: "")
             if count == 0 {
                 sum = Double(number)!
                 count = count + 1
@@ -177,14 +211,13 @@ class View_nomal_ViewController: UIViewController {
                 count = count + 1
             }
             //
-            
             if (doubleToInt(sum: sum))
             {
-                history = String(sum_int) + " + "
+                history = inputComma(innum: sum_int) + " + "
             }
             else
             {
-                history = String(sum) + " + "
+                history = doubleInputComma(input: sum) + " + "
             }
             //
             Text_result_1.text = history
@@ -200,11 +233,14 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func MINUS(_ sender: UIButton) {
-        if Text_result_2.text == "" {
-//            Text_result_2.text = "Error"
-        }
+        buttonsEnable()
+        Commpa = false
+        Button_dot.isUserInteractionEnabled = true
+        if Text_result_2.text == "" {}
         else {
             number = Text_result_2.text!
+            //쉼표 없애기
+            number = number.replacingOccurrences(of: ",", with: "")
             if count == 0 {
                 sum = Double(number)!
                 count = count + 1
@@ -216,11 +252,11 @@ class View_nomal_ViewController: UIViewController {
             //
             if (doubleToInt(sum: sum))
             {
-                history = String(sum_int) + " - "
+                history = inputComma(innum: sum_int) + " - "
             }
             else
             {
-                history = String(sum) + " - "
+                history = doubleInputComma(input: sum) + " - "
             }
             //
             Text_result_1.text = history
@@ -236,11 +272,14 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func MULTIPLE(_ sender: UIButton) {
-        if Text_result_2.text == "" {
-//            Text_result_2.text = "Error"
-        }
+        buttonsEnable()
+        Commpa = false
+        Button_dot.isUserInteractionEnabled = true
+        if Text_result_2.text == "" {}
         else {
             number = Text_result_2.text!
+            //쉼표 없애기
+            number = number.replacingOccurrences(of: ",", with: "")
             if count == 0 {
                 sum = Double(number)!
                 count = count + 1
@@ -251,11 +290,11 @@ class View_nomal_ViewController: UIViewController {
             }
             if (doubleToInt(sum: sum))
             {
-                history = String(sum_int) + " X "
+                history = inputComma(innum: sum_int) + " ✕ "
             }
             else
             {
-                history = String(sum) + " X "
+                history = doubleInputComma(input: sum) + " ✕ "
             }
             Text_result_1.text = history
             Text_result_2.text = ""
@@ -270,11 +309,14 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func DIV(_ sender: UIButton) {
-        if Text_result_2.text == "" {
-//            Text_result_2.text = "Error"
-        }
+        buttonsEnable()
+        Commpa = false
+        Button_dot.isUserInteractionEnabled = true
+        if Text_result_2.text == "" {}
         else {
             number = Text_result_2.text!
+            //쉼표 없애기
+            number = number.replacingOccurrences(of: ",", with: "")
             if count == 0 {
                 sum = Double(number)!
                 count = count + 1
@@ -285,11 +327,11 @@ class View_nomal_ViewController: UIViewController {
             }
             if (doubleToInt(sum: sum))
             {
-                history = String(sum_int) + " / "
+                history = inputComma(innum: sum_int) + " / "
             }
             else
             {
-                history = String(sum) + " / "
+                history = doubleInputComma(input: sum) + " / "
             }
             Text_result_1.text = history
             Text_result_2.text = ""
@@ -304,7 +346,15 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func DEL(_ sender: UIButton) {
-        let del_number = Text_result_2.text!
+        // 마지막 글자를 확인해서 소수점 아닌경우 그냥 진행
+        // 마지막 글자가 소수점인 경우 소수점 버튼 활성화
+        let del_number: String = Text_result_2.text!
+        let end = del_number[del_number.index(before: del_number.endIndex)]
+        if (end == ".")
+        {
+            Commpa = false
+            Button_dot.isUserInteractionEnabled = true
+        }
         if(del_number != "")
         {
             let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
@@ -312,13 +362,14 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     @IBAction func AC(_ sender: UIButton) {
+        Commpa = false
+        buttonsEnable()
         Text_result_1.text = ""
         Text_result_2.text = ""
         sum = 0
         count = 0
         history = ""
         number = ""
-        
         UIView.animate(withDuration: 0.3, animations: {
             self.View_line1.alpha = 0
             self.View_line2.alpha = 0
@@ -355,6 +406,106 @@ class View_nomal_ViewController: UIViewController {
         }
     }
     
+    //ver1.1 콤마 추가
+    func inputComma(innum: Int) -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
+    }
     
+    func countSize(num: Int) -> Int
+    {
+        var number: Int = num
+        var count: Int = 0
+        while number > 0 {
+            number = number/10
+            count += 1
+        }
+        return count
+    }
+    
+    func buttonsEnable()
+    {
+        Button_1.isUserInteractionEnabled = true
+        Button_2.isUserInteractionEnabled = true
+        Button_3.isUserInteractionEnabled = true
+        Button_4.isUserInteractionEnabled = true
+        Button_5.isUserInteractionEnabled = true
+        Button_6.isUserInteractionEnabled = true
+        Button_7.isUserInteractionEnabled = true
+        Button_8.isUserInteractionEnabled = true
+        Button_9.isUserInteractionEnabled = true
+        Button_0.isUserInteractionEnabled = true
+        Button_dot.isUserInteractionEnabled = true
+    }
+    func buttonsDisable()
+    {
+        Button_1.isUserInteractionEnabled = false
+        Button_2.isUserInteractionEnabled = false
+        Button_3.isUserInteractionEnabled = false
+        Button_4.isUserInteractionEnabled = false
+        Button_5.isUserInteractionEnabled = false
+        Button_6.isUserInteractionEnabled = false
+        Button_7.isUserInteractionEnabled = false
+        Button_8.isUserInteractionEnabled = false
+        Button_9.isUserInteractionEnabled = false
+        Button_0.isUserInteractionEnabled = false
+        Button_dot.isUserInteractionEnabled = false
+    }
+    
+    func doubleInputComma(input: Double) -> String
+    {
+        if(input < 1)
+        {
+            return String(input)
+        }
+        //실수를 소수점 앞을 세자리 끊어서, 소수점 뒤는 그냥 붙여서 출력해야 한다
+        let decimal: Int = Int(floor(input))
+        var printString = inputComma(innum: decimal) //숫자부분만 구하기
+        
+        var temp = String(input) //소수점 문자열로 변환
+        let count: Int = countSize(num: decimal) //숫자부분 개수 구하기
+        temp = String(temp.dropFirst(count)) //문자열에서 숫자부분 없애기
+        printString += temp
+        return printString
+    }
 
 }
+
+extension String { /** 숫자형 문자열에 3자리수 마다 콤마 넣기 Double형으로 형변환 되지 않으면 원본을 유지한다. ```swift let stringValue = "10005000.123456789" print(stringValue.insertComma) // 결과 : "10,005,000.123456789" ``` */
+    var insertComma: String { let numberFormatter = NumberFormatter();
+        numberFormatter.numberStyle = .decimal // 소수점이 있는 경우 처리
+        if let _ = self.range(of: ".") {
+            var numberArray = self.components(separatedBy: ".")
+            if numberArray.count == 1 {
+                var numberString = numberArray[0]
+                if numberString.isEmpty {
+                    numberString = "0"
+                }
+                guard let doubleValue = Double(numberString) else {
+                    return self
+                }
+                return numberFormatter.string(from: NSNumber(value: doubleValue)) ?? self
+            } else if numberArray.count == 2 {
+                var numberString = numberArray[0]
+                if numberString.isEmpty {
+                    numberString = "0"
+                }
+                guard let doubleValue = Double(numberString) else {
+                    return self
+                }
+                return (numberFormatter.string(from: NSNumber(value: doubleValue)) ?? numberString) + ".\(numberArray[1])"
+            }
+        } else {
+            guard let doubleValue = Double(self) else {
+                return self
+            }
+            return numberFormatter.string(from: NSNumber(value: doubleValue)) ?? self }
+        return self
+    }
+}
+
+
