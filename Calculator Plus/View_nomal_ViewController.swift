@@ -63,6 +63,7 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
     
     var Commpa: Bool = false
     var temp: Int = 0
+    var inputCount: Int = 0
     
     override func viewDidLoad() {
         
@@ -102,35 +103,40 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func button(sender: UIButton) {
-        let digit = sender.currentTitle!
-        var result = Text_result_2.text!
-        if(String(digit) == ".")
+        if(inputCount<18)
         {
-            Commpa = true
-            Button_dot.isUserInteractionEnabled = false
+            inputCount+=1
+            let digit = sender.currentTitle!
+            var result = Text_result_2.text!
+            if(String(digit) == ".")
+            {
+                Commpa = true
+                Button_dot.isUserInteractionEnabled = false
+            }
+            if(Commpa == false)
+            {
+                result += String(digit)
+                //쉼표 없애기
+                result = result.replacingOccurrences(of: ",", with: "")
+                temp = Int(result)!
+                //쉼표 추가하기
+                Text_result_2.text = inputComma(innum: temp)
+            }
+            else
+            {
+                result += String(digit)
+                Text_result_2.text = result
+            }
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.View_line2.alpha = 1
+                self.View_line2.backgroundColor = self.BUTTON
+                self.View_line1.backgroundColor = self.GRAY
+            })
         }
-        if(Commpa == false)
-        {
-            result += String(digit)
-            //쉼표 없애기
-            result = result.replacingOccurrences(of: ",", with: "")
-            temp = Int(result)!
-            //쉼표 추가하기
-            Text_result_2.text = inputComma(innum: temp)
-        }
-        else
-        {
-            result += String(digit)
-            Text_result_2.text = result
-        }
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            self.View_line2.alpha = 1
-            self.View_line2.backgroundColor = self.BUTTON
-            self.View_line1.backgroundColor = self.GRAY
-        })
     }
     @IBAction func ENTER(_ sender: UIButton) {
+        inputCount = 0
         buttonsDisable()
         Commpa = false
         if count > 0
@@ -194,6 +200,7 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func PLUS(_ sender: UIButton) {
+        inputCount = 0
         buttonsEnable()
         Commpa = false
         Button_dot.isUserInteractionEnabled = true
@@ -233,6 +240,7 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func MINUS(_ sender: UIButton) {
+        inputCount = 0
         buttonsEnable()
         Commpa = false
         Button_dot.isUserInteractionEnabled = true
@@ -272,6 +280,7 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func MULTIPLE(_ sender: UIButton) {
+        inputCount = 0
         buttonsEnable()
         Commpa = false
         Button_dot.isUserInteractionEnabled = true
@@ -309,6 +318,7 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func DIV(_ sender: UIButton) {
+        inputCount = 0
         buttonsEnable()
         Commpa = false
         Button_dot.isUserInteractionEnabled = true
@@ -357,11 +367,13 @@ class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
         }
         if(del_number != "")
         {
+            inputCount-=1
             let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
             Text_result_2.text = String(del_number[range])  // Hello, playgroun
         }
     }
     @IBAction func AC(_ sender: UIButton) {
+        inputCount = 0
         Commpa = false
         buttonsEnable()
         Text_result_1.text = ""
