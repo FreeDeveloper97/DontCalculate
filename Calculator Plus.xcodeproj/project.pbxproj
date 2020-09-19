@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93D70FE92417BE6D0040F035 /* Build configuration list for PBXProject "1" */;
+			buildConfigurationList = 93D70FE92417BE6D0040F035 /* Build configuration list for PBXProject "Calculator Plus" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -521,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 3.2.0;
+				MARKETING_VERSION = 3.3.3;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freedeveloper.CalculatorPlus;
 				PRODUCT_NAME = DontCalculate;
@@ -552,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 3.2.0;
+				MARKETING_VERSION = 3.3.3;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freedeveloper.CalculatorPlus;
 				PRODUCT_NAME = DontCalculate;
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93D70FE92417BE6D0040F035 /* Build configuration list for PBXProject "1" */ = {
+		93D70FE92417BE6D0040F035 /* Build configuration list for PBXProject "Calculator Plus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93D710002417BE6E0040F035 /* Debug */,

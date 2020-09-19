@@ -120,6 +120,18 @@ class View_8_2_ViewController: UIViewController {
         
         View_dottedline.backgroundColor = UIColor.clear
         View_dottedline.addDashedBorder()
+        
+        //우측상단버튼 생성
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "icon_bar"), for: .normal)
+        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 43, height: 51)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    //This method will call when you press button.
+    @objc func fbButtonPressed() {
+        performSegue(withIdentifier: "showNomal", sender: self)
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

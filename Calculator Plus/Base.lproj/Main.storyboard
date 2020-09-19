@@ -35,7 +35,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACN-XK-z04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="132"/>
+            <point key="canvasLocation" x="-2084" y="250"/>
         </scene>
         <!--적립포인트-->
         <scene sceneID="gqO-aK-gcf">
@@ -245,7 +245,13 @@
                             <constraint firstItem="dKE-ns-06P" firstAttribute="leading" secondItem="FxN-34-5c8" secondAttribute="leading" id="hIT-hE-V5V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="적립포인트" id="KET-t6-gFS"/>
+                    <navigationItem key="navigationItem" title="적립포인트" id="KET-t6-gFS">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="r94-D0-Hh9">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="FLm-ZK-b7k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="qsA-id-0DJ" id="eVO-Zc-mTX"/>
                         <outlet property="Button_Result_outlet" destination="cTW-ky-4zZ" id="Mdz-08-22d"/>
@@ -260,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0U-bq-gyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3860" y="1533.2833583208396"/>
+            <point key="canvasLocation" x="2524" y="1227"/>
         </scene>
         <!--3명-->
         <scene sceneID="ftC-EM-AXR">
@@ -919,7 +925,13 @@
                             <constraint firstItem="aEf-Fg-qAd" firstAttribute="top" secondItem="QZ7-NF-eAA" secondAttribute="top" constant="44" id="xFR-CX-YX9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="3명" id="tRJ-hy-zcY"/>
+                    <navigationItem key="navigationItem" title="3명" id="tRJ-hy-zcY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7aJ-pE-Uht">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="CnN-9s-uaV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="Button_RESET" destination="SZv-xu-6Me" id="OJh-Ef-rbN"/>
@@ -960,7 +972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v43-Xv-ln2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568.8000000000002" y="326.53673163418296"/>
+            <point key="canvasLocation" x="3222" y="325"/>
         </scene>
         <!--2명-->
         <scene sceneID="Cx8-eL-Ig4">
@@ -1464,7 +1476,13 @@
                             <constraint firstAttribute="bottom" secondItem="I7T-ju-vy0" secondAttribute="bottom" id="UVG-aS-g0S"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="2명" id="i8I-Fg-otA"/>
+                    <navigationItem key="navigationItem" title="2명" id="i8I-Fg-otA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="jQ6-x5-DVd">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="g3m-fj-XTR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="Button_RESET" destination="cXE-g9-K5v" id="tbL-wM-QZ9"/>
@@ -1498,7 +1516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNz-do-GBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902" y="219"/>
+            <point key="canvasLocation" x="2526" y="215"/>
         </scene>
         <!--4명-->
         <scene sceneID="5AZ-f5-pcP">
@@ -2315,7 +2333,13 @@
                             <constraint firstItem="zm3-9C-oWV" firstAttribute="top" secondItem="7wh-km-DCS" secondAttribute="top" constant="44" id="tlB-Vl-Rvp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="4명" id="9yg-kK-KDe"/>
+                    <navigationItem key="navigationItem" title="4명" id="9yg-kK-KDe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="9Jd-o5-wVr">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="xxz-PJ-hgN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="Button_RESET" destination="czh-32-1rT" id="vTr-bg-8Cc"/>
@@ -2363,7 +2387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEc-91-TNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5256.8000000000002" y="375.11244377811096"/>
+            <point key="canvasLocation" x="3918" y="399"/>
         </scene>
         <!--5명-->
         <scene sceneID="dxu-Va-wdn">
@@ -3339,7 +3363,13 @@
                             <constraint firstItem="uuA-B1-KDQ" firstAttribute="leading" secondItem="rgA-08-Q2W" secondAttribute="leading" id="zWN-Wb-KIj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="5명" id="1ZP-ZB-a4I"/>
+                    <navigationItem key="navigationItem" title="5명" id="1ZP-ZB-a4I">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="qcK-UO-upk">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="d0a-2M-df5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1800"/>
                     <connections>
                         <outlet property="Button_RESET" destination="vAD-WE-aHz" id="A84-P2-L3m"/>
@@ -3394,7 +3424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG8-BR-3Iz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5932" y="465.96701649175418"/>
+            <point key="canvasLocation" x="4623" y="546"/>
         </scene>
         <!--남은 일수-->
         <scene sceneID="8R1-Ap-bG2">
@@ -3657,7 +3687,13 @@
                             <constraint firstItem="iIN-xr-0gR" firstAttribute="leading" secondItem="XAC-2s-VNb" secondAttribute="leading" id="q5X-ao-w35"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="남은 일수" id="zbG-gR-fq4"/>
+                    <navigationItem key="navigationItem" title="남은 일수" id="zbG-gR-fq4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Sce-Ei-zny">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="qG1-hl-MKo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="9Jb-mU-fRY" id="EP1-Kg-N9N"/>
                         <outlet property="Button_Result_outlet" destination="E49-Oc-5oo" id="G7X-R0-NfF"/>
@@ -3681,7 +3717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiO-dY-ADE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7036" y="-806.44677661169419"/>
+            <point key="canvasLocation" x="5514" y="545"/>
         </scene>
         <!--할인금액-->
         <scene sceneID="t3P-58-kX2">
@@ -3926,7 +3962,13 @@
                             <constraint firstItem="vdF-AV-K8w" firstAttribute="trailing" secondItem="uIh-U7-emE" secondAttribute="trailing" id="kis-1w-JYb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="할인금액" id="f5S-cV-ymu"/>
+                    <navigationItem key="navigationItem" title="할인금액" id="f5S-cV-ymu">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="WJ9-xS-5xu">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="tDd-pT-gVT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="osx-Js-NcI" id="aj0-Fv-Ve6"/>
                         <outlet property="Button_Result_outlet" destination="rgc-zu-pAi" id="htW-4N-2To"/>
@@ -3944,7 +3986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHb-hc-zwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276" y="2298"/>
+            <point key="canvasLocation" x="3916" y="2008"/>
         </scene>
         <!--타임머신-->
         <scene sceneID="xjl-Wd-Dce">
@@ -4213,7 +4255,13 @@
                             <constraint firstItem="A8G-QQ-aas" firstAttribute="bottom" secondItem="Wl1-jS-fXP" secondAttribute="bottom" id="d0O-Wr-1DV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="타임머신" id="yb8-3e-djc"/>
+                    <navigationItem key="navigationItem" title="타임머신" id="yb8-3e-djc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="01R-ir-hjf">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="fHv-GH-Ies"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="shU-Ff-hJC" id="TIC-JZ-OJa"/>
                         <outlet property="Button_Result_outlet" destination="H5z-1q-9S3" id="UOk-rC-Ivv"/>
@@ -4237,7 +4285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRS-uJ-jnb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="840.62968515742136"/>
+            <point key="canvasLocation" x="94" y="250"/>
         </scene>
         <!--계산기-->
         <scene sceneID="Xd4-4H-5lk">
@@ -4680,7 +4728,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbu-aW-4S0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="-585"/>
+            <point key="canvasLocation" x="404" y="1196"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="cjK-dh-GBI">
@@ -4790,7 +4838,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dB7-vW-IzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733.5999999999999" y="-584.25787106446785"/>
+            <point key="canvasLocation" x="-580" y="-584"/>
         </scene>
         <!--일반-->
         <scene sceneID="XGW-4z-n7d">
@@ -5171,9 +5219,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일반" id="MVd-jC-MOa">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="OsG-Dp-q9l">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="jGK-pz-jKA">
                             <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="HgU-cl-PJM"/>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="RSt-ok-BNw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -5206,7 +5254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCB-B2-jgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3891" y="-757"/>
+            <point key="canvasLocation" x="2527" y="-653"/>
         </scene>
         <!--계산하지마!-->
         <scene sceneID="pUg-rA-CEd">
@@ -5481,7 +5529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEu-lQ-8y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="237"/>
+            <point key="canvasLocation" x="-1356" y="250"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="n5N-8E-c3l">
@@ -5713,7 +5761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL5-FH-LOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="-584"/>
+            <point key="canvasLocation" x="94" y="-584"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="eim-w6-7uz">
@@ -5823,7 +5871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWo-Ur-LAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="132"/>
+            <point key="canvasLocation" x="777" y="-584"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="5Ln-i9-AmX">
@@ -5955,7 +6003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fx4-J0-KqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="132"/>
+            <point key="canvasLocation" x="1434" y="-584"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="oXd-sG-q9X">
@@ -6065,7 +6113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cED-fY-s6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="837"/>
+            <point key="canvasLocation" x="-580" y="250"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="kiA-Mi-Mtx">
@@ -6175,7 +6223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zH9-Nv-alK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="1533"/>
+            <point key="canvasLocation" x="777" y="250"/>
         </scene>
         <!--간단 더치페이-->
         <scene sceneID="MWb-VI-5YC">
@@ -6285,7 +6333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaY-5p-RnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2438" y="1533"/>
+            <point key="canvasLocation" x="1433" y="250"/>
         </scene>
         <!--따로따로-->
         <scene sceneID="ogv-vX-gQJ">
@@ -6815,7 +6863,13 @@
                             <constraint firstItem="TF0-Hb-RKY" firstAttribute="trailing" secondItem="HAU-la-nzR" secondAttribute="trailing" id="kT1-s2-YIG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="따로따로" id="ohj-Aj-dbM"/>
+                    <navigationItem key="navigationItem" title="따로따로" id="ohj-Aj-dbM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Evd-oE-qeX">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="WvK-Qs-LF0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="Button_RESET" destination="ObQ-l7-U6C" id="gr3-tt-2AC"/>
@@ -6854,7 +6908,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3a-ee-TRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568.8000000000002" y="-757.42128935532241"/>
+            <point key="canvasLocation" x="3223" y="-653"/>
         </scene>
         <!--지출금액-->
         <scene sceneID="x8w-vt-VDr">
@@ -7064,7 +7118,13 @@
                             <constraint firstItem="2WC-ES-QTn" firstAttribute="leading" secondItem="r3L-uL-9b9" secondAttribute="leading" id="mXE-qB-aXW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="지출금액" id="kQx-yN-em1"/>
+                    <navigationItem key="navigationItem" title="지출금액" id="kQx-yN-em1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="aBS-fa-Fek">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="eLl-Zg-n1Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="avq-Qf-dem" id="sqs-NP-w8Y"/>
                         <outlet property="Button_Result_outlet" destination="9JY-wO-cxq" id="BfH-hd-fDN"/>
@@ -7079,7 +7139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFp-CD-naZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4551" y="1532"/>
+            <point key="canvasLocation" x="3223" y="1227"/>
         </scene>
         <!--할인율-->
         <scene sceneID="Pgv-dk-VdR">
@@ -7324,7 +7384,13 @@
                             <constraint firstItem="n0A-5a-5UB" firstAttribute="trailing" secondItem="mq3-4h-keI" secondAttribute="trailing" id="kgz-wZ-k4w"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="할인율" id="ki7-DI-XGH"/>
+                    <navigationItem key="navigationItem" title="할인율" id="ki7-DI-XGH">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="MbE-Da-0bM">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="Mbd-11-AVB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="Frm-qi-X4F" id="ryN-gi-afF"/>
                         <outlet property="Button_Result_outlet" destination="2NF-QR-rV5" id="mZL-tR-p0t"/>
@@ -7342,7 +7408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6g-HD-mjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4569" y="2298"/>
+            <point key="canvasLocation" x="3223" y="2008"/>
         </scene>
         <!--정가-->
         <scene sceneID="FnY-e1-GPA">
@@ -7587,7 +7653,13 @@
                             <constraint firstItem="Lal-Fl-GFD" firstAttribute="trailing" secondItem="fn4-6k-58T" secondAttribute="trailing" id="ube-dR-5fB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="정가" id="BA7-6m-Wob"/>
+                    <navigationItem key="navigationItem" title="정가" id="BA7-6m-Wob">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="cDg-8l-AGW">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="Bse-Wg-dBT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="0dy-xa-6aa" id="6PV-dg-8cC"/>
                         <outlet property="Button_Result_outlet" destination="G9n-NA-gEu" id="8c5-xf-0Gy"/>
@@ -7605,7 +7677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lh2-gt-2VF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3860" y="2298"/>
+            <point key="canvasLocation" x="2527" y="2008"/>
         </scene>
         <!--날짜-->
         <scene sceneID="hZu-of-ciD">
@@ -7876,7 +7948,13 @@
                             <constraint firstItem="22V-su-8Pg" firstAttribute="trailing" secondItem="CKM-yf-AgF" secondAttribute="trailing" id="x6u-Nl-oPN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="날짜" id="I6V-vD-K9h"/>
+                    <navigationItem key="navigationItem" title="날짜" id="I6V-vD-K9h">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="9jr-kI-yvb">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="gur-XW-3dm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="NR7-Mr-dXA" id="FMx-IH-qgs"/>
                         <outlet property="Button_Result_outlet" destination="cZB-WT-iSh" id="q3c-9W-3UK"/>
@@ -7900,7 +7978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwz-iY-7tK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7697" y="-806"/>
+            <point key="canvasLocation" x="6206" y="545"/>
         </scene>
         <!--시급-->
         <scene sceneID="R3X-Bx-rSe">
@@ -8277,7 +8355,13 @@
                             <constraint firstAttribute="bottom" secondItem="jg3-KW-guN" secondAttribute="bottom" id="nli-8V-bjZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="시급" id="mwg-Ai-8ye"/>
+                    <navigationItem key="navigationItem" title="시급" id="mwg-Ai-8ye">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uAL-2c-17L">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="3pL-an-K9S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="Button_RESET" destination="XvB-WX-hL7" id="ky7-IX-Vxo"/>
@@ -8308,7 +8392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFE-Og-JKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7036" y="-94.452773613193415"/>
+            <point key="canvasLocation" x="5513" y="1227"/>
         </scene>
         <!--월급-->
         <scene sceneID="lXZ-iC-HvI">
@@ -8649,7 +8733,13 @@
                             <constraint firstItem="cec-ya-8Uk" firstAttribute="top" secondItem="lJ5-Xf-lpE" secondAttribute="top" constant="44" id="wWm-6F-Q2i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="월급" id="feO-j3-gnT"/>
+                    <navigationItem key="navigationItem" title="월급" id="feO-j3-gnT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="okO-FM-755">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="zWc-Qn-10G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="Button_RESET" destination="ANH-x7-rqT" id="Oe4-xH-h4i"/>
@@ -8679,7 +8769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQM-5y-2AR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7696.8000000000002" y="-94.452773613193415"/>
+            <point key="canvasLocation" x="6204" y="1227"/>
         </scene>
         <!--적금제외-->
         <scene sceneID="zN1-E8-dEW">
@@ -9074,7 +9164,13 @@
                             <constraint firstItem="Szl-DZ-MGa" firstAttribute="trailing" secondItem="Bkw-Uc-Zwc" secondAttribute="trailing" id="hrt-xg-lxH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="적금제외" id="pdn-lP-9we"/>
+                    <navigationItem key="navigationItem" title="적금제외" id="pdn-lP-9we">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7gz-2p-OBm">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="8Vi-FS-1Uk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="Button_RESET" destination="T7a-q1-WZV" id="JgJ-er-ufY"/>
@@ -9104,7 +9200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCy-Ad-SYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7036" y="703"/>
+            <point key="canvasLocation" x="5513" y="2039"/>
         </scene>
         <!--적금포함-->
         <scene sceneID="R8e-6P-bfm">
@@ -9536,7 +9632,13 @@
                             <constraint firstItem="Y5O-lp-zpv" firstAttribute="centerX" secondItem="As9-DZ-geF" secondAttribute="centerX" id="tmh-Jm-PiU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="적금포함" id="zHq-pc-b4P"/>
+                    <navigationItem key="navigationItem" title="적금포함" id="zHq-pc-b4P">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="BAd-y1-iSI">
+                            <connections>
+                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="tIJ-zj-Fsv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="Button_RESET" destination="GVe-od-jMc" id="6Rn-Uh-IXd"/>
@@ -9567,11 +9669,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3h-5X-OLo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7697" y="703"/>
+            <point key="canvasLocation" x="6204" y="2039"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HgU-cl-PJM"/>
+        <segue reference="fHv-GH-Ies"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="button"/>
     <resources>

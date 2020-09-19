@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View_nomal_ViewController: UIViewController {
+class View_nomal_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var Button_AC: UIButton!
     @IBOutlet var Button_DEL: UIButton!

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "93D70FED2417BE6D0040F035"
                BuildableName = "DontCalculate.app"
                BlueprintName = "Calculator Plus"
-               ReferencedContainer = "container:1.xcodeproj">
+               ReferencedContainer = "container:Calculator Plus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "93D70FED2417BE6D0040F035"
             BuildableName = "DontCalculate.app"
             BlueprintName = "Calculator Plus"
-            ReferencedContainer = "container:1.xcodeproj">
+            ReferencedContainer = "container:Calculator Plus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "93D70FED2417BE6D0040F035"
             BuildableName = "DontCalculate.app"
             BlueprintName = "Calculator Plus"
-            ReferencedContainer = "container:1.xcodeproj">
+            ReferencedContainer = "container:Calculator Plus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

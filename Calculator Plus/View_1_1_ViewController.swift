@@ -118,23 +118,17 @@ class View_1_1_ViewController: UIViewController {
         Input_money.addTarget(self, action: #selector(textFieldDidChange1(textField:)), for: UIControl.Event.editingChanged)
         Text_n.addTarget(self, action: #selector(textFieldDidChange2(textField:)), for: UIControl.Event.editingChanged)
         
-        //create a new button
+        //우측상단버튼 생성
         let button = UIButton(type: .custom)
-        //set image for button
         button.setImage(UIImage(named: "icon_bar"), for: .normal)
-        //add function for button
         button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
-        //set frame
         button.frame = CGRect(x: 0, y: 0, width: 43, height: 51)
-        
         let barButton = UIBarButtonItem(customView: button)
-        //assign button to navigationbar
         self.navigationItem.rightBarButtonItem = barButton
     }
     //This method will call when you press button.
     @objc func fbButtonPressed() {
         performSegue(withIdentifier: "showNomal", sender: self)
-        print("버튼 클릭")
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
