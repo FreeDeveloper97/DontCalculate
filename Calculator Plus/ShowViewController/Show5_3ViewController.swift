@@ -1,5 +1,5 @@
 //
-//  View_4_3_ViewController.swift
+//  View_4_1_ViewController.swift
 //  Calculator Plus
 //
 //  Created by Min_MacBook Pro on 2020/03/26.
@@ -9,8 +9,8 @@
 import UIKit
 
 class Show5_3ViewController: UIViewController {
-
-    @IBOutlet var Text_after: UITextField!
+    
+    @IBOutlet var Text_before: UITextField!
     @IBOutlet var Text_per: UITextField!
     @IBOutlet var Button_Result_outlet: UIButton!
     
@@ -28,7 +28,8 @@ class Show5_3ViewController: UIViewController {
     
     @IBOutlet weak var View_View: UIView!
     
-    var AFTER = ""
+    
+    var BEFORE = ""
     var PER = ""
     var temp = 0.0
     var RESULT = 0
@@ -42,9 +43,9 @@ class Show5_3ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.View_View.alpha = 1
         })
-
+        
         Button_Result_outlet.layer.cornerRadius = 4
-        Text_after.keyboardType = .numberPad
+        Text_before.keyboardType = .numberPad
         Text_per.keyboardType = .decimalPad
         
         self.hideKeyboard()
@@ -69,8 +70,9 @@ class Show5_3ViewController: UIViewController {
         
         //color
         self.Button_Result_outlet.backgroundColor = self.GRAY
+        
         //action
-        Text_after.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        Text_before.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         Text_per.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
         //우측상단버튼 생성
@@ -87,7 +89,7 @@ class Show5_3ViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(textField: UITextField){
-        AFTER = Text_after.text!
+        BEFORE = Text_before.text!
         PER = Text_per.text!
         if(check())
         {
@@ -105,13 +107,14 @@ class Show5_3ViewController: UIViewController {
     
 
     @IBAction func Button_Result(_ sender: UIButton) {
-        AFTER = Text_after.text!
+        BEFORE = Text_before.text!
         PER = Text_per.text!
         if(check())
         {
-            RESULT = Int(Double(AFTER)! * 100 / (100 - Double(PER)!))
+            temp = Double(BEFORE)! * (1-(Double(PER)! * 0.01))
+            RESULT = Int(temp)
             Result_1.text = inputComma(innum: RESULT) + " 원"
-            Result_2.text = "- " + inputComma(innum: (RESULT - Int(AFTER)!)) + " 원"
+            Result_2.text = "- " + inputComma(innum: (Int(BEFORE)!-RESULT)) + " 원"
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -139,11 +142,11 @@ class Show5_3ViewController: UIViewController {
     }
     
     @IBAction func Button_reset(_ sender: UIButton) {
-        AFTER = ""
+        BEFORE = ""
         PER = ""
         temp = 0.0
         RESULT = 0
-        Text_after.text = ""
+        Text_before.text = ""
         Text_per.text = ""
 //        Result_1.text = "원"
 //        Result_2.text = "원"
@@ -173,7 +176,7 @@ class Show5_3ViewController: UIViewController {
     
     func check() -> Bool
     {
-        if AFTER == ""
+        if BEFORE == ""
         {
             return false
         }
@@ -193,5 +196,6 @@ class Show5_3ViewController: UIViewController {
         let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
         return RESULT_COMMA
     }
+    
 
 }

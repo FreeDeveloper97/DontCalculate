@@ -25,9 +25,9 @@
 		936598CC2433526600DCAC99 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936598C72433526600DCAC99 /* KakaoOpenSDK.framework */; };
 		936F4F24242C889700E78644 /* Show4_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F23242C889700E78644 /* Show4_1ViewController.swift */; };
 		936F4F26242C88C400E78644 /* Show4_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F25242C88C400E78644 /* Show4_2ViewController.swift */; };
-		936F4F28242C88DC00E78644 /* Show5_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F27242C88DC00E78644 /* Show5_1ViewController.swift */; };
+		936F4F28242C88DC00E78644 /* Show5_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F27242C88DC00E78644 /* Show5_3ViewController.swift */; };
 		936F4F2A242C88ED00E78644 /* Show5_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F29242C88ED00E78644 /* Show5_2ViewController.swift */; };
-		936F4F2C242C88FE00E78644 /* Show5_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F2B242C88FE00E78644 /* Show5_3ViewController.swift */; };
+		936F4F2C242C88FE00E78644 /* Show5_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F2B242C88FE00E78644 /* Show5_1ViewController.swift */; };
 		936F4F2E242C891400E78644 /* Show6_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F2D242C891400E78644 /* Show6_1ViewController.swift */; };
 		936F4F30242C892700E78644 /* Show7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F2F242C892700E78644 /* Show7ViewController.swift */; };
 		936F4F32242C893500E78644 /* Show8_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F4F31242C893500E78644 /* Show8_1ViewController.swift */; };
@@ -77,9 +77,9 @@
 		936C8CAE24334BF40077473E /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		936F4F23242C889700E78644 /* Show4_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show4_1ViewController.swift; sourceTree = "<group>"; };
 		936F4F25242C88C400E78644 /* Show4_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show4_2ViewController.swift; sourceTree = "<group>"; };
-		936F4F27242C88DC00E78644 /* Show5_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show5_1ViewController.swift; sourceTree = "<group>"; };
+		936F4F27242C88DC00E78644 /* Show5_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show5_3ViewController.swift; sourceTree = "<group>"; };
 		936F4F29242C88ED00E78644 /* Show5_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show5_2ViewController.swift; sourceTree = "<group>"; };
-		936F4F2B242C88FE00E78644 /* Show5_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show5_3ViewController.swift; sourceTree = "<group>"; };
+		936F4F2B242C88FE00E78644 /* Show5_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show5_1ViewController.swift; sourceTree = "<group>"; };
 		936F4F2D242C891400E78644 /* Show6_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show6_1ViewController.swift; sourceTree = "<group>"; };
 		936F4F2F242C892700E78644 /* Show7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show7ViewController.swift; sourceTree = "<group>"; };
 		936F4F31242C893500E78644 /* Show8_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show8_1ViewController.swift; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 				9331EA8F241B449B0072A01B /* Show3_4ViewController.swift */,
 				936F4F23242C889700E78644 /* Show4_1ViewController.swift */,
 				936F4F25242C88C400E78644 /* Show4_2ViewController.swift */,
-				936F4F27242C88DC00E78644 /* Show5_1ViewController.swift */,
+				936F4F27242C88DC00E78644 /* Show5_3ViewController.swift */,
 				936F4F29242C88ED00E78644 /* Show5_2ViewController.swift */,
-				936F4F2B242C88FE00E78644 /* Show5_3ViewController.swift */,
+				936F4F2B242C88FE00E78644 /* Show5_1ViewController.swift */,
 				936F4F2D242C891400E78644 /* Show6_1ViewController.swift */,
 				93802E9D243E024F00CEBD59 /* Show6_2ViewController.swift */,
 				936F4F2F242C892700E78644 /* Show7ViewController.swift */,
@@ -379,7 +379,7 @@
 				936F4F26242C88C400E78644 /* Show4_2ViewController.swift in Sources */,
 				9331EA8E241B448D0072A01B /* Show3_3ViewController.swift in Sources */,
 				936F4F24242C889700E78644 /* Show4_1ViewController.swift in Sources */,
-				936F4F28242C88DC00E78644 /* Show5_1ViewController.swift in Sources */,
+				936F4F28242C88DC00E78644 /* Show5_3ViewController.swift in Sources */,
 				93765C8F243386E9005C006A /* StoryLinkHelper.swift in Sources */,
 				9331EA90241B449B0072A01B /* Show3_4ViewController.swift in Sources */,
 				936F4F2A242C88ED00E78644 /* Show5_2ViewController.swift in Sources */,
@@ -391,7 +391,7 @@
 				937E54D0243617E700CCBB37 /* Select8ViewController.swift in Sources */,
 				936F4F38242C8AAD00E78644 /* CalculaterViewController.swift in Sources */,
 				93B2E45924B6C9A200020AAD /* Show3_1ViewController.swift in Sources */,
-				936F4F2C242C88FE00E78644 /* Show5_3ViewController.swift in Sources */,
+				936F4F2C242C88FE00E78644 /* Show5_1ViewController.swift in Sources */,
 				936F4F36242C895100E78644 /* Show9_2ViewController.swift in Sources */,
 				937FC3CC241B32E200848EBD /* Select5ViewController.swift in Sources */,
 				937FC3C4241B276D00848EBD /* Select3ViewController.swift in Sources */,
