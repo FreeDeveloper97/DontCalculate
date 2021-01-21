@@ -36,35 +36,27 @@ class MainViewController: UIViewController {
     @IBAction func buttonCalClick(_ sender: Any) {
         goToViewController(where: "CalculaterViewController")
     }
-    
     @IBAction func button2Click(_ sender: Any) {
         goToViewController(where: "Select2ViewController")
     }
-    
     @IBAction func button3Click(_ sender: Any) {
         goToViewController(where: "Select3ViewController")
     }
-    
     @IBAction func button4Click(_ sender: Any) {
         goToViewController(where: "Select4ViewController")
     }
-    
     @IBAction func button5Click(_ sender: Any) {
         goToViewController(where: "Select5ViewController")
     }
-    
     @IBAction func button6Click(_ sender: Any) {
         goToViewController(where: "Select6ViewController")
     }
-    
     @IBAction func button7Click(_ sender: Any) {
         goToViewController(where: "Show7ViewController")
     }
-    
     @IBAction func button8Click(_ sender: Any) {
         goToViewController(where: "Select8ViewController")
     }
-    
     @IBAction func button9Click(_ sender: Any) {
         goToViewController(where: "Select9ViewController")
     }

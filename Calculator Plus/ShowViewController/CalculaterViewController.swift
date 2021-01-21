@@ -34,10 +34,8 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var Text_result_1: UILabel!
     @IBOutlet var Text_result_2: UILabel!
-    
     @IBOutlet weak var View_line1: UIView!
     @IBOutlet weak var View_line2: UIView!
-    
     @IBOutlet var View_View: UIView!
     
     var type: String = ""
@@ -48,12 +46,9 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
     var DIV: Int = 3
     var sum: Double = 0
     var RESULT: Double = 0
-    
     var history: String = ""
     var number: String = ""
-    
     var NUMBER: Double = 0
-    
     var sum_int: Int = 0
     var sum_str: String = ""
     
@@ -66,12 +61,58 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
     var inputCount: Int = 0
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        showAnimation()
+        setRadius()
+        setAlpha()
+    }
+    //숫자 버튼 입력
+    @IBAction func button(sender: UIButton) {
+        let digit = sender.currentTitle!
+        algoOfNumbers(digit: digit)
+    }
+    //엔터 버튼 입력
+    @IBAction func ENTER(_ sender: UIButton) {
+        algoOfEnter()
+    }
+    //더하기 버튼 입력
+    @IBAction func PLUS(_ sender: UIButton) {
+        algoOfPlus()
+    }
+    //빼기 버튼 입력
+    @IBAction func MINUS(_ sender: UIButton) {
+        algoOfMinus()
+    }
+    //곱하기 버튼 입력
+    @IBAction func MULTIPLE(_ sender: UIButton) {
+        algoOfMultiple()
+    }
+    //나누기 버튼 입력
+    @IBAction func DIV(_ sender: UIButton) {
+        algoOfDiv()
+    }
+    //끝글자 제거 버튼
+    @IBAction func DEL(_ sender: UIButton) {
+        algoOfDel()
+    }
+    //초기화 버튼
+    @IBAction func AC(_ sender: UIButton) {
+        algoOfAC()
+    }
+}
+
+
+
+
+extension CalculaterViewController {
+    func showAnimation() {
         self.View_View.alpha = 0
         UIView.animate(withDuration: 0.5, animations: {
             self.View_View.alpha = 1
         })
-        
+    }
+    
+    func setRadius() {
         Button_AC.layer.cornerRadius = 4
         Button_DEL.layer.cornerRadius = 4
         Button_div.layer.cornerRadius = 4
@@ -93,299 +134,11 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
         Button_0.layer.cornerRadius = 4
         Button_dot.layer.cornerRadius = 4
         Button_Result.layer.cornerRadius = 4
-        
-//        Text_result_2.text="0"
-
-        super.viewDidLoad()
-        
-        self.View_line1.alpha = 0
-        self.View_line2.alpha = 0
     }
     
-    @IBAction func button(sender: UIButton) {
-        if(inputCount<18)
-        {
-            inputCount+=1
-            let digit = sender.currentTitle!
-            var result = Text_result_2.text!
-            if(String(digit) == ".")
-            {
-                Commpa = true
-                Button_dot.isUserInteractionEnabled = false
-            }
-            if(Commpa == false)
-            {
-                result += String(digit)
-                //쉼표 없애기
-                result = result.replacingOccurrences(of: ",", with: "")
-                temp = Int(result)!
-                //쉼표 추가하기
-                Text_result_2.text = inputComma(innum: temp)
-            }
-            else
-            {
-                result += String(digit)
-                Text_result_2.text = result
-            }
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.View_line2.alpha = 1
-                self.View_line2.backgroundColor = self.BUTTON
-                self.View_line1.backgroundColor = self.GRAY
-            })
-        }
-    }
-    @IBAction func ENTER(_ sender: UIButton) {
-        inputCount = 0
-        buttonsDisable()
-        Commpa = false
-        if count > 0
-        {
-            number = Text_result_2.text!
-            number = number.replacingOccurrences(of: ",", with: "")
-            if(number != "")
-            {
-                NUMBER = Double(number)!
-                if(doubleToInt(sum: NUMBER))
-                {
-                    history = history + inputComma(innum: sum_int)
-                }
-                else
-                {
-                    history = history + doubleInputComma(input: NUMBER)
-                }
-                Text_result_1.text = history
-                
-                if type == "PLUS"
-                {
-                    RESULT = sum + NUMBER
-                }
-                else if type == "MINUS"
-                {
-                    RESULT = sum - NUMBER
-                }
-                else if type == "MUL"
-                {
-                    RESULT = sum * NUMBER
-                }
-                else if type == "DIV"
-                {
-                    RESULT = sum / NUMBER
-                }
-                //
-                if(doubleToInt(sum: RESULT))
-                {
-                    Text_result_2.text = inputComma(innum: sum_int)
-                }
-                else
-                {
-                    Text_result_2.text = doubleInputComma(input: RESULT)
-                }
-                //
-                sum = 0
-                count = 0
-                number = ""
-                
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.View_line2.alpha = 1
-                    self.View_line2.backgroundColor = self.BUTTON
-                    self.View_line1.alpha = 0
-                })
-            }
-            
-        }
-        else
-        {
-//            Text_result_2.text = "FINISH"
-        }
-    }
-    @IBAction func PLUS(_ sender: UIButton) {
-        inputCount = 0
-        buttonsEnable()
-        Commpa = false
-        Button_dot.isUserInteractionEnabled = true
-        if Text_result_2.text == "" {}
-        else {
-            number = Text_result_2.text!
-            //쉼표 없애기
-            number = number.replacingOccurrences(of: ",", with: "")
-            if count == 0 {
-                sum = Double(number)!
-                count = count + 1
-            }
-            else {
-                cal()
-                count = count + 1
-            }
-            //
-            if (doubleToInt(sum: sum))
-            {
-                history = inputComma(innum: sum_int) + " + "
-            }
-            else
-            {
-                history = doubleInputComma(input: sum) + " + "
-            }
-            //
-            Text_result_1.text = history
-            Text_result_2.text = ""
-            
-            type = "PLUS"
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.View_line1.alpha = 1
-                self.View_line1.backgroundColor = self.BUTTON
-                self.View_line2.backgroundColor = self.GRAY
-            })
-        }
-    }
-    @IBAction func MINUS(_ sender: UIButton) {
-        inputCount = 0
-        buttonsEnable()
-        Commpa = false
-        Button_dot.isUserInteractionEnabled = true
-        if Text_result_2.text == "" {}
-        else {
-            number = Text_result_2.text!
-            //쉼표 없애기
-            number = number.replacingOccurrences(of: ",", with: "")
-            if count == 0 {
-                sum = Double(number)!
-                count = count + 1
-            }
-            else {
-                cal()
-                count = count + 1
-            }
-            //
-            if (doubleToInt(sum: sum))
-            {
-                history = inputComma(innum: sum_int) + " - "
-            }
-            else
-            {
-                history = doubleInputComma(input: sum) + " - "
-            }
-            //
-            Text_result_1.text = history
-            Text_result_2.text = ""
-            
-            type = "MINUS"
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.View_line1.alpha = 1
-                self.View_line1.backgroundColor = self.BUTTON
-                self.View_line2.backgroundColor = self.GRAY
-            })
-        }
-    }
-    @IBAction func MULTIPLE(_ sender: UIButton) {
-        inputCount = 0
-        buttonsEnable()
-        Commpa = false
-        Button_dot.isUserInteractionEnabled = true
-        if Text_result_2.text == "" {}
-        else {
-            number = Text_result_2.text!
-            //쉼표 없애기
-            number = number.replacingOccurrences(of: ",", with: "")
-            if count == 0 {
-                sum = Double(number)!
-                count = count + 1
-            }
-            else {
-                cal()
-                count = count + 1
-            }
-            if (doubleToInt(sum: sum))
-            {
-                history = inputComma(innum: sum_int) + " ✕ "
-            }
-            else
-            {
-                history = doubleInputComma(input: sum) + " ✕ "
-            }
-            Text_result_1.text = history
-            Text_result_2.text = ""
-            
-            type = "MUL"
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.View_line1.alpha = 1
-                self.View_line1.backgroundColor = self.BUTTON
-                self.View_line2.backgroundColor = self.GRAY
-            })
-        }
-    }
-    @IBAction func DIV(_ sender: UIButton) {
-        inputCount = 0
-        buttonsEnable()
-        Commpa = false
-        Button_dot.isUserInteractionEnabled = true
-        if Text_result_2.text == "" {}
-        else {
-            number = Text_result_2.text!
-            //쉼표 없애기
-            number = number.replacingOccurrences(of: ",", with: "")
-            if count == 0 {
-                sum = Double(number)!
-                count = count + 1
-            }
-            else {
-                cal()
-                count = count + 1
-            }
-            if (doubleToInt(sum: sum))
-            {
-                history = inputComma(innum: sum_int) + " / "
-            }
-            else
-            {
-                history = doubleInputComma(input: sum) + " / "
-            }
-            Text_result_1.text = history
-            Text_result_2.text = ""
-            
-            type = "DIV"
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.View_line1.alpha = 1
-                self.View_line1.backgroundColor = self.BUTTON
-                self.View_line2.backgroundColor = self.GRAY
-            })
-        }
-    }
-    @IBAction func DEL(_ sender: UIButton) {
-        // 마지막 글자를 확인해서 소수점 아닌경우 그냥 진행
-        // 마지막 글자가 소수점인 경우 소수점 버튼 활성화
-        let del_number: String = Text_result_2.text!
-        let end = del_number[del_number.index(before: del_number.endIndex)]
-        if (end == ".")
-        {
-            Commpa = false
-            Button_dot.isUserInteractionEnabled = true
-        }
-        if(del_number != "")
-        {
-            inputCount-=1
-            let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
-            Text_result_2.text = String(del_number[range])  // Hello, playgroun
-        }
-    }
-    @IBAction func AC(_ sender: UIButton) {
-        inputCount = 0
-        Commpa = false
-        buttonsEnable()
-        Text_result_1.text = ""
-        Text_result_2.text = ""
-        sum = 0
-        count = 0
-        history = ""
-        number = ""
-        UIView.animate(withDuration: 0.3, animations: {
-            self.View_line1.alpha = 0
-            self.View_line2.alpha = 0
-        })
+    func setAlpha() {
+        self.View_line1.alpha = 0
+        self.View_line2.alpha = 0
     }
     
     func cal()
@@ -404,7 +157,7 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func doubleToInt(sum : Double) -> Bool
+    func checkDoubleToInt(sum : Double) -> Bool
     {
         sum_int = Int(sum)
         sum_str = String(sum_int) + ".0"
@@ -453,6 +206,7 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
         Button_0.isUserInteractionEnabled = true
         Button_dot.isUserInteractionEnabled = true
     }
+    
     func buttonsDisable()
     {
         Button_1.isUserInteractionEnabled = false
@@ -484,7 +238,42 @@ class CalculaterViewController: UIViewController, UITextFieldDelegate {
         printString += temp
         return printString
     }
-
+    
+    func nextAnimation() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.View_line2.alpha = 1
+            self.View_line2.backgroundColor = self.BUTTON
+            self.View_line1.backgroundColor = self.GRAY
+        })
+    }
+    
+    func inputClear() {
+        inputCount = 0
+        Commpa = false
+    }
+    
+    func checkFirstCal() {
+        if count == 0 {
+            sum = Double(number)!
+            count = count + 1
+        }
+        else {
+            cal()
+            count = count + 1
+        }
+    }
+    
+    func setHistory(oper: String) {
+        if (checkDoubleToInt(sum: sum))
+        {
+            history = inputComma(innum: sum_int) + oper
+        } else {
+            history = doubleInputComma(input: sum) + oper
+        }
+        
+        Text_result_1.text = history
+        Text_result_2.text = ""
+    }
 }
 
 extension String { /** 숫자형 문자열에 3자리수 마다 콤마 넣기 Double형으로 형변환 되지 않으면 원본을 유지한다. ```swift let stringValue = "10005000.123456789" print(stringValue.insertComma) // 결과 : "10,005,000.123456789" ``` */
@@ -521,3 +310,173 @@ extension String { /** 숫자형 문자열에 3자리수 마다 콤마 넣기 Do
 }
 
 
+extension CalculaterViewController {
+    func algoOfNumbers(digit: String) {
+        if(inputCount<18)
+        {
+            inputCount+=1
+            var result = Text_result_2.text!
+            
+            if(String(digit) == ".") {
+                Commpa = true
+                Button_dot.isUserInteractionEnabled = false
+            }
+            
+            result += String(digit)
+            if(Commpa == false) {
+                result = result.replacingOccurrences(of: ",", with: "")
+                Text_result_2.text = inputComma(innum: Int(result)!)
+            } else {
+                Text_result_2.text = result
+            }
+            nextAnimation()
+        }
+    }
+    
+    func algoOfEnter() {
+        inputClear()
+        buttonsDisable()
+        if count > 0
+        {
+            number = Text_result_2.text!.replacingOccurrences(of: ",", with: "")
+            
+            if(number != "") {
+                NUMBER = Double(number)!
+                
+                if(checkDoubleToInt(sum: NUMBER)) {
+                    history = history + inputComma(innum: sum_int)
+                } else {
+                    history = history + doubleInputComma(input: NUMBER)
+                }
+                Text_result_1.text = history
+                
+                if type == "PLUS" {
+                    RESULT = sum + NUMBER
+                } else if type == "MINUS" {
+                    RESULT = sum - NUMBER
+                } else if type == "MUL" {
+                    RESULT = sum * NUMBER
+                } else if type == "DIV" {
+                    RESULT = sum / NUMBER
+                }
+                
+                if(checkDoubleToInt(sum: RESULT)) {
+                    Text_result_2.text = inputComma(innum: sum_int)
+                } else {
+                    Text_result_2.text = doubleInputComma(input: RESULT)
+                }
+                
+                sum = 0
+                count = 0
+                number = ""
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.View_line2.alpha = 1
+                    self.View_line2.backgroundColor = self.BUTTON
+                    self.View_line1.alpha = 0
+                })
+            }
+            
+        }
+        else
+        {
+
+        }
+    }
+    
+    func algoOfPlus() {
+        inputClear()
+        buttonsEnable()
+        Button_dot.isUserInteractionEnabled = true
+        
+        if Text_result_2.text == "" {}
+        else {
+            number = Text_result_2.text!.replacingOccurrences(of: ",", with: "")
+            checkFirstCal()
+            setHistory(oper: " + ")
+            type = "PLUS"
+            nextAnimation()
+        }
+    }
+    
+    func algoOfMinus() {
+        inputClear()
+        buttonsEnable()
+        Button_dot.isUserInteractionEnabled = true
+        
+        if Text_result_2.text == "" {}
+        else {
+            number = Text_result_2.text!.replacingOccurrences(of: ",", with: "")
+            checkFirstCal()
+            setHistory(oper: " - ")
+            type = "MINUS"
+            nextAnimation()
+        }
+    }
+    
+    func algoOfMultiple() {
+        inputClear()
+        buttonsEnable()
+        Button_dot.isUserInteractionEnabled = true
+        
+        if Text_result_2.text == "" {}
+        else {
+            number = Text_result_2.text!.replacingOccurrences(of: ",", with: "")
+            checkFirstCal()
+            setHistory(oper: " ✕ ")
+            type = "MUL"
+            nextAnimation()
+        }
+    }
+    
+    func algoOfDiv() {
+        inputClear()
+        buttonsEnable()
+        Button_dot.isUserInteractionEnabled = true
+        
+        if Text_result_2.text == "" {}
+        else {
+            number = Text_result_2.text!.replacingOccurrences(of: ",", with: "")
+            checkFirstCal()
+            setHistory(oper: " / ")
+            type = "DIV"
+            nextAnimation()
+        }
+    }
+    
+    func algoOfDel() {
+        // 마지막 글자를 확인해서 소수점 아닌경우 그냥 진행
+        // 마지막 글자가 소수점인 경우 소수점 버튼 활성화
+        if Text_result_2.text != "" {
+            let del_number: String = Text_result_2.text!
+            let end = del_number[del_number.index(before: del_number.endIndex)]
+            if (end == ".")
+            {
+                Commpa = false
+                Button_dot.isUserInteractionEnabled = true
+            }
+            if(del_number != "")
+            {
+                inputCount-=1
+                let range = del_number.startIndex..<del_number.index(before: del_number.endIndex)
+                Text_result_2.text = String(del_number[range])  // Hello, playgroun
+            }
+        }
+    }
+    
+    func algoOfAC() {
+        inputCount = 0
+        Commpa = false
+        buttonsEnable()
+        Text_result_1.text = ""
+        Text_result_2.text = ""
+        sum = 0
+        count = 0
+        history = ""
+        number = ""
+        UIView.animate(withDuration: 0.3, animations: {
+            self.View_line1.alpha = 0
+            self.View_line2.alpha = 0
+        })
+    }
+}
