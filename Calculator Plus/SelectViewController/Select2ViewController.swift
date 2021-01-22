@@ -14,22 +14,34 @@ class Select2ViewController: UIViewController {
     @IBOutlet weak var Button_2: UIButton!
     
     override func viewDidLoad() {
-//        navigationController?.isNavigationBarHidden = false
+        super.viewDidLoad()
+        setRadius()
+        setAlpha()
+        showAnimation()
+    }
+}
+
+
+
+extension Select2ViewController {
+    func setRadius() {
         Button_1.layer.cornerRadius = 4
         Button_1.clipsToBounds = true
         Button_2.layer.cornerRadius = 4
         Button_2.clipsToBounds = true
+    }
+    
+    func setAlpha() {
         Button_1.alpha = 0
         Button_2.alpha = 0
-        
+    }
+    
+    func showAnimation() {
         UIView.animate(withDuration: 0.4, animations: {
             self.Button_1.alpha = 1
         })
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_2.alpha = 1
         })
-        
-        super.viewDidLoad()
     }
-    
 }

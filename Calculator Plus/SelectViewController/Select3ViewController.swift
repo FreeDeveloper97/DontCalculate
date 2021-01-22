@@ -15,10 +15,18 @@ class Select3ViewController: UIViewController {
     @IBOutlet weak var Button_3: UIButton!
     @IBOutlet weak var Button_4: UIButton!
     
-    
-    let brown = UIColor(named: "Dynamic_brown")
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        setRadius()
+        setAlpha()
+        showAnimation()
+    }
+}
+
+
+
+extension Select3ViewController {
+    func setRadius() {
         Button_1.layer.cornerRadius = 4
         Button_1.clipsToBounds = true
         Button_2.layer.cornerRadius = 4
@@ -27,11 +35,16 @@ class Select3ViewController: UIViewController {
         Button_3.clipsToBounds = true
         Button_4.layer.cornerRadius = 4
         Button_4.clipsToBounds = true
+    }
+    
+    func setAlpha() {
         Button_1.alpha = 0
         Button_2.alpha = 0
         Button_3.alpha = 0
         Button_4.alpha = 0
-        
+    }
+    
+    func showAnimation() {
         UIView.animate(withDuration: 0.4, animations: {
             self.Button_1.alpha = 1
         })
@@ -44,7 +57,5 @@ class Select3ViewController: UIViewController {
         UIView.animate(withDuration: 0.55, animations: {
             self.Button_4.alpha = 1
         })
-        super.viewDidLoad()
-
     }
 }
