@@ -34,7 +34,6 @@ class Show3_1ViewController: UIViewController {
     @IBOutlet var Result_1: UILabel!
     @IBOutlet var View_result1_line: UIView!
     
-    
     @IBOutlet var Label_result2_show: UILabel!
     @IBOutlet var Result_2: UILabel!
     @IBOutlet var View_result2_line: UIView!
@@ -49,9 +48,7 @@ class Show3_1ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
-    
     @IBOutlet var View_dottedline: UIView!
-    
     
     var A = ""
     var B = ""
@@ -114,13 +111,15 @@ class Show3_1ViewController: UIViewController {
         }
     }
     @IBAction func Button_kakao(_ sender: UIButton) {
-        algoOfKakao()
+        Kakao.sendData(data: kakao_print)
     }
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
-        resetColor()
-        resetAlpha()
-        resetTransform()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.resetColor()
+            self.resetAlpha()
+            self.resetTransform()
+        })
     }
 }
 
@@ -150,16 +149,6 @@ extension Show3_1ViewController {
             return true
         }
         return false
-    }
-    
-    func bubble() {
-        if RESULT_A > RESULT_B {
-            Print = B_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금"
-        } else if RESULT_A < RESULT_B {
-            Print = A_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금"
-        } else {
-            Print = "Error"
-        }
     }
     
     func inputComma(innum: Int) -> String {
@@ -371,24 +360,31 @@ extension Show3_1ViewController {
     }
     
     func resetTransform() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
-            
-            self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
-        })
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
+        
+        self.Kakao_outlet.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -200)
+    }
+    
+    func checkName() {
+        if Text_name_A.text != "" {
+            A_name = Text_name_A.text!
+        }
+        if Text_name_B.text != "" {
+            B_name = Text_name_B.text!
+        }
     }
 }
 
@@ -439,12 +435,7 @@ extension Show3_1ViewController {
     }
     
     func algoOfResult() {
-        if Text_name_A.text != "" {
-            A_name = Text_name_A.text!
-        }
-        if Text_name_B.text != "" {
-            B_name = Text_name_B.text!
-        }
+        checkName()
         
         kakao_print = A_name + " : " + inputComma(innum: A_sum) + " 원"
         kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
@@ -459,35 +450,18 @@ extension Show3_1ViewController {
         kakao_print += "\n더치페이금액 : " + inputComma(innum: DIV) + " 원"
         Result_2.text = inputComma(innum: DIV) + " 원"
         
-        bubble()
+        let data: [String:Any] = [
+            "A_name": A_name,
+            "B_name": B_name,
+            "RESULT_A": RESULT_A,
+            "RESULT_B": RESULT_B]
+        Print = Calculate.twoAlgorithm(data: data)
+        
         kakao_print += "\n\n정산결과\n"
         kakao_print += Print
         Result_3.text = Print
         
         showResultAnimation()
         self.view.endEditing(true)
-    }
-    
-    func algoOfKakao() {
-        if kakao_print != "" {
-            let template = KMTTextTemplate { (KMTTextTemplateBuilder) in
-                KMTTextTemplateBuilder.text = self.kakao_print
-                KMTTextTemplateBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
-                })
-            }
-            // 서버에서 콜백으로 받을 정보
-            let serverCallbackArgs = ["user_id": "FDEE", "product_id": "415849"]
-            // 카카오링크 실행
-            KLKTalkLinkCenter.shared().sendDefault(with: template, serverCallbackArgs: serverCallbackArgs, success: { (warningMsg, argumentMsg) in
-                // 성공
-                print("warning message: \(String(describing: warningMsg))")
-                print("argument message: \(String(describing: argumentMsg))")
-            }, failure: { (error) in
-                // 실패
-                UIAlertController.showMessage(error.localizedDescription)
-                print("error \(error)")
-            })
-        }
     }
 }

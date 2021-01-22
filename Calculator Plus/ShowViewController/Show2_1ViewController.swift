@@ -103,9 +103,11 @@ class Show2_1ViewController: UIViewController {
     
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
-        resetColor()
-        resetAlpha()
-        resetTransform()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.resetColor()
+            self.resetAlpha()
+            self.resetTransform()
+        })
     }
 }
 
@@ -320,23 +322,21 @@ extension Show2_1ViewController {
     }
     
     func resetTransform() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            
-            self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -180)
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
-        })
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -180)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
     }
     
     func reset() {

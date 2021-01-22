@@ -923,11 +923,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="3명" id="tRJ-hy-zcY">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="7aJ-pE-Uht">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="CnN-9s-uaV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7aJ-pE-Uht"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
@@ -9647,7 +9643,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CnN-9s-uaV"/>
+        <segue reference="FLm-ZK-b7k"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="button"/>
     <resources>
