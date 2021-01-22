@@ -128,7 +128,9 @@ class Show2_1ViewController: UIViewController {
     }
     //This method will call when you press button.
     @objc func fbButtonPressed() {
-        performSegue(withIdentifier: "showNomal", sender: self)
+//        performSegue(withIdentifier: "showNomal", sender: self)
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "CalculaterViewController")
+                self.present(vcName!, animated: true, completion: nil)
     }
     
     @objc func textFieldDidChange1(textField: UITextField){

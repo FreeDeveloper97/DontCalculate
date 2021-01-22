@@ -19,6 +19,13 @@ class Select6ViewController: UIViewController {
         setAlpha()
         showAnimation()
     }
+    
+    @IBAction func showVC1(_ sender: Any) {
+        goToViewController(where: "Show6_1ViewController")
+    }
+    @IBAction func showVC2(_ sender: Any) {
+        goToViewController(where: "Show6_2ViewController")
+    }
 }
 
 
@@ -43,5 +50,10 @@ extension Select6ViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_2.alpha = 1
         })
+    }
+    
+    func goToViewController(where: String) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: `where`)
+        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
 }

@@ -20,6 +20,16 @@ class Select5ViewController: UIViewController {
         showAnimation()
         super.viewDidLoad()
     }
+    
+    @IBAction func showVC1(_ sender: Any) {
+        goToViewController(where: "Show5_1ViewController")
+    }
+    @IBAction func showVC2(_ sender: Any) {
+        goToViewController(where: "Show5_2ViewController")
+    }
+    @IBAction func showVC3(_ sender: Any) {
+        goToViewController(where: "Show5_3ViewController")
+    }
 }
 
 
@@ -50,5 +60,10 @@ extension Select5ViewController {
         UIView.animate(withDuration: 0.6, animations: {
             self.Button_3.alpha = 1
         })
+    }
+    
+    func goToViewController(where: String) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: `where`)
+        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
 }

@@ -19,6 +19,13 @@ class Select4ViewController: UIViewController {
         setAlpha()
         showAnimation()
     }
+    
+    @IBAction func showVC1(_ sender: Any) {
+        goToViewController(where: "Show4_1ViewController")
+    }
+    @IBAction func showVC2(_ sender: Any) {
+        goToViewController(where: "Show4_2ViewController")
+    }
 }
 
 
@@ -43,5 +50,10 @@ extension Select4ViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_2.alpha = 1
         })
+    }
+    
+    func goToViewController(where: String) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: `where`)
+        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
 }
