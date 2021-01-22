@@ -103,7 +103,9 @@ class Show2_1ViewController: UIViewController {
     
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
-        resetAnimation()
+        resetColor()
+        resetAlpha()
+        resetTransform()
     }
 }
 
@@ -291,43 +293,49 @@ extension Show2_1ViewController {
         })
     }
     
-    func resetAnimation() {
+    func resetColor() {
+        self.Label_money_show.textColor = self.GRAY
+        self.Text_money.textColor = self.GRAY
+        self.View_money_line.backgroundColor = self.GRAY
+        
+        self.Button_plus_outlet.backgroundColor = self.GRAY
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+    }
+    
+    func resetAlpha() {
+        self.Label_result1_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.View_result1_line.alpha = 0
+        
+        self.Label_result2_show.alpha = 0
+        self.Result_2.alpha = 0
+        self.View_result2_line.alpha = 0
+        
+        self.Label_result3_show.alpha = 0
+        self.Result_3.alpha = 0
+        self.View_result3_line.alpha = 0
+        
+        self.View_Line.alpha = 0
+        self.View_Buttons.alpha = 0
+    }
+    
+    func resetTransform() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.Label_result1_show.alpha = 0
             self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_1.alpha = 0
             self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result1_line.alpha = 0
             self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.Label_result2_show.alpha = 0
             self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_2.alpha = 0
             self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result2_line.alpha = 0
             self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.Label_result3_show.alpha = 0
             self.Label_result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_3.alpha = 0
             self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result3_line.alpha = 0
             self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.View_Line.alpha = 0
             self.View_Line.transform = CGAffineTransform(translationX: 0, y: -155)
-            
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -180)
-            
-            self.View_Buttons.alpha = 0
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
-            
-            self.Label_money_show.textColor = self.GRAY
-            self.Text_money.textColor = self.GRAY
-            self.View_money_line.backgroundColor = self.GRAY
-            
-            self.Button_plus_outlet.backgroundColor = self.GRAY
-            self.Button_Result_outlet.backgroundColor = self.GRAY
         })
     }
     
@@ -399,7 +407,6 @@ extension Show2_1ViewController {
                 self.Button_Result_outlet.backgroundColor = self.BUTTON
             })
         }
-        self.view.endEditing(true)
     }
     
     func algoOfResult() {

@@ -17,7 +17,6 @@ class Show3_2ViewController: UIViewController {
     @IBOutlet var Text_name_b: UITextField!
     @IBOutlet var Text_name_c: UITextField!
     
-    //animation
     @IBOutlet var Button_plus_a_outlet: UIButton!
     @IBOutlet weak var Label_sum1_show: UILabel!
     @IBOutlet var Sum_a: UILabel!

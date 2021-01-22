@@ -126,7 +126,9 @@ class Show2_2ViewController: UIViewController {
     }
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
-        resetAnimation()
+        resetColor()
+        resetAlpha()
+        resetTransform()
     }
 }
 
@@ -313,55 +315,66 @@ extension Show2_2ViewController {
         detailCount = 0
     }
     
-    func resetAnimation() {
+    func resetColor() {
+        self.Button_plus_1_outlet.backgroundColor = self.GRAY
+        self.Button_plus_2_outlet.backgroundColor = self.GRAY
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+        
+        self.Label_sum1_show.textColor = self.GRAY
+        self.Text_1_sum.textColor = self.GRAY
+        self.View_sum1_line.backgroundColor = self.GRAY
+        
+        self.Label_sum2_show.textColor = self.GRAY
+        self.Text_2_sum.textColor = self.GRAY
+        self.View_sum2_line.backgroundColor = self.GRAY
+    }
+    
+    func resetAlpha() {
+        self.Label_Result1_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.View_Result1_Line.alpha = 0
+        
+        self.Label_Result2_show.alpha = 0
+        self.Result_2.alpha = 0
+        self.View_Result2_Line.alpha = 0
+        
+        self.Label_Result3_show.alpha = 0
+        self.Result_3.alpha = 0
+        self.View_Result3_Line.alpha = 0
+        
+        self.Text_show.alpha = 0
+        self.Text_detail.alpha = 0
+        self.View_result4_line.alpha = 0
+        
+        self.View_Buttons.alpha = 0
+    }
+    
+    func resetTransform() {
         UIView.animate(withDuration: 0.5, animations: {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
             
-            self.Label_Result1_show.alpha = 0
             self.Label_Result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_1.alpha = 0
             self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_Result1_Line.alpha = 0
             self.View_Result1_Line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.Label_Result2_show.alpha = 0
             self.Label_Result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_2.alpha = 0
             self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_Result2_Line.alpha = 0
             self.View_Result2_Line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.Label_Result3_show.alpha = 0
             self.Label_Result3_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_3.alpha = 0
             self.Result_3.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_Result3_Line.alpha = 0
             self.View_Result3_Line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.Text_show.alpha = 0
             self.Text_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Text_detail.alpha = 0
             self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result4_line.alpha = 0
             self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
             
-            self.View_Buttons.alpha = 0
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -230)
-            
-            self.Button_plus_1_outlet.backgroundColor = self.GRAY
-            self.Button_plus_2_outlet.backgroundColor = self.GRAY
-            self.Button_Result_outlet.backgroundColor = self.GRAY
-            
-            self.Label_sum1_show.textColor = self.GRAY
-            self.Text_1_sum.textColor = self.GRAY
-            self.View_sum1_line.backgroundColor = self.GRAY
-            
-            self.Label_sum2_show.textColor = self.GRAY
-            self.Text_2_sum.textColor = self.GRAY
-            self.View_sum2_line.backgroundColor = self.GRAY
         })
     }
+    
+    
     
     func showDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
@@ -499,7 +512,6 @@ extension Show2_2ViewController {
         
         showPlus1Animation()
         showResultButtonAnimation()
-        self.view.endEditing(true)
     }
     
     func algoOfPlus2() {
@@ -519,7 +531,6 @@ extension Show2_2ViewController {
         
         showPlus2Animation()
         showResultButtonAnimation()
-        self.view.endEditing(true)
     }
     
     func algoOfResult() {
