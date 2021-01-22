@@ -65,8 +65,8 @@ class Show2_1ViewController: UIViewController {
         setTransform()
         showViewAnimation()
         
-        setInputType()
         setNavigationButton()
+        setInputType()
         setInputChanged()
     }
     
@@ -133,21 +133,16 @@ extension Show2_1ViewController {
                 self.present(vcName!, animated: true, completion: nil)
     }
     
-    func check() -> Bool
-    {
-        if Text_money.text == "원"
-        {
+    func check() -> Bool {
+        if Text_money.text == "원" {
             return false
-        }
-        else if N == ""
-        {
+        } else if N == "" {
             return false
         }
         return true
     }
     
-    func inputComma(innum: Int) -> String
-    {
+    func inputComma(innum: Int) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
@@ -265,7 +260,6 @@ extension Show2_1ViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.View_Line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
-            
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
         })
         
@@ -452,7 +446,6 @@ extension Show2_1ViewController {
                 // 성공
                 print("warning message: \(String(describing: warningMsg))")
                 print("argument message: \(String(describing: argumentMsg))")
-
             }, failure: { (error) in
                 // 실패
                 UIAlertController.showMessage(error.localizedDescription)
