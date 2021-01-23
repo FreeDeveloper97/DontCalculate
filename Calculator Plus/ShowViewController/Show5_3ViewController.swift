@@ -28,7 +28,6 @@ class Show5_3ViewController: UIViewController {
     
     @IBOutlet weak var View_View: UIView!
     
-    
     var BEFORE = ""
     var PER = ""
     var temp = 0.0
@@ -38,27 +37,97 @@ class Show5_3ViewController: UIViewController {
     let BUTTON = UIColor(named: "button")
     
     override func viewDidLoad() {
-        
-        self.View_View.alpha = 0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.View_View.alpha = 1
-        })
-        
-        Button_Result_outlet.layer.cornerRadius = 4
-        Text_before.keyboardType = .numberPad
-        Text_per.keyboardType = .decimalPad
-        
-        self.hideKeyboard()
         super.viewDidLoad()
+        hideKeyboard()
         
-        //animation
+        setColor()
+        setRadius()
+        setAlpha()
+        setTransform()
+        showAnimation()
+        
+        setNavigationButton()
+        setInputType()
+        setInputChanged()
+    }
+    
+    @objc func fbButtonPressed() {
+        goToCalculater()
+    }
+    @objc func textFieldDidChange(textField: UITextField){
+        algoOfTextChange()
+    }
+    
+    @IBAction func Button_Result(_ sender: UIButton) {
+        BEFORE = Text_before.text!
+        PER = Text_per.text!
+        if(check()) {
+            algoOfResult()
+        }
+    }
+    @IBAction func Button_reset(_ sender: UIButton) {
+        reset()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.resetColor()
+            self.resetAlpha()
+            self.resetTransform()
+        })
+    }
+}
+
+
+
+extension Show5_3ViewController {
+    
+    func setNavigationButton() {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "icon_bar"), for: .normal)
+        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 43, height: 51)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func goToCalculater() {
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "CalculaterViewController")
+                self.present(vcName!, animated: true, completion: nil)
+    }
+    
+    func check() -> Bool {
+        if BEFORE == "" {
+            return false
+        } else if PER == "" {
+            return false
+        }
+        return true
+    }
+    
+    func inputComma(innum: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
+        return RESULT_COMMA
+    }
+    
+    func setColor() {
+        self.Button_Result_outlet.backgroundColor = self.GRAY
+    }
+    
+    func setRadius() {
+        Button_Result_outlet.layer.cornerRadius = 4
+    }
+    
+    func setAlpha() {
         self.Label_result1_show.alpha = 0
         self.Label_result2_show.alpha = 0
         self.Result_1.alpha = 0
         self.Result_2.alpha = 0
         self.View_result1_line.alpha = 0
         self.View_result2_line.alpha = 0
-        
+    }
+    
+    func setTransform() {
         self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -67,135 +136,110 @@ class Show5_3ViewController: UIViewController {
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -109)
         self.View_line.transform = CGAffineTransform(translationX: 0, y: -109)
-        
-        //color
-        self.Button_Result_outlet.backgroundColor = self.GRAY
-        
-        //action
-        Text_before.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        Text_per.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
-        //우측상단버튼 생성
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "icon_bar"), for: .normal)
-        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 43, height: 51)
-        let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = barButton
-    }
-    //This method will call when you press button.
-    @objc func fbButtonPressed() {
-        performSegue(withIdentifier: "showNomal", sender: self)
     }
     
-    @objc func textFieldDidChange(textField: UITextField){
-        BEFORE = Text_before.text!
-        PER = Text_per.text!
-        if(check())
-        {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.Button_Result_outlet.backgroundColor = self.BUTTON
-            })
-        }
-        else
-        {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.Button_Result_outlet.backgroundColor = self.GRAY
-            })
-        }
+    func showAnimation() {
+        self.View_View.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_View.alpha = 1
+        })
     }
     
-
-    @IBAction func Button_Result(_ sender: UIButton) {
-        BEFORE = Text_before.text!
-        PER = Text_per.text!
-        if(check())
-        {
-            temp = Double(BEFORE)! * (1-(Double(PER)! * 0.01))
-            RESULT = Int(temp)
-            Result_1.text = inputComma(innum: RESULT) + " 원"
-            Result_2.text = "- " + inputComma(innum: (Int(BEFORE)!-RESULT)) + " 원"
+    func setInputType() {
+        Text_before.keyboardType = .numberPad
+        Text_per.keyboardType = .decimalPad
+    }
+    
+    func setInputChanged() {
+        Text_before.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+            for: UIControl.Event.editingChanged)
+        Text_per.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+            for: UIControl.Event.editingChanged)
+    }
+    
+    func showResultAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+        })
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.Label_result1_show.alpha = 1
+            self.Label_result2_show.alpha = 1
+            self.Result_1.alpha = 1
+            self.Result_2.alpha = 1
+            self.View_result1_line.alpha = 1
+            self.View_result2_line.alpha = 1
             
-            UIView.animate(withDuration: 0.5, animations: {
-                self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Button_Result_outlet.backgroundColor = self.GRAY
-            })
-            
-            UIView.animate(withDuration: 0.7, animations: {
-                self.Label_result1_show.alpha = 1
-                self.Label_result2_show.alpha = 1
-                self.Result_1.alpha = 1
-                self.Result_2.alpha = 1
-                self.View_result1_line.alpha = 1
-                self.View_result2_line.alpha = 1
-                
-                self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
-                self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
-            self.view.endEditing(true)
-        }
+            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_2.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
     }
     
-    @IBAction func Button_reset(_ sender: UIButton) {
+    func reset() {
         BEFORE = ""
         PER = ""
         temp = 0.0
         RESULT = 0
         Text_before.text = ""
         Text_per.text = ""
-//        Result_1.text = "원"
-//        Result_2.text = "원"
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            //animation
-            self.Label_result1_show.alpha = 0
-            self.Label_result2_show.alpha = 0
-            self.Result_1.alpha = 0
-            self.Result_2.alpha = 0
-            self.View_result1_line.alpha = 0
-            self.View_result2_line.alpha = 0
-            
-            self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -109)
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -109)
-            
-            //color
-            self.Button_Result_outlet.backgroundColor = self.GRAY
-        })
     }
     
-    func check() -> Bool
-    {
-        if BEFORE == ""
-        {
-            return false
-        }
-        else if PER == ""
-        {
-            return false
-        }
-        return true
+    func resetColor() {
+        self.Button_Result_outlet.backgroundColor = self.GRAY
     }
     
-    //ver1.1 콤마 추가
-    func inputComma(innum: Int) -> String
-    {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        let RESULT_COMMA: String = numberFormatter.string(from:NSNumber(value: innum))!
-        return RESULT_COMMA
+    func resetAlpha() {
+        self.Label_result1_show.alpha = 0
+        self.Label_result2_show.alpha = 0
+        self.Result_1.alpha = 0
+        self.Result_2.alpha = 0
+        self.View_result1_line.alpha = 0
+        self.View_result2_line.alpha = 0
     }
     
+    func resetTransform() {
+        self.Label_result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Label_result2_show.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Result_2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result1_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -109)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -109)
+    }
+}
 
+
+
+extension Show5_3ViewController {
+    
+    func algoOfTextChange() {
+        BEFORE = Text_before.text!
+        PER = Text_per.text!
+        if(check()) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.BUTTON
+            })
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.Button_Result_outlet.backgroundColor = self.GRAY
+            })
+        }
+    }
+    
+    func algoOfResult() {
+        temp = Double(BEFORE)! * (1-(Double(PER)! * 0.01))
+        RESULT = Int(temp)
+        Result_1.text = inputComma(innum: RESULT) + " 원"
+        Result_2.text = "- " + inputComma(innum: (Int(BEFORE)!-RESULT)) + " 원"
+        
+        showResultAnimation()
+        self.view.endEditing(true)
+    }
 }
