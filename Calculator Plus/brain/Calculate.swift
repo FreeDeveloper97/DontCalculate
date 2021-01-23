@@ -20,6 +20,11 @@ class Calculate {
     static var RESULT_C: Int = 0
     static var RESULT_D: Int = 0
     static var RESULT_E: Int = 0
+    static var ONE: String = ""
+    static var TWO: String = ""
+    static var THREE: String = ""
+    static var FOUR: String = ""
+    static var FIVE: String = ""
     static var Print: String = ""
     static var array_before: [Int] = []
     static var array_after: [Int] = []
@@ -67,9 +72,9 @@ class Calculate {
 
         switch State {
         case 1:
-            two_case1()
+            three_case1()
         case 2:
-            two_case2()
+            three_case2()
         default:
             Print = "Error"
         }
@@ -78,6 +83,43 @@ class Calculate {
     }
     
     static func fourAlgorithm(data: [String: Any]) -> String {
+        A_name = data["A_name"] as! String
+        B_name = data["B_name"] as! String
+        C_name = data["C_name"] as! String
+        D_name = data["D_name"] as! String
+        RESULT_A = data["RESULT_A"] as! Int
+        RESULT_B = data["RESULT_B"] as! Int
+        RESULT_C = data["RESULT_C"] as! Int
+        RESULT_D = data["RESULT_D"] as! Int
+        
+        var State: Int = 0
+        
+        if RESULT_A > 0 {
+            State+=1
+        }
+        if RESULT_B > 0 {
+            State+=1
+        }
+        if RESULT_C > 0 {
+            State+=1
+        }
+        if RESULT_D > 0 {
+            State+=1
+        }
+
+        switch State {
+        case 1:
+            four_case1()
+            print("case1")
+        case 2:
+            four_case2()
+            print("case2")
+        case 3:
+            four_case3()
+            print("case3")
+        default:
+            Print = "Error"
+        }
         
         return Print
     }
@@ -87,7 +129,7 @@ class Calculate {
         return Print
     }
     
-    static func two_case1() {
+    static func three_case1() {
         //양수가 하나 : 나머지 두명이 한명한테 송금해야 한다
         if array_after[1] == 0
         {
@@ -142,7 +184,7 @@ class Calculate {
         }
     }
     
-    static func two_case2() {
+    static func three_case2() {
         //양수가 둘 : 한명이 나머지 두명한테 송금해야 한다
         //[0] > [1] > [2]
         if(RESULT_A == array_after[2])
@@ -159,6 +201,251 @@ class Calculate {
         {
             Print = C_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
                     + C_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금"
+        }
+    }
+    
+    static func four_case1() {
+        //양수 하나 : 나머지 셋이 한사람에게 송금
+        if RESULT_A > 0
+        {
+            if RESULT_B != 0
+            {
+                Print = B_name + " → " + A_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
+            }
+            if RESULT_C != 0
+            {
+                Print += C_name + " → " + A_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금\n"
+            }
+            if RESULT_D != 0
+            {
+                Print += D_name + " → " + A_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
+            }
+        }
+        else if RESULT_B > 0
+        {
+            if RESULT_A != 0
+            {
+                Print = A_name + " → " + B_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
+            }
+            if RESULT_C != 0
+            {
+                Print += C_name + " → " + B_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금\n"
+            }
+            if RESULT_D != 0
+            {
+                Print += D_name + " → " + B_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
+            }
+        }
+        else if RESULT_C > 0
+        {
+            if RESULT_A != 0
+            {
+                Print = A_name + " → " + C_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
+            }
+            if RESULT_B != 0
+            {
+                Print += B_name + " → " + C_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
+            }
+            if RESULT_D != 0
+            {
+                Print += D_name + " → " + C_name + " " + inputComma(innum: (-RESULT_D)) + " 원 송금"
+            }
+        }
+        else if RESULT_D > 0
+        {
+            if RESULT_A != 0
+            {
+                Print = A_name + " → " + D_name + " " + inputComma(innum: (-RESULT_A)) + " 원 송금\n"
+            }
+            if RESULT_B != 0
+            {
+                Print += B_name + " → " + D_name + " " + inputComma(innum: (-RESULT_B)) + " 원 송금\n"
+            }
+            if RESULT_C != 0
+            {
+                Print += C_name + " → " + D_name + " " + inputComma(innum: (-RESULT_C)) + " 원 송금"
+            }
+        }
+    }
+    
+    static func four_case2() {
+        four_find()
+        
+        if array_after[0] > -(array_after[3])
+        {
+            let temp = array_after[0] + array_after[3]
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: (-array_after[3])) + " 원 송금\n"
+                + THREE + " → " + ONE + " " + inputComma(innum: temp) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금"
+        }
+        else if array_after[0] < -(array_after[3])
+        {
+            let temp = -(array_after[0] + array_after[3])
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
+                    + FOUR + " → " + TWO + " " + inputComma(innum: temp) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: (-array_after[2])) + " 원 송금"
+        }
+        else if array_after[0] == -(array_after[3])
+        {
+            Print = FOUR + " → " + ONE + " " + inputComma(innum: array_after[0]) + " 원 송금\n"
+                    + THREE + " → " + TWO + " " + inputComma(innum: array_after[1]) + " 원 송금"
+        }
+    }
+    
+    static func four_case3() {
+        //양수 셋 : 한명이 나머지 셋에게 송금
+        if RESULT_A < 0
+        {
+            Print = A_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + A_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금\n"
+                    + A_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
+        }
+        else if RESULT_B < 0
+        {
+            Print = B_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + B_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금\n"
+                    + B_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
+        }
+        else if RESULT_C < 0
+        {
+            Print = C_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + C_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + C_name + " → " + D_name + " " + inputComma(innum: RESULT_D) + " 원 송금"
+        }
+        else if RESULT_D < 0
+        {
+            Print = D_name + " → " + A_name + " " + inputComma(innum: RESULT_A) + " 원 송금\n"
+                    + D_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금\n"
+                    + D_name + " → " + C_name + " " + inputComma(innum: RESULT_C) + " 원 송금"
+        }
+    }
+    
+    static func four_find() {
+        array_before.append(RESULT_A)
+        array_before.append(RESULT_B)
+        array_before.append(RESULT_C)
+        array_before.append(RESULT_D)
+        array_after = array_before.sorted(by: >)
+        //ver1.1 정렬문제 해결
+        var use_A: Bool = true
+        var use_B: Bool = true
+        var use_C: Bool = true
+        var use_D: Bool = true
+        var find: Bool = true
+        var num: Int = 0
+        for i in stride(from:0, to: 4, by: 1)
+        {
+            num = i+1
+            if array_after[i] == RESULT_A
+            {
+                if(find && use_A)
+                {
+                    print("in A")
+                    switch num {
+                    case 1:
+                        ONE = A_name
+                        use_A = false
+                        find = false
+                    case 2:
+                        TWO = A_name
+                        use_A = false
+                        find = false
+                    case 3:
+                        THREE = A_name
+                        use_A = false
+                        find = false
+                    case 4:
+                        FOUR = A_name
+                        use_A = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
+                }
+            }
+            if array_after[i] == RESULT_B
+            {
+                if(find && use_B)
+                {
+                    print("in B")
+                    switch num {
+                    case 1:
+                        ONE = B_name
+                        use_B = false
+                        find = false
+                    case 2:
+                        TWO = B_name
+                        use_B = false
+                        find = false
+                    case 3:
+                        THREE = B_name
+                        use_B = false
+                        find = false
+                    case 4:
+                        FOUR = B_name
+                        use_B = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
+                }
+            }
+            if array_after[i] == RESULT_C
+            {
+                if(find && use_C)
+                {
+                    print("in C")
+                    switch num {
+                    case 1:
+                        ONE = C_name
+                        use_C = false
+                        find = false
+                    case 2:
+                        TWO = C_name
+                        use_C = false
+                        find = false
+                    case 3:
+                        THREE = C_name
+                        use_C = false
+                        find = false
+                        break
+                    case 4:
+                        FOUR = C_name
+                        use_C = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
+                }
+            }
+            if array_after[i] == RESULT_D
+            {
+                if(find && use_D)
+                {
+                    print("in D")
+                    switch num {
+                    case 1:
+                        ONE = D_name
+                        use_D = false
+                        find = false
+                    case 2:
+                        TWO = D_name
+                        use_D = false
+                        find = false
+                    case 3:
+                        THREE = D_name
+                        use_D = false
+                        find = false
+                    case 4:
+                        FOUR = D_name
+                        use_D = false
+                        find = false
+                    default:
+                        Print = "Error"
+                    }
+                }
+            }
+            find = true
         }
     }
     

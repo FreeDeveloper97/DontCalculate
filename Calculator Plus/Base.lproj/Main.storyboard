@@ -2317,11 +2317,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="4명" id="9yg-kK-KDe">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="9Jd-o5-wVr">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="xxz-PJ-hgN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="9Jd-o5-wVr"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
