@@ -7077,11 +7077,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="지출금액" id="kQx-yN-em1">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="aBS-fa-Fek">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="eLl-Zg-n1Z"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="aBS-fa-Fek"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="avq-Qf-dem" id="sqs-NP-w8Y"/>
