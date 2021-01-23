@@ -7608,11 +7608,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="정가" id="BA7-6m-Wob">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="cDg-8l-AGW">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="Bse-Wg-dBT"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="cDg-8l-AGW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="0dy-xa-6aa" id="6PV-dg-8cC"/>
