@@ -3338,11 +3338,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="5명" id="1ZP-ZB-a4I">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="qcK-UO-upk">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="d0a-2M-df5"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="qcK-UO-upk"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1800"/>
                     <connections>

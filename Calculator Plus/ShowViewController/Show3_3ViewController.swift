@@ -150,11 +150,9 @@ class Show3_3ViewController: UIViewController {
             algoOfResult()
         }
     }
-    
     @IBAction func Button_kakao(_ sender: UIButton) {
         Kakao.sendData(data: kakao_print)
     }
-    
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
         UIView.animate(withDuration: 0.5, animations: {
@@ -163,9 +161,6 @@ class Show3_3ViewController: UIViewController {
             self.resetTransform()
         })
     }
-    
-    
-    
 }
 
 
