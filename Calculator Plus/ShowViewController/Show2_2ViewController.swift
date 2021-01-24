@@ -122,7 +122,7 @@ class Show2_2ViewController: UIViewController {
         }
     }
     @IBAction func Button_kakao(_ sender: UIButton) {
-        algoOfKakao()
+        Kakao.sendData(data: kakao_print)
     }
     @IBAction func Button_reset(_ sender: UIButton) {
         reset()
@@ -532,21 +532,20 @@ extension Show2_2ViewController {
     }
     
     func algoOfResult() {
-        kakao_print = "더치페이1 총액 : " + inputComma(innum: MONEY_1) + " 원"
-        kakao_print += "\n더치페이1 계산인원 : " + N_1 + " 명"
+        kakao_print = "따로 더치페이"
+        kakao_print += "\n\n더치페이1 총액 : " + inputComma(innum: MONEY_1) + " 원"
+        kakao_print += "\n더치페이1 인원수 : " + N_1 + " 명"
         RESULT_1 = MONEY_1 / Int(N_1)!
         kakao_print += "\n더치페이1 결과 : " + inputComma(innum: RESULT_1) + " 원"
         Result_1.text = inputComma(innum: RESULT_1) + " 원"
         
         kakao_print += "\n\n더치페이2 총액 : " + inputComma(innum: MONEY_2) + " 원"
-        kakao_print += "\n더치페이2 계산인원 : " + N_2 + " 명"
+        kakao_print += "\n더치페이2 인원수 : " + N_2 + " 명"
         RESULT_2 = MONEY_2 / Int(N_2)!
         kakao_print += "\n더치페이2 결과 : " + inputComma(innum: RESULT_2) + " 원"
         Result_2.text = inputComma(innum: RESULT_2) + " 원"
         
-        kakao_print += "\n\n더치페이1 : " + inputComma(innum: RESULT_1) + " 원"
-        kakao_print += "\n더치페이2 : " + inputComma(innum: RESULT_2) + " 원"
-        kakao_print += "\n둘다해당 : " + inputComma(innum: (RESULT_1+RESULT_2)) + " 원"
+        kakao_print += "\n\n둘다해당인원 : " + inputComma(innum: (RESULT_1+RESULT_2)) + " 원"
         Result_3.text = inputComma(innum: (RESULT_1+RESULT_2)) + " 원"
         
         showResultAnimation()
@@ -563,29 +562,6 @@ extension Show2_2ViewController {
         } else {
             dismissDetailAnimation()
             detailShow = true
-        }
-    }
-    
-    func algoOfKakao() {
-        if kakao_print != "" {
-            let template = KMTTextTemplate { (KMTTextTemplateBuilder) in
-                KMTTextTemplateBuilder.text = self.kakao_print
-                KMTTextTemplateBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
-                })
-            }
-            // 서버에서 콜백으로 받을 정보
-            let serverCallbackArgs = ["user_id": "FDEE", "product_id": "415849"]
-            // 카카오링크 실행
-            KLKTalkLinkCenter.shared().sendDefault(with: template, serverCallbackArgs: serverCallbackArgs, success: { (warningMsg, argumentMsg) in
-                // 성공
-                print("warning message: \(String(describing: warningMsg))")
-                print("argument message: \(String(describing: argumentMsg))")
-            }, failure: { (error) in
-                // 실패
-                UIAlertController.showMessage(error.localizedDescription)
-                print("error \(error)")
-            })
         }
     }
 }

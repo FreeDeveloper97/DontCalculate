@@ -381,22 +381,19 @@ extension Show9_2ViewController {
     func algoOfResult() {
         beforeCheck()
         if(check()) {
-            KAKAO_PRINT = M + "월 카드대금납부"
-            KAKAO_PRINT += "\n\nA 현재 : " + inputComma(innum: Int(NOW)!) + " 원"
-            KAKAO_PRINT += "\nB 수입 : " + inputComma(innum: Int(Plus)!) + " 원"
-            
             PLUS = Int(NOW)! + Int(Plus)!
             MINUS += Int(SAVE)!
-            KAKAO_PRINT += "\nC 지출 : -" + inputComma(innum: MINUS) + " 원"
-            
             Result_1.text = inputComma(innum: PLUS) + " 원"
             Result_2.text = "- " + inputComma(innum: MINUS) + " 원"
             Result_3.text = inputComma(innum: (PLUS-MINUS)) + " 원"
             
-            KAKAO_PRINT += "\n\n결과"
-            KAKAO_PRINT += "\n A + B : " + inputComma(innum: PLUS) + " 원"
-            KAKAO_PRINT += "\n A + B - C : " + inputComma(innum: (PLUS-MINUS)) + " 원"
-            KAKAO_PRINT += "\n\n지출 상세내역\n" + detail
+            KAKAO_PRINT = M + "월달 카드대금납부"
+            KAKAO_PRINT += "\n\n현재 잔액 : " + inputComma(innum: Int(NOW)!) + " 원"
+            KAKAO_PRINT += "\n수입 금액 : " + inputComma(innum: Int(Plus)!) + " 원"
+            KAKAO_PRINT += "\n\n잔액+수입 : " + inputComma(innum: PLUS) + " 원"
+            KAKAO_PRINT += "\n지출 금액 : -" + inputComma(innum: MINUS) + " 원"
+            KAKAO_PRINT += "\n최종 금액 : " + inputComma(innum: (PLUS-MINUS)) + " 원"
+            KAKAO_PRINT += "\n\n지출 내역\n" + detail
             KAKAO_PRINT += "\n- " + inputComma(innum: Int(SAVE)!) + " 원(적금)"
             
             showResultAnimation()

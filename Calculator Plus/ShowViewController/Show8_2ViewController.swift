@@ -381,7 +381,7 @@ extension Show8_2ViewController {
     func algoOfResult() {
         beforeCheck()
         if(check()) {
-            Print_kakao = M + "월 월급계산서"
+            Print_kakao = M + "월달 급여계산서"
             RESULT = Int(MONEY)!
             Print_kakao += "\n\n월급 : " + inputComma(innum: RESULT) + " 원"
             Result_1.text = inputComma(innum: RESULT) + " 원"
@@ -389,9 +389,9 @@ extension Show8_2ViewController {
             calculate()
             
             MINUS = Int(temp)
-            Print_kakao += "\n4대보험금 결과 : - " + inputComma(innum: MINUS) + " 원"
+            Print_kakao += "\n4대보험금 : - " + inputComma(innum: MINUS) + " 원"
             Result_2.text = "- " + inputComma(innum: MINUS) + " 원"
-            Print_kakao += "\n월급 최종결과 : " + inputComma(innum: (RESULT-MINUS)) + " 원"
+            Print_kakao += "\n최종월급 : " + inputComma(innum: (RESULT-MINUS)) + " 원"
             Result_3.text = inputComma(innum: (RESULT-MINUS)) + " 원"
             
             showResultAnimation()
@@ -403,11 +403,11 @@ extension Show8_2ViewController {
         if(check()) {
             if(detailCount == 0) {
                 Result_4.text =
-                    "국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
-                + "건강보험 : " + inputComma(innum: Int(detail_2)) + " 원\n"
-                + "장기요양 : " + inputComma(innum: Int(detail_3)) + " 원\n"
-                + "고용보험 : " + inputComma(innum: Int(detail_4)) + " 원"
-                Print_kakao += "\n\n상세내역\n"
+                    "국민연금 (4.5%) : " + inputComma(innum: Int(detail_1)) + " 원\n"
+                + "건강보험 (3.4%) : " + inputComma(innum: Int(detail_2)) + " 원\n"
+                + "장기요양 (0.4%) : " + inputComma(innum: Int(detail_3)) + " 원\n"
+                + "고용보험 (0.8%) : " + inputComma(innum: Int(detail_4)) + " 원"
+                Print_kakao += "\n\n4대보험금 상세내역 (9.1%)\n"
                 + "국민연금 : " + inputComma(innum: Int(detail_1)) + " 원\n"
                 + "건강보험 : " + inputComma(innum: Int(detail_2)) + " 원\n"
                 + "장기요양 : " + inputComma(innum: Int(detail_3)) + " 원\n"

@@ -40,7 +40,7 @@ class Calculate {
         } else if RESULT_A < RESULT_B {
             Print = A_name + " → " + B_name + " " + inputComma(innum: RESULT_B) + " 원 송금"
         } else {
-            Print = "Error"
+            Print = "같은금액 입니다 :)"
         }
         return Print
     }
@@ -76,7 +76,7 @@ class Calculate {
         case 2:
             three_case2()
         default:
-            Print = "Error"
+            Print = "같은금액 입니다 :)"
         }
         
         return Print
@@ -115,7 +115,7 @@ class Calculate {
         case 3:
             four_case3()
         default:
-            Print = "Error"
+            Print = "같은금액 입니다 :)"
         }
         
         return Print
@@ -161,7 +161,7 @@ class Calculate {
         case 4:
             five_case4()
         default:
-            Print = "Error"
+            Print = "같은금액 입니다 :)"
         }
         
         return Print

@@ -98,7 +98,7 @@ class Show2_1ViewController: UIViewController {
         }
     }
     @IBAction func Button_kakao(_ sender: UIButton) {
-        algoOfKakao()
+        Kakao.sendData(data: kakao_print)
     }
     
     @IBAction func Button_reset(_ sender: UIButton) {
@@ -410,14 +410,15 @@ extension Show2_1ViewController {
     }
     
     func algoOfResult() {
-        kakao_print = "총 사용금액 : " + inputComma(innum: MONEY) + " 원"
-        kakao_print += "\n더치페이 인원수 : " + N + " 명"
+        kakao_print = "일반 더치페이"
+        kakao_print += "\n\n총 사용금액 : " + inputComma(innum: MONEY) + " 원"
+        kakao_print += "\n인원수 : " + N + " 명"
 
         RESULT = MONEY / Int(N)!
         Result_1.text = inputComma(innum: RESULT) + " 원"
         Result_2.text = Text_bank.text!
-        kakao_print += "\n\n더치페이 결과 : " + inputComma(innum: RESULT) + " 원"
-        kakao_print += "\n계좌 : " + Text_bank.text!
+        kakao_print += "\n더치페이 결과 : " + inputComma(innum: RESULT) + " 원"
+        kakao_print += "\n\n계좌번호 : " + Text_bank.text!
         
         showResultAnimation()
         self.view.endEditing(true)
@@ -427,7 +428,7 @@ extension Show2_1ViewController {
         if(detailShow == true) {
             if(detailCount == 0) {
                 self.Result_3.text = self.DETAIL
-                self.kakao_print += "\n\n상세내역\n" + self.DETAIL
+                self.kakao_print += "\n\n상세금액\n" + self.DETAIL
                 detailCount = detailCount + 1
             }
             showDetailAnimation()
@@ -435,29 +436,6 @@ extension Show2_1ViewController {
         } else {
             dismissDetailAnimation()
             detailShow = true
-        }
-    }
-    
-    func algoOfKakao() {
-        if kakao_print != "" {
-            let template = KMTTextTemplate { (KMTTextTemplateBuilder) in
-                KMTTextTemplateBuilder.text = self.kakao_print
-                KMTTextTemplateBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
-                })
-            }
-            // 서버에서 콜백으로 받을 정보
-            let serverCallbackArgs = ["user_id": "FDEE", "product_id": "415849"]
-            // 카카오링크 실행
-            KLKTalkLinkCenter.shared().sendDefault(with: template, serverCallbackArgs: serverCallbackArgs, success: { (warningMsg, argumentMsg) in
-                // 성공
-                print("warning message: \(String(describing: warningMsg))")
-                print("argument message: \(String(describing: argumentMsg))")
-            }, failure: { (error) in
-                // 실패
-                UIAlertController.showMessage(error.localizedDescription)
-                print("error \(error)")
-            })
         }
     }
 }

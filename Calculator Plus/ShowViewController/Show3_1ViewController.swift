@@ -437,7 +437,8 @@ extension Show3_1ViewController {
     func algoOfResult() {
         checkName()
         
-        kakao_print = A_name + " : " + inputComma(innum: A_sum) + " 원"
+        kakao_print = "2명 더치페이정산"
+        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
         kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
         
         SUM = A_sum + B_sum
