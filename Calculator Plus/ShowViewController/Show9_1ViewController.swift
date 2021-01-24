@@ -38,7 +38,7 @@ class Show9_1ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
-    @IBOutlet weak var View_dottedline: UIView!
+    @IBOutlet var View_dottedline: UIView!
     
     var NOW = ""
     var Plus = ""

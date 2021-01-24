@@ -4246,14 +4246,14 @@
             <objects>
                 <viewController storyboardIdentifier="CalculaterViewController" id="Bk9-Uw-E6i" customClass="CalculaterViewController" customModule="DontCalculate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AMR-8M-5gX">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toy-tP-1Bd">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd1-RA-iOR">
-                                        <rect key="frame" x="15.666666666666657" y="350" width="359" height="398"/>
+                                        <rect key="frame" x="15.666666666666657" y="360" width="359" height="398"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-bx-U12">
                                                 <rect key="frame" x="96" y="242" width="80" height="70"/>
@@ -4593,7 +4593,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jss-IK-0Qe">
-                                        <rect key="frame" x="50" y="107.66666666666667" width="308" height="2"/>
+                                        <rect key="frame" x="50" y="107.66666666666666" width="308" height="2"/>
                                         <color key="backgroundColor" name="button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="9Bg-vq-zPo"/>
@@ -4610,7 +4610,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGB-CV-OOr">
-                                        <rect key="frame" x="176" y="52.666666666666664" width="182" height="1"/>
+                                        <rect key="frame" x="176" y="52.666666666666671" width="182" height="1"/>
                                         <color key="backgroundColor" name="button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="5ny-oq-aw4"/>
@@ -9551,11 +9551,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="적금포함" id="zHq-pc-b4P">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="BAd-y1-iSI">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="tIJ-zj-Fsv"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="BAd-y1-iSI"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
