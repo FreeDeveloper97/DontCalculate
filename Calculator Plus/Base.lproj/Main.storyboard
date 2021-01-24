@@ -4214,11 +4214,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="타임머신" id="yb8-3e-djc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="01R-ir-hjf">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="fHv-GH-Ies"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="01R-ir-hjf"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Button_RESET" destination="shU-Ff-hJC" id="TIC-JZ-OJa"/>
