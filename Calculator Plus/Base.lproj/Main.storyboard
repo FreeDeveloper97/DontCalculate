@@ -9087,11 +9087,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="적금제외" id="pdn-lP-9we">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="7gz-2p-OBm">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="8Vi-FS-1Uk"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7gz-2p-OBm"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
@@ -9594,9 +9590,6 @@
             <point key="canvasLocation" x="6203.8461538461534" y="2038.8625592417061"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="8Vi-FS-1Uk"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="button"/>
     <resources>
         <image name="icon_2_1" width="512" height="512"/>
