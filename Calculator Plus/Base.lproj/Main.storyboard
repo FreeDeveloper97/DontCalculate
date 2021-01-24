@@ -8286,11 +8286,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="시급" id="mwg-Ai-8ye">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="uAL-2c-17L">
-                            <connections>
-                                <segue destination="Bk9-Uw-E6i" kind="showDetail" identifier="showNomal" id="3pL-an-K9S"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uAL-2c-17L"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>

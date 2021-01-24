@@ -14,6 +14,7 @@
 		7782C76E24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */; };
 		7782C76F24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */; };
 		7782C77024CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */; };
+		878CE93025BD58E300FDD6E1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CE92F25BD58E300FDD6E1 /* Money.swift */; };
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
 		930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930458F5241A315500ADC73A /* Select2ViewController.swift */; };
@@ -66,6 +67,7 @@
 		7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_40G.otf; sourceTree = "<group>"; };
 		7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_00G.otf; sourceTree = "<group>"; };
 		7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_20G.otf; sourceTree = "<group>"; };
+		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		87E9980C25BB19860009C199 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		923AD7BC9EA3EDF10A4CBF8F /* Pods-Calculator Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Plus.release.xcconfig"; path = "Target Support Files/Pods-Calculator Plus/Pods-Calculator Plus.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				87E9980C25BB19860009C199 /* Calculate.swift */,
 				87C28C3D25BB271F00F084B4 /* Kakao.swift */,
+				878CE92F25BD58E300FDD6E1 /* Money.swift */,
 			);
 			path = brain;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				936F4F38242C8AAD00E78644 /* CalculaterViewController.swift in Sources */,
 				93B2E45924B6C9A200020AAD /* Show3_1ViewController.swift in Sources */,
 				936F4F2C242C88FE00E78644 /* Show5_1ViewController.swift in Sources */,
+				878CE93025BD58E300FDD6E1 /* Money.swift in Sources */,
 				87E9980D25BB19860009C199 /* Calculate.swift in Sources */,
 				936F4F36242C895100E78644 /* Show9_2ViewController.swift in Sources */,
 				87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */,
