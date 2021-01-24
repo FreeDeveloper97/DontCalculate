@@ -16,6 +16,7 @@
 		7782C77024CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */; };
 		878CE93025BD58E300FDD6E1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CE92F25BD58E300FDD6E1 /* Money.swift */; };
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
+		87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4BA125BDAE75000B0864 /* AboutViewController.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
 		930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930458F5241A315500ADC73A /* Select2ViewController.swift */; };
 		93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93184EE02425AC740089EE15 /* Show2_2ViewController.swift */; };
@@ -69,6 +70,7 @@
 		7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_20G.otf; sourceTree = "<group>"; };
 		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
+		87DA4BA125BDAE75000B0864 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		87E9980C25BB19860009C199 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		923AD7BC9EA3EDF10A4CBF8F /* Pods-Calculator Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Plus.release.xcconfig"; path = "Target Support Files/Pods-Calculator Plus/Pods-Calculator Plus.release.xcconfig"; sourceTree = "<group>"; };
 		930458F5241A315500ADC73A /* Select2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select2ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				937E54D12436198700CCBB37 /* Show8_2ViewController.swift */,
 				936F4F33242C894300E78644 /* Show9_1ViewController.swift */,
 				936F4F35242C895100E78644 /* Show9_2ViewController.swift */,
+				87DA4BA125BDAE75000B0864 /* AboutViewController.swift */,
 			);
 			path = ShowViewController;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				93D70FF62417BE6D0040F035 /* MainViewController.swift in Sources */,
 				9331EA8A241B41FB0072A01B /* Show3_2ViewController.swift in Sources */,
 				93CC43662423AB4D00A2BEC4 /* Show2_1ViewController.swift in Sources */,
+				87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */,
 				936F4F2E242C891400E78644 /* Show6_1ViewController.swift in Sources */,
 				937E54D22436198700CCBB37 /* Show8_2ViewController.swift in Sources */,
 				936F4F34242C894300E78644 /* Show9_1ViewController.swift in Sources */,
@@ -565,7 +569,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 55;
+				CURRENT_PROJECT_VERSION = 56;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 3.3.0;
+				MARKETING_VERSION = 3.4;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freedeveloper.CalculatorPlus;
 				PRODUCT_NAME = DontCalculate;
@@ -596,7 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 55;
+				CURRENT_PROJECT_VERSION = 56;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,7 +613,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 3.3.0;
+				MARKETING_VERSION = 3.4;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freedeveloper.CalculatorPlus;
 				PRODUCT_NAME = DontCalculate;
