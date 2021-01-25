@@ -10428,7 +10428,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="Button_plus_a:" destination="oiw-zM-tIh" eventType="touchUpInside" id="871-3Y-Aly"/>
-                                                            <action selector="Button_plus_a:" destination="YvH-B3-WDO" eventType="touchUpInside" id="r0b-dP-Ic2"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbT-o7-2wg">
@@ -10643,7 +10642,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="Button_plus_b:" destination="oiw-zM-tIh" eventType="touchUpInside" id="3pl-Ie-Ype"/>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="kYt-Rv-Guz"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -10789,7 +10787,6 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="jEs-cT-RCU"/>
                                                             <action selector="Button_plus_c:" destination="oiw-zM-tIh" eventType="touchUpInside" id="dqJ-fE-VE5"/>
                                                         </connections>
                                                     </button>
@@ -10970,7 +10967,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="Button_Result:" destination="oiw-zM-tIh" eventType="touchUpInside" id="5GO-gA-VKb"/>
-                                                    <action selector="Button_Result:" destination="YvH-B3-WDO" eventType="touchUpInside" id="GUp-B8-TpN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f8-Mb-odu">
@@ -10984,7 +10980,6 @@
                                                     <color key="titleColor" name="Dynamic_reverse"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_kakao:" destination="YvH-B3-WDO" eventType="touchUpInside" id="4fv-gl-89X"/>
                                                     <action selector="Button_kakao:" destination="oiw-zM-tIh" eventType="touchUpInside" id="ewg-6w-XQO"/>
                                                 </connections>
                                             </button>
@@ -11000,7 +10995,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="Button_reset:" destination="oiw-zM-tIh" eventType="touchUpInside" id="6TJ-0S-G6D"/>
-                                                    <action selector="Button_reset:" destination="YvH-B3-WDO" eventType="touchUpInside" id="Aaq-wa-xLA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -11152,7 +11146,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_a:" destination="YvH-B3-WDO" eventType="touchUpInside" id="8Yr-HR-QQj"/>
+                                                            <action selector="Button_plus_a:" destination="254-qV-mRf" eventType="touchUpInside" id="hp8-XT-fwb"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMC-J1-NEY">
@@ -11366,7 +11360,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="Lug-h8-GUy"/>
+                                                            <action selector="Button_plus_b:" destination="254-qV-mRf" eventType="touchUpInside" id="RV1-dO-Y74"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -11512,7 +11506,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="Xf8-Ey-n8C"/>
+                                                            <action selector="Button_plus_c:" destination="254-qV-mRf" eventType="touchUpInside" id="Cah-Qc-lNP"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -11658,7 +11652,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="bVe-GS-nr9"/>
+                                                            <action selector="Button_plus_d:" destination="254-qV-mRf" eventType="touchUpInside" id="FlB-M2-xf3"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -11837,7 +11831,7 @@
                                                     <color key="titleColor" name="Dynamic_system"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_Result:" destination="YvH-B3-WDO" eventType="touchUpInside" id="zf9-tW-Al7"/>
+                                                    <action selector="Result_Button:" destination="254-qV-mRf" eventType="touchUpInside" id="lpG-cW-X9G"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-ET-tFq">
@@ -11851,7 +11845,7 @@
                                                     <color key="titleColor" name="Dynamic_reverse"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_kakao:" destination="YvH-B3-WDO" eventType="touchUpInside" id="M07-7y-SYp"/>
+                                                    <action selector="Button_kakao:" destination="254-qV-mRf" eventType="touchUpInside" id="xzD-wc-uAJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GU-SO-syS">
@@ -11865,7 +11859,7 @@
                                                     <color key="titleColor" name="Dynamic_reverse"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_reset:" destination="YvH-B3-WDO" eventType="touchUpInside" id="FwU-LM-gT6"/>
+                                                    <action selector="Button_reset:" destination="254-qV-mRf" eventType="touchUpInside" id="o0X-el-R81"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -11925,6 +11919,51 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="OcK-wc-XW9"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1400"/>
+                    <connections>
+                        <outlet property="Button_RESET" destination="3GU-SO-syS" id="Feg-56-jfg"/>
+                        <outlet property="Button_Result_outlet" destination="tOZ-ue-wi1" id="w8L-Uc-c6v"/>
+                        <outlet property="Button_plus_a" destination="FxX-S9-oRh" id="TyV-mk-Ccq"/>
+                        <outlet property="Button_plus_b" destination="TGX-xL-mRt" id="iVF-Fg-5km"/>
+                        <outlet property="Button_plus_c" destination="mU2-1E-fiN" id="cbc-8R-kuA"/>
+                        <outlet property="Button_plus_d" destination="xKL-Bl-gau" id="ha4-mU-Kdw"/>
+                        <outlet property="Kakao_outlet" destination="pIn-ET-tFq" id="piC-ZJ-ZVa"/>
+                        <outlet property="Label_result1_show" destination="cGb-Je-x3a" id="yLm-oM-pHU"/>
+                        <outlet property="Label_result2_show" destination="taA-HH-tBO" id="EOO-G1-R9U"/>
+                        <outlet property="Label_result3_show" destination="plm-Sk-B0k" id="Gp9-uW-GWK"/>
+                        <outlet property="Label_sum1_show" destination="Ah6-eF-GiF" id="YN0-vl-Zwv"/>
+                        <outlet property="Label_sum2_show" destination="c2b-SI-Svm" id="gc1-5Q-XaA"/>
+                        <outlet property="Label_sum3_show" destination="imn-zU-eZS" id="Ap1-W5-Xuk"/>
+                        <outlet property="Label_sum4_show" destination="oAo-eT-YDW" id="yXt-i9-WnZ"/>
+                        <outlet property="Result_1" destination="jLU-tE-YGE" id="Qu9-mZ-bg7"/>
+                        <outlet property="Result_2" destination="g0q-zQ-Mdq" id="E7R-Rl-68H"/>
+                        <outlet property="Result_3" destination="y7d-h5-inr" id="zSj-Ui-rEG"/>
+                        <outlet property="Text_A" destination="K0x-hb-D7e" id="sYr-LX-7Kc"/>
+                        <outlet property="Text_B" destination="9Fm-0D-m1J" id="RNw-b9-M4w"/>
+                        <outlet property="Text_C" destination="mYU-ow-Ci6" id="bLG-lQ-6LR"/>
+                        <outlet property="Text_D" destination="UEZ-7h-mEt" id="LiH-1g-c5K"/>
+                        <outlet property="Text_name_a" destination="IiP-Wl-9Bo" id="1ZM-PN-oST"/>
+                        <outlet property="Text_name_b" destination="bbE-Xg-rg7" id="Ulr-KB-bHq"/>
+                        <outlet property="Text_name_c" destination="UoC-HR-UbG" id="yuf-ct-58o"/>
+                        <outlet property="Text_name_d" destination="ABe-vh-fhN" id="Fi6-ze-ZNo"/>
+                        <outlet property="Text_sum_a" destination="GMC-J1-NEY" id="slp-oX-ggy"/>
+                        <outlet property="Text_sum_b" destination="U0C-aQ-Apg" id="8q2-rF-9dI"/>
+                        <outlet property="Text_sum_c" destination="T4h-Th-eSh" id="5Rp-6X-NoS"/>
+                        <outlet property="Text_sum_d" destination="buB-nY-e69" id="kfj-lq-8Et"/>
+                        <outlet property="View_View" destination="BkJ-Ya-Nsr" id="D7M-qj-qDO"/>
+                        <outlet property="View_line" destination="lvw-Rs-1TG" id="1TA-FC-3gA"/>
+                        <outlet property="View_result1_line" destination="usC-d9-RFC" id="zG5-nS-H4i"/>
+                        <outlet property="View_result2_line" destination="tc9-od-lOf" id="pqw-RD-dSa"/>
+                        <outlet property="View_result3_line" destination="KS5-Ya-1px" id="wR2-2x-CIf"/>
+                        <outlet property="View_sum1_line" destination="2EA-qi-a2d" id="PbH-A5-LdT"/>
+                        <outlet property="View_sum2_line" destination="Vge-eH-abb" id="sNJ-Iq-VOG"/>
+                        <outlet property="View_sum3_line" destination="jcE-M2-8cN" id="UzI-KJ-BJt"/>
+                        <outlet property="View_sum4_line" destination="jUc-Pm-Max" id="uou-yO-NJ8"/>
+                        <outlet property="viewA" destination="YH8-SQ-O8Z" id="jOH-Is-Jdj"/>
+                        <outlet property="viewB" destination="VGA-SH-c7e" id="moM-Q0-DnD"/>
+                        <outlet property="viewC" destination="BZR-x7-JSq" id="aOe-hV-yYJ"/>
+                        <outlet property="viewD" destination="Kmq-W9-qHl" id="P52-T4-pMW"/>
+                        <outlet property="viewResult" destination="skD-tH-0mb" id="1sT-X7-Q8E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G80-j1-79s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -64,6 +64,12 @@ class Show3_3ViewController2: UIViewController {
 //    @IBOutlet var View_dottedline_2: UIView!
 //    @IBOutlet var View_dottedline_3: UIView!
     
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewB: UIView!
+    @IBOutlet var viewC: UIView!
+    @IBOutlet var viewD: UIView!
+    @IBOutlet var viewResult: UIView!
+    
     var A = ""
     var B = ""
     var C = ""
@@ -237,6 +243,12 @@ extension Show3_3ViewController2 {
         Button_plus_d.layer.cornerRadius = 4
         Button_Result_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
+        
+        viewA.layer.cornerRadius = 12
+        viewB.layer.cornerRadius = 12
+        viewC.layer.cornerRadius = 12
+        viewD.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -253,6 +265,8 @@ extension Show3_3ViewController2 {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -372,6 +386,7 @@ extension Show3_3ViewController2 {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -475,6 +490,8 @@ extension Show3_3ViewController2 {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
