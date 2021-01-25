@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		771F7FBB24DCEB9B0074C66B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 771F7FBA24DCEB9B0074C66B /* logo.png */; };
 		7782C76B24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_60G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76524CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_60G.otf */; };
 		7782C76C24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_99G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76624CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_99G.otf */; };
 		7782C76D24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_80G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76724CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_80G.otf */; };
@@ -18,6 +17,7 @@
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
 		87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4BA125BDAE75000B0864 /* AboutViewController.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
+		87F581B225BEC2EE00B4913A /* Show3_1ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */; };
 		930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930458F5241A315500ADC73A /* Select2ViewController.swift */; };
 		93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93184EE02425AC740089EE15 /* Show2_2ViewController.swift */; };
 		9331EA8A241B41FB0072A01B /* Show3_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331EA89241B41FB0072A01B /* Show3_2ViewController.swift */; };
@@ -61,13 +61,13 @@
 
 /* Begin PBXFileReference section */
 		58664863A7A6AFFE0C15C266 /* Pods-Calculator Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Plus.debug.xcconfig"; path = "Target Support Files/Pods-Calculator Plus/Pods-Calculator Plus.debug.xcconfig"; sourceTree = "<group>"; };
-		771F7FBA24DCEB9B0074C66B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "Calculator Plus/Component/logo.png"; sourceTree = SOURCE_ROOT; };
 		7782C76524CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_60G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_60G.otf; sourceTree = "<group>"; };
 		7782C76624CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_99G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_99G.otf; sourceTree = "<group>"; };
 		7782C76724CEAFFB006FDC01 /* HGGGOTHICSSI_PRO_80G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_80G.otf; sourceTree = "<group>"; };
 		7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_40G.otf; sourceTree = "<group>"; };
 		7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_00G.otf; sourceTree = "<group>"; };
 		7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_20G.otf; sourceTree = "<group>"; };
+		8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_1ViewController2.swift; sourceTree = "<group>"; };
 		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		87DA4BA125BDAE75000B0864 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -170,12 +170,12 @@
 			path = ShowViewController;
 			sourceTree = "<group>";
 		};
-		87089C2F25B9BC500083D1EB /* Component */ = {
+		8729779225BEC170009948C6 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				771F7FBA24DCEB9B0074C66B /* logo.png */,
+				8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */,
 			);
-			path = Component;
+			path = test;
 			sourceTree = "<group>";
 		};
 		87E9980B25BB19280009C199 /* brain */ = {
@@ -236,9 +236,9 @@
 		93D70FF02417BE6D0040F035 /* Calculator Plus */ = {
 			isa = PBXGroup;
 			children = (
+				8729779225BEC170009948C6 /* test */,
 				87E9980B25BB19280009C199 /* brain */,
 				93FB6450243CAB8B00A30B34 /* fonts */,
-				87089C2F25B9BC500083D1EB /* Component */,
 				87EC6C9D25B9DB1D00B789EA /* SelectViewController */,
 				87089C2D25B9BC060083D1EB /* ShowViewController */,
 				93D70FF12417BE6D0040F035 /* AppDelegate.swift */,
@@ -332,7 +332,6 @@
 				7782C76D24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_80G.otf in Resources */,
 				7782C76F24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf in Resources */,
 				93D70FFB2417BE6E0040F035 /* Assets.xcassets in Resources */,
-				771F7FBB24DCEB9B0074C66B /* logo.png in Resources */,
 				7782C76B24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_60G.otf in Resources */,
 				93D70FF92417BE6D0040F035 /* Main.storyboard in Resources */,
 				7782C77024CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf in Resources */,
@@ -404,6 +403,7 @@
 				93765C8F243386E9005C006A /* StoryLinkHelper.swift in Sources */,
 				9331EA90241B449B0072A01B /* Show3_4ViewController.swift in Sources */,
 				936F4F2A242C88ED00E78644 /* Show5_2ViewController.swift in Sources */,
+				87F581B225BEC2EE00B4913A /* Show3_1ViewController2.swift in Sources */,
 				93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */,
 				930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */,
 				93D70FF22417BE6D0040F035 /* AppDelegate.swift in Sources */,
@@ -569,7 +569,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -600,7 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

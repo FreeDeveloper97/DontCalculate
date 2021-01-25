@@ -52,8 +52,8 @@ extension AboutViewController{
     }
     
     func setRadius() {
-        self.sendFeedback.layer.cornerRadius = 8
-        self.showApps.layer.cornerRadius = 8
+        self.sendFeedback.layer.cornerRadius = 16
+        self.showApps.layer.cornerRadius = 16
     }
     
     func viewAnimation() {
