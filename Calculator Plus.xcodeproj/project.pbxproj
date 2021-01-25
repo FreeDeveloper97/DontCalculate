@@ -13,7 +13,10 @@
 		7782C76E24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */; };
 		7782C76F24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */; };
 		7782C77024CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */; };
+		876C321B25BF264600A5DD9F /* Show3_3ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */; };
+		876C321E25BF264900A5DD9F /* Show3_4ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */; };
 		878CE93025BD58E300FDD6E1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CE92F25BD58E300FDD6E1 /* Money.swift */; };
+		87A60D7B25BF25B000D872B2 /* Show3_2ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */; };
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
 		87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4BA125BDAE75000B0864 /* AboutViewController.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
@@ -68,7 +71,10 @@
 		7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_00G.otf; sourceTree = "<group>"; };
 		7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_20G.otf; sourceTree = "<group>"; };
 		8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_1ViewController2.swift; sourceTree = "<group>"; };
+		876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_3ViewController2.swift; sourceTree = "<group>"; };
+		876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_4ViewController2.swift; sourceTree = "<group>"; };
 		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_2ViewController2.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		87DA4BA125BDAE75000B0864 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		87E9980C25BB19860009C199 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
@@ -174,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */,
+				87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */,
+				876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */,
+				876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 				87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */,
 				936F4F2E242C891400E78644 /* Show6_1ViewController.swift in Sources */,
 				937E54D22436198700CCBB37 /* Show8_2ViewController.swift in Sources */,
+				876C321E25BF264900A5DD9F /* Show3_4ViewController2.swift in Sources */,
 				936F4F34242C894300E78644 /* Show9_1ViewController.swift in Sources */,
 				937FC3C6241B2BA000848EBD /* Select4ViewController.swift in Sources */,
 				936F4F30242C892700E78644 /* Show7ViewController.swift in Sources */,
@@ -406,6 +416,7 @@
 				87F581B225BEC2EE00B4913A /* Show3_1ViewController2.swift in Sources */,
 				93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */,
 				930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */,
+				876C321B25BF264600A5DD9F /* Show3_3ViewController2.swift in Sources */,
 				93D70FF22417BE6D0040F035 /* AppDelegate.swift in Sources */,
 				93802EA0243E027600CEBD59 /* Select6ViewController.swift in Sources */,
 				93802E9E243E024F00CEBD59 /* Show6_2ViewController.swift in Sources */,
@@ -418,6 +429,7 @@
 				936F4F36242C895100E78644 /* Show9_2ViewController.swift in Sources */,
 				87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */,
 				937FC3CC241B32E200848EBD /* Select5ViewController.swift in Sources */,
+				87A60D7B25BF25B000D872B2 /* Show3_2ViewController2.swift in Sources */,
 				937FC3C4241B276D00848EBD /* Select3ViewController.swift in Sources */,
 				937FC3CE241B346800848EBD /* Select9ViewController.swift in Sources */,
 				9337B91624B6CB3D000AB51F /* AlertExtension.swift in Sources */,

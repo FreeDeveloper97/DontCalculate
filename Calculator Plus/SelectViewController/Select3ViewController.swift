@@ -26,7 +26,7 @@ class Select3ViewController: UIViewController {
         goToViewController(where: "Show3_1ViewController2")
     }
     @IBAction func showVC2(_ sender: Any) {
-        goToViewController(where: "Show3_2ViewController")
+        goToViewController(where: "Show3_2ViewController2")
     }
     @IBAction func showVC3(_ sender: Any) {
         goToViewController(where: "Show3_3ViewController")
