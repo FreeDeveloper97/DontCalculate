@@ -70,6 +70,14 @@ class Show3_4ViewController2: UIViewController {
 //    @IBOutlet weak var View_dottedline_3: UIView!
 //    @IBOutlet weak var View_dottedline_4: UIView!
     
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewB: UIView!
+    @IBOutlet var viewC: UIView!
+    @IBOutlet var viewD: UIView!
+    @IBOutlet var viewE: UIView!
+    @IBOutlet var viewResult: UIView!
+    
+    
     var A = ""
     var B = ""
     var C = ""
@@ -266,6 +274,13 @@ extension Show3_4ViewController2 {
         Button_plus_e.layer.cornerRadius = 4
         Button_Result_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
+        
+        viewA.layer.cornerRadius = 12
+        viewB.layer.cornerRadius = 12
+        viewC.layer.cornerRadius = 12
+        viewD.layer.cornerRadius = 12
+        viewE.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -282,6 +297,8 @@ extension Show3_4ViewController2 {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -417,6 +434,8 @@ extension Show3_4ViewController2 {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -539,6 +558,8 @@ extension Show3_4ViewController2 {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func reesetTransform() {
@@ -673,11 +694,11 @@ extension Show3_4ViewController2 {
         checkName()
         
         kakao_print = "5명 더치페이정산"
-        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
-        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
-        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
-        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
-        kakao_print += "\n" + E_name + " : " + inputComma(innum: E_sum) + " 원"
+//        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
+//        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
+//        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
+//        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
+//        kakao_print += "\n" + E_name + " : " + inputComma(innum: E_sum) + " 원"
         
         SUM = A_sum + B_sum + C_sum + D_sum + E_sum
         DIV = SUM / 5

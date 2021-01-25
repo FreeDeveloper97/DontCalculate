@@ -606,10 +606,10 @@ extension Show3_3ViewController2 {
         checkName()
         
         kakao_print = "4명 더치페이정산"
-        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
-        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
-        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
-        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
+//        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
+//        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
+//        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
+//        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
         
         SUM = A_sum + B_sum + C_sum + D_sum
         DIV = SUM / 4

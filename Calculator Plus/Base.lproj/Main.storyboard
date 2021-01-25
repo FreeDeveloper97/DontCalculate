@@ -10203,7 +10203,7 @@
                                                             <constraint firstAttribute="height" constant="3" id="xjw-ar-xVL"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-5C-qy1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-5C-qy1">
                                                         <rect key="frame" x="102" y="127" width="225" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="L4A-y5-0rA"/>
@@ -10911,7 +10911,7 @@
                                                             <constraint firstAttribute="height" constant="3" id="F6I-Fh-aOD"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoK-DS-gwT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoK-DS-gwT">
                                                         <rect key="frame" x="102" y="127" width="225" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="oc2-rK-J2v"/>
@@ -11776,7 +11776,7 @@
                                                             <constraint firstAttribute="height" constant="3" id="0QE-1M-1oU"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7d-h5-inr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7d-h5-inr">
                                                         <rect key="frame" x="102" y="127" width="225" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="R0L-G7-Rb7"/>
@@ -12023,7 +12023,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_a:" destination="YvH-B3-WDO" eventType="touchUpInside" id="NHC-8V-AsV"/>
+                                                            <action selector="Button_plus_a:" destination="F7g-S1-N3q" eventType="touchUpInside" id="DBa-pk-dHW"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq0-Zv-kvr">
@@ -12237,7 +12237,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="mWv-bc-udd"/>
+                                                            <action selector="Button_plus_b:" destination="F7g-S1-N3q" eventType="touchUpInside" id="hSm-cG-vBi"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -12383,7 +12383,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="hkI-0r-K0h"/>
+                                                            <action selector="Button_plus_c:" destination="F7g-S1-N3q" eventType="touchUpInside" id="1PF-Hr-pxV"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -12529,7 +12529,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="KcU-Ue-hS6"/>
+                                                            <action selector="Button_plus_d:" destination="F7g-S1-N3q" eventType="touchUpInside" id="stM-bA-StB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -12675,7 +12675,7 @@
                                                             <color key="titleColor" name="Dynamic_system"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="Button_plus_b:" destination="YvH-B3-WDO" eventType="touchUpInside" id="B90-GD-A2D"/>
+                                                            <action selector="Button_plus_e:" destination="F7g-S1-N3q" eventType="touchUpInside" id="bFL-yq-m4D"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -12799,7 +12799,7 @@
                                                             <constraint firstAttribute="height" constant="3" id="wuq-a2-VpU"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0B-7I-NZK">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0B-7I-NZK">
                                                         <rect key="frame" x="102" y="127" width="225" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="31L-e3-AWe"/>
@@ -12854,7 +12854,7 @@
                                                     <color key="titleColor" name="Dynamic_system"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_Result:" destination="YvH-B3-WDO" eventType="touchUpInside" id="Kc0-DC-frz"/>
+                                                    <action selector="Button_Result:" destination="F7g-S1-N3q" eventType="touchUpInside" id="04V-1w-y2X"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62y-O7-6BY">
@@ -12868,7 +12868,7 @@
                                                     <color key="titleColor" name="Dynamic_reverse"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_kakao:" destination="YvH-B3-WDO" eventType="touchUpInside" id="oFG-nX-UBz"/>
+                                                    <action selector="Button_kakao:" destination="F7g-S1-N3q" eventType="touchUpInside" id="sKC-oj-afh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udI-hl-HhD">
@@ -12882,7 +12882,7 @@
                                                     <color key="titleColor" name="Dynamic_reverse"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Button_reset:" destination="YvH-B3-WDO" eventType="touchUpInside" id="eEl-On-5As"/>
+                                                    <action selector="Button_reset:" destination="F7g-S1-N3q" eventType="touchUpInside" id="9T0-eA-iDe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -12946,6 +12946,58 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="335-ao-y8R"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1800"/>
+                    <connections>
+                        <outlet property="Button_RESET" destination="udI-hl-HhD" id="ADP-qw-JUW"/>
+                        <outlet property="Button_Result_outlet" destination="ptS-SJ-lGw" id="nfq-CS-P2R"/>
+                        <outlet property="Button_plus_a" destination="Eu7-XK-WzY" id="WaS-Pb-kIt"/>
+                        <outlet property="Button_plus_b" destination="2Zt-PJ-iLf" id="LfD-Yh-kdp"/>
+                        <outlet property="Button_plus_c" destination="8cD-fn-dGI" id="Gw3-1M-Q3Q"/>
+                        <outlet property="Button_plus_d" destination="9VF-15-KQ4" id="QeU-fN-fzk"/>
+                        <outlet property="Button_plus_e" destination="nSE-mE-Y5C" id="YRe-tl-oEz"/>
+                        <outlet property="Kakao_outlet" destination="62y-O7-6BY" id="LiD-5n-Bs5"/>
+                        <outlet property="Label_result1_show" destination="9U9-FT-dtI" id="Raf-L9-gxB"/>
+                        <outlet property="Label_result2_show" destination="NGf-CH-uAV" id="obA-HU-jG7"/>
+                        <outlet property="Label_result3_show" destination="eqb-Fg-TuJ" id="hF6-oh-q9Z"/>
+                        <outlet property="Label_sum1_show" destination="gW3-Md-ZJZ" id="1Gg-JG-7uk"/>
+                        <outlet property="Label_sum2_show" destination="Z7i-zo-Ga3" id="hbv-gt-dkc"/>
+                        <outlet property="Label_sum3_show" destination="Dp0-x9-Err" id="zYn-Fu-30O"/>
+                        <outlet property="Label_sum4_show" destination="EpZ-y9-X72" id="WGi-Ki-PNs"/>
+                        <outlet property="Label_sum5_show" destination="Oog-Yq-j3l" id="yWV-1W-tPA"/>
+                        <outlet property="Result_1" destination="NlZ-mz-9kH" id="i76-Tj-3G1"/>
+                        <outlet property="Result_2" destination="v5f-hA-Bee" id="CiX-5D-D4u"/>
+                        <outlet property="Result_3" destination="L0B-7I-NZK" id="C3x-I5-iVe"/>
+                        <outlet property="Text_A" destination="NXI-2b-jm4" id="OoW-AG-GLZ"/>
+                        <outlet property="Text_B" destination="aMJ-4A-iKI" id="WDs-wn-CrZ"/>
+                        <outlet property="Text_C" destination="bcn-YK-Ppi" id="7cJ-1z-1RW"/>
+                        <outlet property="Text_D" destination="L0P-7T-qd2" id="mFM-aY-G9L"/>
+                        <outlet property="Text_E" destination="2wX-xx-mFL" id="OrN-EW-Mpm"/>
+                        <outlet property="Text_name_a" destination="jTu-kY-dPg" id="IWp-UN-3kS"/>
+                        <outlet property="Text_name_b" destination="xLY-n8-Dks" id="EBa-rl-fdS"/>
+                        <outlet property="Text_name_c" destination="6cL-8s-pfc" id="izR-Yd-nk4"/>
+                        <outlet property="Text_name_d" destination="VdX-vW-naW" id="IKK-G7-ZOg"/>
+                        <outlet property="Text_name_e" destination="wvA-e7-piP" id="J18-x4-mxW"/>
+                        <outlet property="Text_sum_a" destination="Qq0-Zv-kvr" id="asH-uT-OHN"/>
+                        <outlet property="Text_sum_b" destination="dqp-HE-jXd" id="lCd-8s-Gh5"/>
+                        <outlet property="Text_sum_c" destination="ySN-b1-ixT" id="u0a-U1-9EC"/>
+                        <outlet property="Text_sum_d" destination="to4-IL-3my" id="9Pc-wS-k8W"/>
+                        <outlet property="Text_sum_e" destination="VfD-On-BNz" id="yMO-MM-xOP"/>
+                        <outlet property="View_View" destination="T84-k2-WoN" id="OCm-d0-neu"/>
+                        <outlet property="View_line" destination="7Wu-c1-x2g" id="UM5-Ll-JcM"/>
+                        <outlet property="View_result1_line" destination="5Ee-bJ-VqY" id="9EF-Hm-naP"/>
+                        <outlet property="View_result2_line" destination="htQ-bg-bIr" id="TUf-au-eQa"/>
+                        <outlet property="View_result3_line" destination="nC9-Nj-79b" id="NLS-uG-uXU"/>
+                        <outlet property="View_sum1_line" destination="8P7-qb-Jm3" id="FLn-8s-JZp"/>
+                        <outlet property="View_sum2_line" destination="Qpr-ry-W6O" id="U6q-au-fYU"/>
+                        <outlet property="View_sum3_line" destination="kD7-2w-acb" id="9e2-gc-etN"/>
+                        <outlet property="View_sum4_line" destination="9Fz-Pr-54K" id="WRe-xj-RSV"/>
+                        <outlet property="View_sum5_line" destination="rAy-6C-XF7" id="59K-F4-0t7"/>
+                        <outlet property="viewA" destination="q4t-c9-Waw" id="5dU-mE-8yP"/>
+                        <outlet property="viewB" destination="jIL-gw-UPM" id="hQW-Tr-nEv"/>
+                        <outlet property="viewC" destination="CSC-AV-nbB" id="GoK-9N-RaR"/>
+                        <outlet property="viewD" destination="Kvm-xu-b7F" id="Vgl-oY-7Ik"/>
+                        <outlet property="viewE" destination="Qux-fs-rGn" id="NI4-dT-ieV"/>
+                        <outlet property="viewResult" destination="Igz-Sr-ctQ" id="IJd-BT-Tdl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OA6-Q1-b2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
