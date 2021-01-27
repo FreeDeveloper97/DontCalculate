@@ -43,6 +43,7 @@ class Show6_2ViewController: UIViewController {
     
     let GRAY = UIColor(named: "ColorGray")
     let BUTTON = UIColor(named: "button")
+    var negative: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,14 @@ class Show6_2ViewController: UIViewController {
             self.resetTransform()
         })
     }
+    @IBAction func plusMinus(_ sender: UISwitch) {
+        if sender.isOn {
+            negative = false
+        } else {
+            negative = true
+        }
+    }
+    
 }
 
 
@@ -309,6 +318,9 @@ extension Show6_2ViewController {
     
     func algoOfResult() {
         temp = Int(DDAY)!
+        if negative {
+            temp = -temp
+        }
         plus = Double(temp * 86400)
         
         let dateFormatter = DateFormatter()
