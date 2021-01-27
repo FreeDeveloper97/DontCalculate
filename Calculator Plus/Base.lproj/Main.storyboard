@@ -13437,7 +13437,10 @@
                         <outlet property="inputMoney" destination="meq-66-eob" id="dkS-aZ-wfd"/>
                         <outlet property="inputMoneyNotCal" destination="4Ee-Sm-Pev" id="ena-vC-zPl"/>
                         <outlet property="inputPeopleNum" destination="lkO-dq-DIK" id="w5r-0B-ChJ"/>
+                        <outlet property="result1" destination="RLJ-hE-AoU" id="LIE-B2-fcE"/>
+                        <outlet property="result2" destination="QLj-1J-R1w" id="s9h-Bf-at2"/>
                         <outlet property="result3" destination="wFY-7P-reX" id="Yz1-sR-cAA"/>
+                        <outlet property="result4" destination="iU3-Y0-uAJ" id="6LU-7g-8nQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjw-EQ-sWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
