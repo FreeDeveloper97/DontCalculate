@@ -31,6 +31,7 @@ class Money {
     static func algoOfIncomMoney(Money: Int) -> Int {
         var result: Int = 0
         var per: Double = -1
+        
         if Money < 1060 {
             //없는 경우
         } else if Money < 2030 {
@@ -70,13 +71,15 @@ class Money {
             //15.0 ~ 15.5의 경우
         }
         
-        result = Int(Double(Money)*per)
+        result = Int(Double(Money)*per*10)
         return result
     }
     
     static func getPersent(Money: Int, data: [Int], data2: [Double]) -> Double {
+        var loop: Bool = true
         for i in 1...9 {
-            if Money < data[i] {
+            if (loop && Money < data[i]) {
+                loop = false
                 return data2[i]
             }
         }

@@ -17,6 +17,7 @@
 		876C321E25BF264900A5DD9F /* Show3_4ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */; };
 		878CE93025BD58E300FDD6E1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CE92F25BD58E300FDD6E1 /* Money.swift */; };
 		87A60D7B25BF25B000D872B2 /* Show3_2ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */; };
+		87B37A0725C1AB6900877F65 /* Show8_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */; };
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
 		87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4BA125BDAE75000B0864 /* AboutViewController.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
@@ -75,6 +76,7 @@
 		876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_4ViewController2.swift; sourceTree = "<group>"; };
 		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_2ViewController2.swift; sourceTree = "<group>"; };
+		87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show8_3ViewController.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		87DA4BA125BDAE75000B0864 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		87E9980C25BB19860009C199 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */,
 				876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */,
 				876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */,
+				87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				93D70FF22417BE6D0040F035 /* AppDelegate.swift in Sources */,
 				93802EA0243E027600CEBD59 /* Select6ViewController.swift in Sources */,
 				93802E9E243E024F00CEBD59 /* Show6_2ViewController.swift in Sources */,
+				87B37A0725C1AB6900877F65 /* Show8_3ViewController.swift in Sources */,
 				937E54D0243617E700CCBB37 /* Select8ViewController.swift in Sources */,
 				936F4F38242C8AAD00E78644 /* CalculaterViewController.swift in Sources */,
 				93B2E45924B6C9A200020AAD /* Show3_1ViewController.swift in Sources */,
