@@ -34,6 +34,7 @@ class Show8_3ViewController: UIViewController {
     var detail2: Double = 0
     var detail3: Double = 0
     var detail4: Double = 0
+    var Kakao_print: String = ""
     
     
     override func viewDidLoad() {
@@ -54,11 +55,17 @@ class Show8_3ViewController: UIViewController {
     @IBAction func buttonDetail(_ sender: Any) {
         algoOfDetail()
     }
+    @IBAction func buttonKakao(_ sender: Any) {
+        Kakao.sendData(data: Kakao_print)
+    }
+    @IBAction func buttonLink(_ sender: Any) {
+        if let url = URL(string: "https://han.gl/kp39M"){
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
     @IBAction func buttonReset(_ sender: Any) {
         reset()
     }
-    
-    
 }
 
 
@@ -116,6 +123,9 @@ extension Show8_3ViewController {
         detail2 = Money.algoOfMoney2(Money: monMoney)
         detail3 = Money.algoOfMoney3(Money: monMoney)
         detail4 = Money.algoOfMoney4(Money: monMoney)
+        if(detail1 > 226350) {
+            detail1 = 226350.0
+        }
         
         let monMoneyResult: Int = monMoney + monMoneyNotCal
         let minus: Int = Int(detail1+detail2+detail3+detail4)
@@ -126,6 +136,16 @@ extension Show8_3ViewController {
         result2.text = "- " + inputComma(innum: minus) + " 원"
         result3.text = "- " + inputComma(innum: minus2) + " 원"
         result4.text = inputComma(innum: result) + " 원"
+        
+        Kakao_print = "연봉 → 월급 계산서"
+        Kakao_print += "\n\n연봉 금액 : " + inputComma(innum: Int(inputMoney.text!)!) + " 원"
+        Kakao_print += "\n비과세금액 : " + inputComma(innum: Int(inputMoneyNotCal.text!)!) + " 원"
+        Kakao_print += "\n부양가족수 : " + inputPeopleNum.text! + " 명"
+        Kakao_print += "\n\n월급 : " + inputComma(innum: monMoneyResult) + " 원"
+        Kakao_print += "\n4대보험비 : -" + inputComma(innum: minus) + " 원"
+        Kakao_print += "\n근로소득세 : -" + inputComma(innum: minus2) + " 원"
+        Kakao_print += "\n\n최종 월급 : " + inputComma(innum: result) + " 원"
+        Kakao_print += "\n\n※ 근로소득세는 오차가 존재합니다 ※"
     }
     
     func algoOfCheckInput() {
@@ -139,12 +159,16 @@ extension Show8_3ViewController {
         }
         monMoney = Int(Double(money)/12.0) - monMoneyNotCal
         
-        if monMoney < 1060000 {
+        if (monMoney < 1060000) {
             minusIncomMoney = 0
             minusIncomMoney2 = 0
-        } else {
+        } else if (monMoney < 10000000) {
             minusIncomMoney = Money.algoOfIncomMoney(Money: (monMoney/1000))
             minusIncomMoney2 = Int(Double(minusIncomMoney)*0.1)
+        } else {
+            //천만원 이상의 경우 에러
+            minusIncomMoney = 0
+            minusIncomMoney2 = 0
         }
     }
     
