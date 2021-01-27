@@ -44,7 +44,12 @@ class Show8_3ViewController: UIViewController {
         setRadius()
         showAnimation()
         
+        setNavigationButton()
         setInputType()
+    }
+    
+    @objc func fbButtonPressed() {
+        goToCalculater()
     }
 
     @IBAction func buttonResult(_ sender: Any) {
@@ -71,6 +76,20 @@ class Show8_3ViewController: UIViewController {
 
 
 extension Show8_3ViewController {
+    func setNavigationButton() {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "icon_bar"), for: .normal)
+        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 43, height: 51)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func goToCalculater() {
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "CalculaterViewController")
+                self.present(vcName!, animated: true, completion: nil)
+    }
+    
     func showAnimation() {
         self.View_view.alpha = 0
         UIView.animate(withDuration: 0.5, animations: {
@@ -136,6 +155,7 @@ extension Show8_3ViewController {
         result2.text = "- " + inputComma(innum: minus) + " 원"
         result3.text = "- " + inputComma(innum: minus2) + " 원"
         result4.text = inputComma(innum: result) + " 원"
+        self.view.endEditing(true)
         
         Kakao_print = "연봉 → 월급 계산서"
         Kakao_print += "\n\n연봉 금액 : " + inputComma(innum: Int(inputMoney.text!)!) + " 원"

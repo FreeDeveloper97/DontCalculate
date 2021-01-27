@@ -12,6 +12,7 @@ class Select8ViewController: UIViewController {
     
     @IBOutlet weak var Button_1: UIButton!
     @IBOutlet weak var Button_2: UIButton!
+    @IBOutlet weak var Button_3: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class Select8ViewController: UIViewController {
     @IBAction func showVC2(_ sender: Any) {
         goToViewController(where: "Show8_2ViewController")
     }
+    @IBAction func showVC3(_ sender: Any) {
+        goToViewController(where: "Show8_3ViewController")
+    }
 }
 
 
@@ -36,11 +40,14 @@ extension Select8ViewController {
         Button_1.clipsToBounds = true
         Button_2.layer.cornerRadius = 4
         Button_2.clipsToBounds = true
+        Button_3.layer.cornerRadius = 4
+        Button_3.clipsToBounds = true
     }
     
     func setAlpha() {
         Button_1.alpha = 0
         Button_2.alpha = 0
+        Button_3.alpha = 0
     }
     
     func showAnimation() {
@@ -49,6 +56,9 @@ extension Select8ViewController {
         })
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_2.alpha = 1
+        })
+        UIView.animate(withDuration: 0.6, animations: {
+            self.Button_3.alpha = 1
         })
     }
     
