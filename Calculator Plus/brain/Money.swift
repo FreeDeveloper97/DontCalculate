@@ -67,14 +67,29 @@ class Money {
             per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 5000 {
             //6.0 ~ 6.9의 경우
+            let data = [4460, 4520, 4580, 4620, 4680, 4740, 4800, 4860, 4940, 5000]
+            let data2 = [6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 5680 {
             //7.0 ~ 7.9의 경우
+            let data = [5080, 5140, 5220, 5300, 5380, 5460, 5560, 5620, 5660, 5680]
+            let data2 = [7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 5940 {
             //8.0 ~ 8.9의 경우
+            let data = [5740, 5780, 5820, 5840, 5860, 5880, 5940]
+            let data2 = [8.0, 8.1, 8.2, 8.3, 8.7, 8.8, 8.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 6400 {
             //9.0 ~ 9.9의 경우
+            let data = [5980, 6020, 6060, 6100, 6160, 6200, 6240, 6300, 6340, 6400]
+            let data2 = [9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 6940 {
             //10.0 ~ 10.9의 경우
+            let data = [6440, 6500, 6560, 6600, 6660, 6720, 6780, 6820, 6880, 6940]
+            let data2 = [10.0, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 7600 {
             //11.0 ~ 11.9의 경우
         } else if Money < 8380 {
