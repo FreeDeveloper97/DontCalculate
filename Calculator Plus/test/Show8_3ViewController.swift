@@ -26,6 +26,7 @@ class Show8_3ViewController: UIViewController {
     var money: Int = 0
     var monMoney: Int = 0
     var moneyNotCal: Int = 0
+    var monMoneyNotCal: Int = 0
     var peopleNum: Int = 0
     var minusIncomMoney: Int = 0
     var minusIncomMoney2: Int = 0
@@ -109,8 +110,34 @@ extension Show8_3ViewController {
 extension Show8_3ViewController {
     
     func algoOfResult() {
+        algoOfCheckInput()
+        
+        detail1 = Money.algoOfMoney1(Money: monMoney)
+        detail2 = Money.algoOfMoney2(Money: monMoney)
+        detail3 = Money.algoOfMoney3(Money: monMoney)
+        detail4 = Money.algoOfMoney4(Money: monMoney)
+        
+        let monMoneyResult: Int = monMoney + monMoneyNotCal
+        let minus: Int = Int(detail1+detail2+detail3+detail4)
+        let minus2: Int = minusIncomMoney + minusIncomMoney2
+        let result: Int = (monMoneyResult - minus - minus2)
+        
+        result1.text = inputComma(innum: monMoneyResult) + " 원"
+        result2.text = "- " + inputComma(innum: minus) + " 원"
+        result3.text = "- " + inputComma(innum: minus2) + " 원"
+        result4.text = inputComma(innum: result) + " 원"
+    }
+    
+    func algoOfCheckInput() {
         money = Int(inputMoney.text!)!
-        monMoney = Int(Double(money)/12.0)
+        if (inputMoneyNotCal.text != "") {
+            moneyNotCal = Int(inputMoneyNotCal.text!)!
+            monMoneyNotCal = Int(Double(moneyNotCal)/12.0)
+        } else {
+            moneyNotCal = 0
+            monMoneyNotCal = 0
+        }
+        monMoney = Int(Double(money)/12.0) - monMoneyNotCal
         
         if monMoney < 1060000 {
             minusIncomMoney = 0
@@ -119,20 +146,6 @@ extension Show8_3ViewController {
             minusIncomMoney = Money.algoOfIncomMoney(Money: (monMoney/1000))
             minusIncomMoney2 = Int(Double(minusIncomMoney)*0.1)
         }
-        
-        detail1 = Money.algoOfMoney1(Money: monMoney)
-        detail2 = Money.algoOfMoney2(Money: monMoney)
-        detail3 = Money.algoOfMoney3(Money: monMoney)
-        detail4 = Money.algoOfMoney4(Money: monMoney)
-        
-        let minus: Int = Int(detail1+detail2+detail3+detail4)
-        let minus2: Int = minusIncomMoney + minusIncomMoney2
-        let result: Int = (monMoney - minus - minus2)
-        //화면 보이기
-        result1.text = inputComma(innum: monMoney) + " 원"
-        result2.text = "- " + inputComma(innum: minus) + " 원"
-        result3.text = "- " + inputComma(innum: minus2) + " 원"
-        result4.text = inputComma(innum: result) + " 원"
     }
     
     func algoOfDetail() {

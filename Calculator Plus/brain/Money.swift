@@ -34,6 +34,7 @@ class Money {
         
         if Money < 1060 {
             //없는 경우
+            print("error")
         } else if Money < 2030 {
             //0.1 ~ 0.9의 경우
             let data = [1150, 1255, 1330, 1415, 1510, 1620, 1750, 1900, 2030]
@@ -41,8 +42,14 @@ class Money {
             per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 2630 {
             //1.0 ~ 1.9의 경우
+            let data = [2120, 2230, 2340, 2410, 2440, 2480, 2520, 2550, 2590, 2630]
+            let data2 = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 3100 {
             //2.0 ~ 2.9의 경우
+            let data = [2670, 2720, 2760, 2800, 2850, 2900, 2950, 3000, 3040, 3100]
+            let data2 = [2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 3480 {
             //3.0 ~ 3.9의 경우
         } else if Money < 3880 {
@@ -77,7 +84,7 @@ class Money {
     
     static func getPersent(Money: Int, data: [Int], data2: [Double]) -> Double {
         var loop: Bool = true
-        for i in 1...9 {
+        for i in 0...9 {
             if (loop && Money < data[i]) {
                 loop = false
                 return data2[i]
