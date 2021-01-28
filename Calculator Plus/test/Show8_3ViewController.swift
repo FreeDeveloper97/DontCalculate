@@ -379,6 +379,7 @@ extension Show8_3ViewController {
         result4.text = inputComma(innum: result) + " 원"
         
         showResultAnimation()
+        dismissDetailAnimation()
         self.detailShow = true
         self.view.endEditing(true)
         
@@ -408,13 +409,22 @@ extension Show8_3ViewController {
             minusIncomMoney = 0
             minusIncomMoney2 = 0
         } else if (monMoney < 10000000) {
-            minusIncomMoney = Money.algoOfIncomMoney(Money: (monMoney/1000))
-            minusIncomMoney2 = Int(Double(minusIncomMoney)*0.1)
+            algoOfCheckPeopleNum()
         } else {
             //천만원 이상의 경우 에러
             minusIncomMoney = 0
             minusIncomMoney2 = 0
         }
+    }
+    
+    func algoOfCheckPeopleNum() {
+        peopleNum = Int(inputPeopleNum.text!)!
+        if (peopleNum == 1) {
+            minusIncomMoney = Money.algoOfIncomMoney(Money: (monMoney/1000))
+        } else if (peopleNum == 2) {
+            minusIncomMoney = Money.algoOfIncomMoney2(Money: (monMoney/1000))
+        }
+        minusIncomMoney2 = Int(Double(minusIncomMoney)*0.1)
     }
     
     func algoOfDetail() {
