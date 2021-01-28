@@ -13,7 +13,19 @@ class Show8_3ViewController: UIViewController {
     @IBOutlet var inputMoney: UITextField!
     @IBOutlet var inputMoneyNotCal: UITextField!
     @IBOutlet var inputPeopleNum: UITextField!
-    @IBOutlet var buttonOutlet: UIButton!
+    @IBOutlet var buttonResultOutlet: UIButton!
+    
+    @IBOutlet var showResult1: UILabel!
+    @IBOutlet var showResult2: UILabel!
+    @IBOutlet var showResult3: UILabel!
+    @IBOutlet var showResult4: UILabel!
+    @IBOutlet var showDetail: UILabel!
+    
+    @IBOutlet var lineResult1: UIView!
+    @IBOutlet var lineResult2: UIView!
+    @IBOutlet var lineResult3: UIView!
+    @IBOutlet var lineResult4: UIView!
+    @IBOutlet var lineDetail: UIView!
     
     @IBOutlet var result1: UILabel!
     @IBOutlet var result2: UILabel!
@@ -21,7 +33,15 @@ class Show8_3ViewController: UIViewController {
     @IBOutlet var result4: UILabel!
     @IBOutlet var detail: UILabel!
     
+    @IBOutlet var View_line: UIView!
     @IBOutlet var View_view: UIView!
+    
+    @IBOutlet var buttons: UIView!
+    @IBOutlet var buttonLinkOutlet: UIButton!
+    @IBOutlet var buttonResetOutlet: UIButton!
+    
+    let GRAY = UIColor(named: "ColorGray")
+    let BUTTON = UIColor(named: "button")
     
     var money: Int = 0
     var monMoney: Int = 0
@@ -35,21 +55,30 @@ class Show8_3ViewController: UIViewController {
     var detail3: Double = 0
     var detail4: Double = 0
     var Kakao_print: String = ""
+    var detailShow: Bool = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
         
+        self.navigationItem.title = "연봉"
+        setColor()
         setRadius()
+        setAlpha()
+        setTransform()
         showAnimation()
         
         setNavigationButton()
         setInputType()
+        setInputChanged()
     }
     
     @objc func fbButtonPressed() {
         goToCalculater()
+    }
+    @objc func textFieldDidChange(textField: UITextField){
+        algoOfTextChange()
     }
 
     @IBAction func buttonResult(_ sender: Any) {
@@ -70,6 +99,11 @@ class Show8_3ViewController: UIViewController {
     }
     @IBAction func buttonReset(_ sender: Any) {
         reset()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.resetColor()
+            self.setAlpha()
+            self.setTransform()
+        })
     }
 }
 
@@ -90,24 +124,18 @@ extension Show8_3ViewController {
                 self.present(vcName!, animated: true, completion: nil)
     }
     
-    func showAnimation() {
-        self.View_view.alpha = 0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.View_view.alpha = 1
-        })
-    }
-    
-    func setRadius() {
-        buttonOutlet.layer.cornerRadius = 4
-    }
-    
-    func setInputType() {
-        inputMoney.keyboardType = .numberPad
-        inputMoneyNotCal.keyboardType = .numberPad
-        inputPeopleNum.keyboardType = .numberPad
-    }
-    
     func check() -> Bool {
+        if inputMoney.text == "" {
+            return false
+        }
+        if inputMoneyNotCal.text == "" {
+            return false
+        }
+        if inputPeopleNum.text == "" {
+            return false
+        } else if (Int(inputPeopleNum.text!)! == 0 || Int(inputPeopleNum.text!)! > 4) {
+            return false
+        }
         return true
     }
     
@@ -119,6 +147,155 @@ extension Show8_3ViewController {
         return RESULT_COMMA
     }
     
+    func setColor() {
+        buttonResultOutlet.backgroundColor = GRAY
+    }
+    
+    func setRadius() {
+        buttonResultOutlet.layer.cornerRadius = 4
+        detail.layer.cornerRadius = 4
+        buttonLinkOutlet.layer.cornerRadius = 4
+        buttonResetOutlet.layer.cornerRadius = 4
+    }
+    
+    func setAlpha() {
+        self.showResult1.alpha = 0
+        self.showResult2.alpha = 0
+        self.showResult3.alpha = 0
+        self.showResult4.alpha = 0
+        self.showDetail.alpha = 0
+        
+        self.lineResult1.alpha = 0
+        self.lineResult2.alpha = 0
+        self.lineResult3.alpha = 0
+        self.lineResult4.alpha = 0
+        self.lineDetail.alpha = 0
+        
+        self.result1.alpha = 0
+        self.result2.alpha = 0
+        self.result3.alpha = 0
+        self.result4.alpha = 0
+        self.detail.alpha = 0
+        
+        self.buttons.alpha = 0
+        self.buttonLinkOutlet.alpha = 0
+    }
+    
+    func setTransform() {
+        self.showResult1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.showResult2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.showResult3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.showResult4.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.showDetail.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.lineResult1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.lineResult2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.lineResult3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.lineResult4.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.lineDetail.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.result1.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.result2.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.result3.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.result4.transform = CGAffineTransform(translationX: 0, y: -10)
+        self.detail.transform = CGAffineTransform(translationX: 0, y: -10)
+        
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -341)
+        self.buttons.transform = CGAffineTransform(translationX: 0, y: -150)
+        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -150)
+        self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -400)
+    }
+    
+    func showAnimation() {
+        self.View_view.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_view.alpha = 1
+        })
+    }
+    
+    func setInputType() {
+        inputMoney.keyboardType = .numberPad
+        inputMoneyNotCal.keyboardType = .numberPad
+        inputPeopleNum.keyboardType = .numberPad
+    }
+    
+    func setInputChanged() {
+        inputMoney.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+            for: UIControl.Event.editingChanged)
+        inputMoneyNotCal.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+            for: UIControl.Event.editingChanged)
+        inputPeopleNum.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+            for: UIControl.Event.editingChanged)
+    }
+    
+    func showResultButtonAnimation() {
+        if(check()) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.buttonResultOutlet.backgroundColor = self.BUTTON
+            })
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.buttonResultOutlet.backgroundColor = self.GRAY
+            })
+        }
+    }
+    
+    func showResultAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttonResultOutlet.backgroundColor = self.GRAY
+        })
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.showAlpha()
+            self.showTransform()
+        })
+    }
+    
+    func showAlpha() {
+        self.showResult1.alpha = 1
+        self.showResult2.alpha = 1
+        self.showResult3.alpha = 1
+        self.showResult4.alpha = 1
+        
+        self.lineResult1.alpha = 1
+        self.lineResult2.alpha = 1
+        self.lineResult3.alpha = 1
+        self.lineResult4.alpha = 1
+        
+        self.result1.alpha = 1
+        self.result2.alpha = 1
+        self.result3.alpha = 1
+        self.result4.alpha = 1
+        
+        self.buttons.alpha = 1
+        self.buttonLinkOutlet.alpha = 1
+    }
+    
+    func showTransform() {
+        self.showResult1.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.showResult2.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.showResult3.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.showResult4.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.showDetail.transform = CGAffineTransform(translationX: 0, y: 0)
+        
+        self.lineResult1.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.lineResult2.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.lineResult3.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.lineResult4.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.lineDetail.transform = CGAffineTransform(translationX: 0, y: 0)
+        
+        self.result1.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.result2.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.result3.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.result4.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.detail.transform = CGAffineTransform(translationX: 0, y: 0)
+        
+        self.buttons.transform = CGAffineTransform(translationX: 0, y: -140)
+        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+    }
+    
     func reset() {
         inputMoney.text = ""
         inputMoneyNotCal.text = ""
@@ -128,12 +305,57 @@ extension Show8_3ViewController {
         result3.text = "원"
         result4.text = "원"
         detail.text = "원\n원\n원\n원\n원\n원"
+        detailShow = true
+    }
+    
+    func resetColor() {
+        self.buttonResultOutlet.backgroundColor = self.GRAY
+    }
+    
+    func showDetailAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.buttons.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.showDetail.alpha = 1
+            self.lineDetail.alpha = 1
+            self.detail.alpha = 1
+            
+            self.showDetail.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.lineDetail.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.detail.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+    }
+    
+    func dismissDetailAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttons.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+            
+            self.showDetail.alpha = 0
+            self.lineDetail.alpha = 0
+            self.detail.alpha = 0
+            
+            self.showDetail.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.lineDetail.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.detail.transform = CGAffineTransform(translationX: 0, y: -10)
+        })
     }
 }
 
 
 
 extension Show8_3ViewController {
+    
+    func algoOfTextChange() {
+        showResultButtonAnimation()
+    }
     
     func algoOfResult() {
         algoOfCheckInput()
@@ -155,6 +377,9 @@ extension Show8_3ViewController {
         result2.text = "- " + inputComma(innum: minus) + " 원"
         result3.text = "- " + inputComma(innum: minus2) + " 원"
         result4.text = inputComma(innum: result) + " 원"
+        
+        showResultAnimation()
+        self.detailShow = true
         self.view.endEditing(true)
         
         Kakao_print = "연봉 → 월급 계산서"
@@ -200,5 +425,13 @@ extension Show8_3ViewController {
         + "고용보험 (0.8%) : " + inputComma(innum: Int(detail4)) + " 원\n"
         + "근로소득세 (beta) : " + inputComma(innum: minusIncomMoney) + " 원\n"
         + "지방소득세 (beta) : " + inputComma(innum: minusIncomMoney2) + " 원"
+        
+        if (detailShow) {
+            showDetailAnimation()
+            detailShow = false
+        } else {
+            dismissDetailAnimation()
+            detailShow = true
+        }
     }
 }

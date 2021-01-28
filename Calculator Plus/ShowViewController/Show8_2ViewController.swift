@@ -270,8 +270,6 @@ extension Show8_2ViewController {
             self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -100)
             self.Button_url.transform = CGAffineTransform(translationX: 0, y: -100)
-            
-            self.detailShow = true
         })
     }
     
@@ -395,6 +393,7 @@ extension Show8_2ViewController {
             Result_3.text = inputComma(innum: (RESULT-MINUS)) + " 원"
             
             showResultAnimation()
+            self.detailShow = true
             self.view.endEditing(true)
         }
     }
