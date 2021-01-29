@@ -21,6 +21,8 @@ class Show4_2ViewController: UIViewController {
     
     @IBOutlet weak var Button_RESET: UIButton!
     @IBOutlet weak var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
     
     var GOAL = ""
     var PER = ""
@@ -108,12 +110,15 @@ extension Show4_2ViewController {
     
     func setRadius() {
         Button_Result_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
         self.Label_result_show.alpha = 0
         self.Result_1.alpha = 0
         self.View_result_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -148,6 +153,7 @@ extension Show4_2ViewController {
             self.Button_Result_outlet.backgroundColor = self.GRAY
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -176,6 +182,7 @@ extension Show4_2ViewController {
         self.Label_result_show.alpha = 0
         self.Result_1.alpha = 0
         self.View_result_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
