@@ -21,6 +21,9 @@ class Show4_1ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
+    
     
     var USE = ""
     var PER = ""
@@ -110,12 +113,15 @@ extension Show4_1ViewController {
     
     func setRadius() {
         Button_Result_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
         self.Label_result_show.alpha = 0
         self.Result_1.alpha = 0
         self.View_result_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func showAnimation() {
@@ -145,6 +151,24 @@ extension Show4_1ViewController {
             for: UIControl.Event.editingChanged)
     }
     
+    func showResultAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.viewResult.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.Label_result_show.alpha = 1
+            self.Result_1.alpha = 1
+            self.View_result_line.alpha = 1
+            self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.View_result_line.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+    }
+    
     func reset() {
         USE = ""
         PER = ""
@@ -162,6 +186,7 @@ extension Show4_1ViewController {
         self.Label_result_show.alpha = 0
         self.Result_1.alpha = 0
         self.View_result_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
@@ -196,20 +221,7 @@ extension Show4_1ViewController {
         RESULT = Int(temp)
         Result_1.text = inputComma(innum: RESULT) + " P"
         
-        UIView.animate(withDuration: 0.5, animations: {
-            self.Button_Result_outlet.backgroundColor = self.GRAY
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
-        })
-        
-        UIView.animate(withDuration: 0.7, animations: {
-            self.Label_result_show.alpha = 1
-            self.Result_1.alpha = 1
-            self.View_result_line.alpha = 1
-            self.Label_result_show.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Result_1.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.View_result_line.transform = CGAffineTransform(translationX: 0, y: 0)
-        })
+        showResultAnimation()
         self.view.endEditing(true)
     }
 }
