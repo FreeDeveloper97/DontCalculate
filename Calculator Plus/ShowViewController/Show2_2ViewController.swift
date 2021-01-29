@@ -22,8 +22,6 @@ class Show2_2ViewController: UIViewController {
     @IBOutlet var Text_1_sum: UILabel!
     @IBOutlet var View_sum1_line: UIView!
     
-    @IBOutlet var View_dottedline: UIView!
-    
     @IBOutlet var Label_sum2_show: UILabel!
     @IBOutlet var Text_2_sum: UILabel!
     @IBOutlet var View_sum2_line: UIView!
@@ -52,6 +50,10 @@ class Show2_2ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewB: UIView!
+    @IBOutlet var viewResult: UIView!
+    @IBOutlet var viewDetail: UIView!
     
     var Money_1 = ""
     var MONEY_1 = 0
@@ -84,8 +86,6 @@ class Show2_2ViewController: UIViewController {
         setNavigationButton()
         setInputType()
         setInputChanged()
-        
-        setDottedLine()
     }
     
     @objc func fbButtonPressed() {
@@ -165,6 +165,10 @@ extension Show2_2ViewController {
         Button_Result_outlet.layer.cornerRadius = 4
         Button_detail_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewB.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
+        viewDetail.layer.cornerRadius = 12
     }
     
     func setInputType() {
@@ -192,10 +196,12 @@ extension Show2_2ViewController {
         self.View_result4_line.alpha = 0
         
         self.View_Buttons.alpha = 0
+        self.viewResult.alpha = 0
+        self.viewDetail.alpha = 0
     }
     
     func setTransform() {
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
         
         self.Label_Result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -213,7 +219,7 @@ extension Show2_2ViewController {
         self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
         
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -80)
         self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -230)
     }
     
@@ -238,11 +244,6 @@ extension Show2_2ViewController {
             for: UIControl.Event.editingChanged)
         Text_2_num.addTarget(self, action: #selector(textFieldDidChange3(textField:)),
             for: UIControl.Event.editingChanged)
-    }
-    
-    func setDottedLine() {
-        View_dottedline.backgroundColor = UIColor.clear
-        View_dottedline.addDashedBorder()
     }
     
     func showPlus1Animation() {
@@ -349,10 +350,12 @@ extension Show2_2ViewController {
         self.View_result4_line.alpha = 0
         
         self.View_Buttons.alpha = 0
+        self.viewResult.alpha = 0
+        self.viewDetail.alpha = 0
     }
     
     func resetTransform() {
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -155)
         
         self.Label_Result1_show.transform = CGAffineTransform(translationX: 0, y: -10)
         self.Result_1.transform = CGAffineTransform(translationX: 0, y: -10)
@@ -370,15 +373,15 @@ extension Show2_2ViewController {
         self.Text_detail.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
         
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -60)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -80)
         self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -230)
     }
     
     func showDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.viewDetail.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -393,10 +396,9 @@ extension Show2_2ViewController {
     
     func dismissDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -50)
-            
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -70)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -70)
+            self.viewDetail.alpha = 0
         })
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -411,9 +413,10 @@ extension Show2_2ViewController {
     
     func showResultAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -50)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -50)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -70)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -439,7 +442,7 @@ extension Show2_2ViewController {
             self.View_Result3_Line.transform = CGAffineTransform(translationX: 0, y: 0)
             
             self.View_Buttons.alpha = 1
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -50)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -70)
             
             self.Text_show.alpha = 0
             self.Text_show.transform = CGAffineTransform(translationX: 0, y: -10)
