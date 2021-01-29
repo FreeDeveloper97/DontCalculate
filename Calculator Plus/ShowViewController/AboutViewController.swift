@@ -88,6 +88,8 @@ extension AboutViewController{
         navigationController?.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
         navigationController?.navigationBar.barTintColor = BUTTON
         navigationController?.navigationBar.backgroundColor = BUTTON
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     func algoOfSendEmail() {
@@ -105,5 +107,7 @@ extension AboutViewController{
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.systemBackground
         navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
+        
+        navigationController?.navigationBar.tintColor = BUTTON
     }
 }

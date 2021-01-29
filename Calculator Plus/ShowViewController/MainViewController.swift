@@ -72,6 +72,8 @@ extension MainViewController {
         navigationController?.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
         navigationController?.navigationBar.barTintColor = UIColor.systemBackground
         navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
+        
+        self.view?.tintColor = BUTTON
     }
     
     func setAlpha() {
