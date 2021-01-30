@@ -40,6 +40,10 @@ class Show8_3ViewController: UIViewController {
     @IBOutlet var buttonLinkOutlet: UIButton!
     @IBOutlet var buttonResetOutlet: UIButton!
     
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
+    @IBOutlet var viewDetail: UIView!
+    
     let GRAY = UIColor(named: "ColorGray")
     let BUTTON = UIColor(named: "button")
     
@@ -156,6 +160,9 @@ extension Show8_3ViewController {
         detail.layer.cornerRadius = 4
         buttonLinkOutlet.layer.cornerRadius = 4
         buttonResetOutlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
+        viewDetail.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -179,6 +186,8 @@ extension Show8_3ViewController {
         
         self.buttons.alpha = 0
         self.buttonLinkOutlet.alpha = 0
+        self.viewResult.alpha = 0
+        self.viewDetail.alpha = 0
     }
     
     func setTransform() {
@@ -200,10 +209,10 @@ extension Show8_3ViewController {
         self.result4.transform = CGAffineTransform(translationX: 0, y: -10)
         self.detail.transform = CGAffineTransform(translationX: 0, y: -10)
         
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -341)
-        self.buttons.transform = CGAffineTransform(translationX: 0, y: -150)
-        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -150)
-        self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -400)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -200)
+        self.buttons.transform = CGAffineTransform(translationX: 0, y: -180)
+        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -180)
+        self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -440)
     }
     
     func showAnimation() {
@@ -242,8 +251,8 @@ extension Show8_3ViewController {
     
     func showResultAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -140)
-            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -170)
             self.buttonResultOutlet.backgroundColor = self.GRAY
         })
         
@@ -271,6 +280,7 @@ extension Show8_3ViewController {
         
         self.buttons.alpha = 1
         self.buttonLinkOutlet.alpha = 1
+        self.viewResult.alpha = 1
     }
     
     func showTransform() {
@@ -292,8 +302,8 @@ extension Show8_3ViewController {
         self.result4.transform = CGAffineTransform(translationX: 0, y: 0)
         self.detail.transform = CGAffineTransform(translationX: 0, y: 0)
         
-        self.buttons.transform = CGAffineTransform(translationX: 0, y: -140)
-        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+        self.buttons.transform = CGAffineTransform(translationX: 0, y: -170)
+        self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -170)
     }
     
     func reset() {
@@ -314,10 +324,10 @@ extension Show8_3ViewController {
     
     func showDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.buttons.transform = CGAffineTransform(translationX: 0, y: 0)
             self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: 0)
             self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.viewDetail.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -333,10 +343,10 @@ extension Show8_3ViewController {
     
     func dismissDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -140)
-            self.buttons.transform = CGAffineTransform(translationX: 0, y: -140)
-            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
-            self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -140)
+            self.buttons.transform = CGAffineTransform(translationX: 0, y: -170)
+            self.buttonResetOutlet.transform = CGAffineTransform(translationX: 0, y: -170)
+            self.buttonLinkOutlet.transform = CGAffineTransform(translationX: 0, y: -170)
+            self.viewDetail.alpha = 0
             
             self.showDetail.alpha = 0
             self.lineDetail.alpha = 0
