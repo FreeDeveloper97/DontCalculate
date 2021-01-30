@@ -33,6 +33,8 @@ class Show6_1ViewController: UIViewController {
     @IBOutlet weak var Button_RESET: UIButton!
     
     @IBOutlet weak var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
     
     var datePicker: UIDatePicker?
     
@@ -126,6 +128,8 @@ extension Show6_1ViewController {
     
     func setRadius() {
         Button_Result_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -141,6 +145,7 @@ extension Show6_1ViewController {
         self.View_result2_line.alpha = 0
         self.View_result3_line.alpha = 0
         self.View_result4_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -200,6 +205,7 @@ extension Show6_1ViewController {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -256,6 +262,7 @@ extension Show6_1ViewController {
         self.View_result2_line.alpha = 0
         self.View_result3_line.alpha = 0
         self.View_result4_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
