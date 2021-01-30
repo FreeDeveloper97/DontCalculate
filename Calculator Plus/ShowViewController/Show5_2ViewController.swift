@@ -27,6 +27,8 @@ class Show5_2ViewController: UIViewController {
     @IBOutlet weak var Button_RESET: UIButton!
     
     @IBOutlet weak var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
     
     var BEFORE = ""
     var AFTER = ""
@@ -116,6 +118,8 @@ extension Show5_2ViewController {
     
     func setRadius() {
         Button_Result_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -125,6 +129,7 @@ extension Show5_2ViewController {
         self.Result_2.alpha = 0
         self.View_result1_line.alpha = 0
         self.View_result2_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -162,6 +167,7 @@ extension Show5_2ViewController {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -200,6 +206,7 @@ extension Show5_2ViewController {
         self.Result_2.alpha = 0
         self.View_result1_line.alpha = 0
         self.View_result2_line.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
