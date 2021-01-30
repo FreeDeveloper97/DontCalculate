@@ -206,8 +206,8 @@ extension Show8_1ViewController {
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
-        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -130)
+        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -130)
         
         self.View_line.transform = CGAffineTransform(translationX: 0, y: -153)
         self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -340)
@@ -250,7 +250,7 @@ extension Show8_1ViewController {
     func showResultAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -110)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -120)
             self.Button_Result_outlet.backgroundColor = self.GRAY
             self.viewResult.alpha = 1
         })
@@ -283,8 +283,8 @@ extension Show8_1ViewController {
             self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -110)
-            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -110)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
             
             self.detailShow = true
         })
@@ -310,9 +310,9 @@ extension Show8_1ViewController {
     
     func dismissDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -110)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -110)
-            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -110)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
             self.viewDetail.alpha = 0
             
             self.Label_result4_show.alpha = 0
@@ -379,8 +379,8 @@ extension Show8_1ViewController {
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
-        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -130)
+        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -130)
         
         self.View_line.transform = CGAffineTransform(translationX: 0, y: -153)
         self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -340)

@@ -42,6 +42,9 @@ class Show8_2ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewResult: UIView!
+    @IBOutlet var viewDetail: UIView!
     
     var MONEY = ""
     var temp = 0.0
@@ -163,6 +166,9 @@ extension Show8_2ViewController {
         Button_detail_outlet.layer.cornerRadius = 4
         Button_url_outlet.layer.cornerRadius = 4
         Button_kakao_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
+        viewDetail.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -180,6 +186,8 @@ extension Show8_2ViewController {
         self.View_result4_line.alpha = 0
         self.View_Buttons.alpha = 0
         self.Button_url.alpha = 0
+        self.viewResult.alpha = 0
+        self.viewDetail.alpha = 0
     }
     
     func setTransform() {
@@ -195,11 +203,11 @@ extension Show8_2ViewController {
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -110)
-        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -110)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -130)
+        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -130)
         
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -255)
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -330)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -153)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -340)
     }
     
     func showAnimation() {
@@ -235,9 +243,10 @@ extension Show8_2ViewController {
     
     func showResultAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -100)
+            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -120)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -268,17 +277,17 @@ extension Show8_2ViewController {
             self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -100)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
         })
     }
     
     func showDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_url.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.viewDetail.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -293,10 +302,10 @@ extension Show8_2ViewController {
     
     func dismissDetailAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.View_line.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -100)
+            self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.Button_url.transform = CGAffineTransform(translationX: 0, y: -120)
+            self.viewDetail.alpha = 0
             
             self.Label_result4_show.alpha = 0
             self.Result_4.alpha = 0
@@ -343,6 +352,8 @@ extension Show8_2ViewController {
         self.View_result4_line.alpha = 0
         self.View_Buttons.alpha = 0
         self.Button_url.alpha = 0
+        self.viewResult.alpha = 0
+        self.viewDetail.alpha = 0
     }
     
     func resetTransform() {
@@ -358,11 +369,11 @@ extension Show8_2ViewController {
         self.View_result2_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result3_line.transform = CGAffineTransform(translationX: 0, y: -10)
         self.View_result4_line.transform = CGAffineTransform(translationX: 0, y: -10)
-        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -110)
-        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -110)
+        self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: -130)
+        self.Button_url.transform = CGAffineTransform(translationX: 0, y: -130)
         
-        self.View_line.transform = CGAffineTransform(translationX: 0, y: -255)
-        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -330)
+        self.View_line.transform = CGAffineTransform(translationX: 0, y: -153)
+        self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: -340)
     }
 }
 
