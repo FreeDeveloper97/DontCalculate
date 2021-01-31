@@ -433,6 +433,10 @@ extension Show8_3ViewController {
             minusIncomMoney = Money.algoOfIncomMoney(Money: (monMoney/1000))
         } else if (peopleNum == 2) {
             minusIncomMoney = Money.algoOfIncomMoney2(Money: (monMoney/1000))
+        } else if (peopleNum == 3) {
+            minusIncomMoney = Money.algoOfIncomMoney3(Money: (monMoney/1000))
+        } else if (peopleNum == 4) {
+            minusIncomMoney = Money.algoOfIncomMoney4(Money: (monMoney/1000))
         }
         minusIncomMoney2 = Int(Double(minusIncomMoney)*0.1)
     }
