@@ -390,7 +390,7 @@ extension Show8_2ViewController {
     func algoOfResult() {
         beforeCheck()
         if(check()) {
-            Print_kakao = M + "월달 급여계산서"
+            Print_kakao = M + "월 급여계산서"
             RESULT = Int(MONEY)!
             Print_kakao += "\n\n월급 : " + inputComma(innum: RESULT) + " 원"
             Result_1.text = inputComma(innum: RESULT) + " 원"

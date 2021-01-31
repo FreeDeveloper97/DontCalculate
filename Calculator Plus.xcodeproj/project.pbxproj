@@ -13,20 +13,17 @@
 		7782C76E24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */; };
 		7782C76F24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */; };
 		7782C77024CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */; };
-		876C321B25BF264600A5DD9F /* Show3_3ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */; };
-		876C321E25BF264900A5DD9F /* Show3_4ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */; };
+		876C321B25BF264600A5DD9F /* Show3_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321A25BF264600A5DD9F /* Show3_3ViewController.swift */; };
+		876C321E25BF264900A5DD9F /* Show3_4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C321D25BF264900A5DD9F /* Show3_4ViewController.swift */; };
 		878CE93025BD58E300FDD6E1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CE92F25BD58E300FDD6E1 /* Money.swift */; };
-		87A60D7B25BF25B000D872B2 /* Show3_2ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */; };
+		87A60D7B25BF25B000D872B2 /* Show3_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A60D7A25BF25AF00D872B2 /* Show3_2ViewController.swift */; };
 		87B37A0725C1AB6900877F65 /* Show8_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */; };
 		87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C28C3D25BB271F00F084B4 /* Kakao.swift */; };
 		87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4BA125BDAE75000B0864 /* AboutViewController.swift */; };
 		87E9980D25BB19860009C199 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9980C25BB19860009C199 /* Calculate.swift */; };
-		87F581B225BEC2EE00B4913A /* Show3_1ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */; };
+		87F581B225BEC2EE00B4913A /* Show3_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729779425BEC18B009948C6 /* Show3_1ViewController.swift */; };
 		930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930458F5241A315500ADC73A /* Select2ViewController.swift */; };
 		93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93184EE02425AC740089EE15 /* Show2_2ViewController.swift */; };
-		9331EA8A241B41FB0072A01B /* Show3_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331EA89241B41FB0072A01B /* Show3_2ViewController.swift */; };
-		9331EA8E241B448D0072A01B /* Show3_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331EA8D241B448D0072A01B /* Show3_3ViewController.swift */; };
-		9331EA90241B449B0072A01B /* Show3_4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331EA8F241B449B0072A01B /* Show3_4ViewController.swift */; };
 		9337B91624B6CB3D000AB51F /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9337B91524B6CB3D000AB51F /* AlertExtension.swift */; };
 		936598C82433526600DCAC99 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936598C52433526600DCAC99 /* KakaoLink.framework */; };
 		936598CA2433526600DCAC99 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936598C62433526600DCAC99 /* KakaoCommon.framework */; };
@@ -52,7 +49,6 @@
 		937FC3CE241B346800848EBD /* Select9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937FC3CD241B346800848EBD /* Select9ViewController.swift */; };
 		93802E9E243E024F00CEBD59 /* Show6_2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93802E9D243E024F00CEBD59 /* Show6_2ViewController.swift */; };
 		93802EA0243E027600CEBD59 /* Select6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93802E9F243E027600CEBD59 /* Select6ViewController.swift */; };
-		93B2E45924B6C9A200020AAD /* Show3_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2E45824B6C9A200020AAD /* Show3_1ViewController.swift */; };
 		93CC43662423AB4D00A2BEC4 /* Show2_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC43652423AB4D00A2BEC4 /* Show2_1ViewController.swift */; };
 		93D70FF22417BE6D0040F035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D70FF12417BE6D0040F035 /* AppDelegate.swift */; };
 		93D70FF42417BE6D0040F035 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D70FF32417BE6D0040F035 /* SceneDelegate.swift */; };
@@ -71,11 +67,11 @@
 		7782C76824CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_40G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_40G.otf; sourceTree = "<group>"; };
 		7782C76924CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_00G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_00G.otf; sourceTree = "<group>"; };
 		7782C76A24CEAFFC006FDC01 /* HGGGOTHICSSI_PRO_20G.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGGGOTHICSSI_PRO_20G.otf; sourceTree = "<group>"; };
-		8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_1ViewController2.swift; sourceTree = "<group>"; };
-		876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_3ViewController2.swift; sourceTree = "<group>"; };
-		876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_4ViewController2.swift; sourceTree = "<group>"; };
+		8729779425BEC18B009948C6 /* Show3_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_1ViewController.swift; sourceTree = "<group>"; };
+		876C321A25BF264600A5DD9F /* Show3_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_3ViewController.swift; sourceTree = "<group>"; };
+		876C321D25BF264900A5DD9F /* Show3_4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_4ViewController.swift; sourceTree = "<group>"; };
 		878CE92F25BD58E300FDD6E1 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
-		87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_2ViewController2.swift; sourceTree = "<group>"; };
+		87A60D7A25BF25AF00D872B2 /* Show3_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_2ViewController.swift; sourceTree = "<group>"; };
 		87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show8_3ViewController.swift; sourceTree = "<group>"; };
 		87C28C3D25BB271F00F084B4 /* Kakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao.swift; sourceTree = "<group>"; };
 		87DA4BA125BDAE75000B0864 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +79,6 @@
 		923AD7BC9EA3EDF10A4CBF8F /* Pods-Calculator Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Plus.release.xcconfig"; path = "Target Support Files/Pods-Calculator Plus/Pods-Calculator Plus.release.xcconfig"; sourceTree = "<group>"; };
 		930458F5241A315500ADC73A /* Select2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select2ViewController.swift; sourceTree = "<group>"; };
 		93184EE02425AC740089EE15 /* Show2_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show2_2ViewController.swift; sourceTree = "<group>"; };
-		9331EA89241B41FB0072A01B /* Show3_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_2ViewController.swift; sourceTree = "<group>"; };
-		9331EA8D241B448D0072A01B /* Show3_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_3ViewController.swift; sourceTree = "<group>"; };
-		9331EA8F241B449B0072A01B /* Show3_4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show3_4ViewController.swift; sourceTree = "<group>"; };
 		9337B91524B6CB3D000AB51F /* AlertExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = SOURCE_ROOT; };
 		936598C52433526600DCAC99 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
 		936598C62433526600DCAC99 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
@@ -112,7 +105,6 @@
 		937FC3CD241B346800848EBD /* Select9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select9ViewController.swift; sourceTree = "<group>"; };
 		93802E9D243E024F00CEBD59 /* Show6_2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show6_2ViewController.swift; sourceTree = "<group>"; };
 		93802E9F243E027600CEBD59 /* Select6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select6ViewController.swift; sourceTree = "<group>"; };
-		93B2E45824B6C9A200020AAD /* Show3_1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show3_1ViewController.swift; sourceTree = "<group>"; };
 		93CC43652423AB4D00A2BEC4 /* Show2_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show2_1ViewController.swift; sourceTree = "<group>"; };
 		93D70FEE2417BE6D0040F035 /* DontCalculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontCalculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D70FF12417BE6D0040F035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,10 +149,10 @@
 				936F4F37242C8AAD00E78644 /* CalculaterViewController.swift */,
 				93CC43652423AB4D00A2BEC4 /* Show2_1ViewController.swift */,
 				93184EE02425AC740089EE15 /* Show2_2ViewController.swift */,
-				93B2E45824B6C9A200020AAD /* Show3_1ViewController.swift */,
-				9331EA89241B41FB0072A01B /* Show3_2ViewController.swift */,
-				9331EA8D241B448D0072A01B /* Show3_3ViewController.swift */,
-				9331EA8F241B449B0072A01B /* Show3_4ViewController.swift */,
+				8729779425BEC18B009948C6 /* Show3_1ViewController.swift */,
+				87A60D7A25BF25AF00D872B2 /* Show3_2ViewController.swift */,
+				876C321A25BF264600A5DD9F /* Show3_3ViewController.swift */,
+				876C321D25BF264900A5DD9F /* Show3_4ViewController.swift */,
 				936F4F23242C889700E78644 /* Show4_1ViewController.swift */,
 				936F4F25242C88C400E78644 /* Show4_2ViewController.swift */,
 				936F4F2B242C88FE00E78644 /* Show5_1ViewController.swift */,
@@ -171,6 +163,7 @@
 				936F4F2F242C892700E78644 /* Show7ViewController.swift */,
 				936F4F31242C893500E78644 /* Show8_1ViewController.swift */,
 				937E54D12436198700CCBB37 /* Show8_2ViewController.swift */,
+				87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */,
 				936F4F33242C894300E78644 /* Show9_1ViewController.swift */,
 				936F4F35242C895100E78644 /* Show9_2ViewController.swift */,
 				87DA4BA125BDAE75000B0864 /* AboutViewController.swift */,
@@ -181,11 +174,6 @@
 		8729779225BEC170009948C6 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				8729779425BEC18B009948C6 /* Show3_1ViewController2.swift */,
-				87A60D7A25BF25AF00D872B2 /* Show3_2ViewController2.swift */,
-				876C321A25BF264600A5DD9F /* Show3_3ViewController2.swift */,
-				876C321D25BF264900A5DD9F /* Show3_4ViewController2.swift */,
-				87B37A0625C1AB6900877F65 /* Show8_3ViewController.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -400,40 +388,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D70FF62417BE6D0040F035 /* MainViewController.swift in Sources */,
-				9331EA8A241B41FB0072A01B /* Show3_2ViewController.swift in Sources */,
 				93CC43662423AB4D00A2BEC4 /* Show2_1ViewController.swift in Sources */,
 				87DA4BA225BDAE75000B0864 /* AboutViewController.swift in Sources */,
 				936F4F2E242C891400E78644 /* Show6_1ViewController.swift in Sources */,
 				937E54D22436198700CCBB37 /* Show8_2ViewController.swift in Sources */,
-				876C321E25BF264900A5DD9F /* Show3_4ViewController2.swift in Sources */,
+				876C321E25BF264900A5DD9F /* Show3_4ViewController.swift in Sources */,
 				936F4F34242C894300E78644 /* Show9_1ViewController.swift in Sources */,
 				937FC3C6241B2BA000848EBD /* Select4ViewController.swift in Sources */,
 				936F4F30242C892700E78644 /* Show7ViewController.swift in Sources */,
 				936F4F26242C88C400E78644 /* Show4_2ViewController.swift in Sources */,
-				9331EA8E241B448D0072A01B /* Show3_3ViewController.swift in Sources */,
 				936F4F24242C889700E78644 /* Show4_1ViewController.swift in Sources */,
 				936F4F28242C88DC00E78644 /* Show5_3ViewController.swift in Sources */,
 				93765C8F243386E9005C006A /* StoryLinkHelper.swift in Sources */,
-				9331EA90241B449B0072A01B /* Show3_4ViewController.swift in Sources */,
 				936F4F2A242C88ED00E78644 /* Show5_2ViewController.swift in Sources */,
-				87F581B225BEC2EE00B4913A /* Show3_1ViewController2.swift in Sources */,
+				87F581B225BEC2EE00B4913A /* Show3_1ViewController.swift in Sources */,
 				93184EE12425AC740089EE15 /* Show2_2ViewController.swift in Sources */,
 				930458F6241A315500ADC73A /* Select2ViewController.swift in Sources */,
-				876C321B25BF264600A5DD9F /* Show3_3ViewController2.swift in Sources */,
+				876C321B25BF264600A5DD9F /* Show3_3ViewController.swift in Sources */,
 				93D70FF22417BE6D0040F035 /* AppDelegate.swift in Sources */,
 				93802EA0243E027600CEBD59 /* Select6ViewController.swift in Sources */,
 				93802E9E243E024F00CEBD59 /* Show6_2ViewController.swift in Sources */,
 				87B37A0725C1AB6900877F65 /* Show8_3ViewController.swift in Sources */,
 				937E54D0243617E700CCBB37 /* Select8ViewController.swift in Sources */,
 				936F4F38242C8AAD00E78644 /* CalculaterViewController.swift in Sources */,
-				93B2E45924B6C9A200020AAD /* Show3_1ViewController.swift in Sources */,
 				936F4F2C242C88FE00E78644 /* Show5_1ViewController.swift in Sources */,
 				878CE93025BD58E300FDD6E1 /* Money.swift in Sources */,
 				87E9980D25BB19860009C199 /* Calculate.swift in Sources */,
 				936F4F36242C895100E78644 /* Show9_2ViewController.swift in Sources */,
 				87C28C3E25BB271F00F084B4 /* Kakao.swift in Sources */,
 				937FC3CC241B32E200848EBD /* Select5ViewController.swift in Sources */,
-				87A60D7B25BF25B000D872B2 /* Show3_2ViewController2.swift in Sources */,
+				87A60D7B25BF25B000D872B2 /* Show3_2ViewController.swift in Sources */,
 				937FC3C4241B276D00848EBD /* Select3ViewController.swift in Sources */,
 				937FC3CE241B346800848EBD /* Select9ViewController.swift in Sources */,
 				9337B91624B6CB3D000AB51F /* AlertExtension.swift in Sources */,
@@ -585,7 +569,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 68;
+				CURRENT_PROJECT_VERSION = 69;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,7 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 68;
+				CURRENT_PROJECT_VERSION = 69;
 				DEVELOPMENT_TEAM = 2C96RNDN63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

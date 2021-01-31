@@ -48,7 +48,10 @@ class Show3_1ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
-    @IBOutlet var View_dottedline: UIView!
+    @IBOutlet weak var ViewA: UIView!
+    @IBOutlet weak var ViewB: UIView!
+    @IBOutlet weak var ViewResult: UIView!
+    
     
     var A = ""
     var B = ""
@@ -79,8 +82,6 @@ class Show3_1ViewController: UIViewController {
         setNavigationButton()
         setInputType()
         setInputChanged()
-        
-        setDottedLine()
     }
     
     @objc func fbButtonPressed() {
@@ -180,6 +181,10 @@ extension Show3_1ViewController {
         Button_plus_a_outlet.layer.cornerRadius = 4
         Button_plus_b_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
+        
+        ViewA.layer.cornerRadius = 12
+        ViewB.layer.cornerRadius = 12
+        ViewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -234,11 +239,6 @@ extension Show3_1ViewController {
             for: UIControl.Event.editingChanged)
         Text_B.addTarget(self, action: #selector(textFieldDidChange2(textField:)),
             for: UIControl.Event.editingChanged)
-    }
-    
-    func setDottedLine() {
-        View_dottedline.backgroundColor = UIColor.clear
-        View_dottedline.addDashedBorder()
     }
     
     func showResultButtonAnimation() {
@@ -438,8 +438,8 @@ extension Show3_1ViewController {
         checkName()
         
         kakao_print = "2명 더치페이정산"
-        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
-        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
+//        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
+//        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
         
         SUM = A_sum + B_sum
         DIV = SUM / 2

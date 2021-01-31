@@ -59,10 +59,11 @@ class Show3_3ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
-    
-    @IBOutlet var View_dottedline_1: UIView!
-    @IBOutlet var View_dottedline_2: UIView!
-    @IBOutlet var View_dottedline_3: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewB: UIView!
+    @IBOutlet var viewC: UIView!
+    @IBOutlet var viewD: UIView!
+    @IBOutlet var viewResult: UIView!
     
     var A = ""
     var B = ""
@@ -101,8 +102,6 @@ class Show3_3ViewController: UIViewController {
         setNavigationButton()
         setInputType()
         setInputChanged()
-        
-        setDottedLine()
     }
     
     @objc func fbButtonPressed() {
@@ -237,6 +236,12 @@ extension Show3_3ViewController {
         Button_plus_d.layer.cornerRadius = 4
         Button_Result_outlet.layer.cornerRadius = 4
         Kakao_outlet.layer.cornerRadius = 4
+        
+        viewA.layer.cornerRadius = 12
+        viewB.layer.cornerRadius = 12
+        viewC.layer.cornerRadius = 12
+        viewD.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -253,6 +258,8 @@ extension Show3_3ViewController {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -297,15 +304,6 @@ extension Show3_3ViewController {
             for: UIControl.Event.editingChanged)
         Text_D.addTarget(self, action: #selector(textFieldDidChange4(textField:)),
             for: UIControl.Event.editingChanged)
-    }
-    
-    func setDottedLine() {
-        View_dottedline_1.backgroundColor = UIColor.clear
-        View_dottedline_2.backgroundColor = UIColor.clear
-        View_dottedline_3.backgroundColor = UIColor.clear
-        View_dottedline_1.addDashedBorder()
-        View_dottedline_2.addDashedBorder()
-        View_dottedline_3.addDashedBorder()
     }
     
     func showResultButtonAnimation() {
@@ -372,6 +370,7 @@ extension Show3_3ViewController {
             self.View_line.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -475,6 +474,8 @@ extension Show3_3ViewController {
         self.View_result3_line.alpha = 0
         
         self.Kakao_outlet.alpha = 0
+        
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
@@ -589,10 +590,10 @@ extension Show3_3ViewController {
         checkName()
         
         kakao_print = "4명 더치페이정산"
-        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
-        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
-        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
-        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
+//        kakao_print += "\n\n" + A_name + " : " + inputComma(innum: A_sum) + " 원"
+//        kakao_print += "\n" + B_name + " : " + inputComma(innum: B_sum) + " 원"
+//        kakao_print += "\n" + C_name + " : " + inputComma(innum: C_sum) + " 원"
+//        kakao_print += "\n" + D_name + " : " + inputComma(innum: D_sum) + " 원"
         
         SUM = A_sum + B_sum + C_sum + D_sum
         DIV = SUM / 4

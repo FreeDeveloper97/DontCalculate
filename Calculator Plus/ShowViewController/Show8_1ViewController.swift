@@ -400,7 +400,7 @@ extension Show8_1ViewController {
     func algoOfResult() {
         beforeCheck()
         if(check()) {
-            Print_kakao = M + "월달 급여계산서"
+            Print_kakao = M + "월 급여계산서"
             Print_kakao += "\n\n근로시간 : " + H + " 시간"
             Print_kakao += "\n시급 : " + inputComma(innum: Int(PAY)!) + " 원"
             RESULT = Int(Double(H)! * Double(PAY)!)
