@@ -219,6 +219,89 @@ class Money {
         return result
     }
     
+    static func algoOfIncomMoney3(Money: Int) -> Int {
+        var result: Int = 0
+        var per: Double = -1
+        
+        if Money < 1720 {
+            //없는 경우
+            print("error")
+            return -1
+        } else if Money < 2930 {
+            //0.1 ~ 0.9의 경우
+            let data = [1860, 1970, 2090, 2230, 2390, 2570, 2690, 2810, 2930]
+            let data2 = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 3460 {
+            //1.0 ~ 1.9의 경우
+            let data = [3020, 3060, 3100, 3140, 3200, 3240, 3300, 3340, 3400, 3460]
+            let data2 = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 3960 {
+            //2.0 ~ 2.9의 경우
+            let data = [3520, 3580, 3640, 3720, 3760, 3800, 3840, 3880, 3920, 3960]
+            let data2 = [2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 4440 {
+            //3.0 ~ 3.9의 경우
+            let data = [4000, 4040, 4100, 4140, 4180, 4240, 4280, 4340, 4380, 4440]
+            let data2 = [3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 4980 {
+            //4.0 ~ 4.9의 경우
+            let data = [4500, 4540, 4580, 4620, 4680, 4740, 4800, 4860, 4920, 4980]
+            let data2 = [4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.7, 4.8, 4.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 5700 {
+            //5.0 ~ 5.9의 경우
+            let data = [5040, 5100, 5160, 5240, 5300, 5380, 5460, 5540, 5620, 5700]
+            let data2 = [5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 6160 {
+            //6.0 ~ 6.9의 경우
+//            let data = [48000, 4860, 4920, 4980, 5060, 5120, 5200, 5260, 5340, 5420]
+//            let data2 = [6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 6680 {
+            //7.0 ~ 7.9의 경우
+//            let data = [5500, 5580, 5660, 5740, 5820, 5840, 5860]
+//            let data2 = [7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 7240 {
+            //8.0 ~ 8.9의 경우
+//            let data = [5880, 5920, 5980, 6020, 6060, 6100, 6140, 6180, 6240, 6280]
+//            let data2 = [8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 7880 {
+            //9.0 ~ 9.9의 경우
+//            let data = [6320, 6380, 6420, 6460, 6520, 6560, 6620, 6680, 6720, 6780]
+//            let data2 = [9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 8640 {
+            //10.0 ~ 10.9의 경우
+//            let data = [6840, 6880, 6940, 7000, 7060, 7120, 7180, 7240, 7300, 7360]
+//            let data2 = [10.0, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 9520 {
+            //11.0 ~ 11.9의 경우
+//            let data = [7420, 7500, 7560, 7620, 7700, 7760, 7840, 7900, 7980, 8060]
+//            let data2 = [11.0, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else if Money < 1000 {
+            //12.0 ~ 12.4의 경우
+//            let data = [8140, 8220, 8300, 8380, 8440, 8520, 8600, 8700, 8780, 8860]
+//            let data2 = [12.0, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9]
+//            per = getPersent(Money: Money, data: data, data2: data2)
+        } else {
+            //천만원 초과의 경우
+            print("error")
+            return -1
+        }
+        
+        result = Int(Double(Money)*per*10)
+        return result
+    }
+    
     static func getPersent(Money: Int, data: [Int], data2: [Double]) -> Double {
         var loop: Bool = true
         for i in 0...9 {
