@@ -284,14 +284,14 @@ class Money {
             per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 9520 {
             //11.0 ~ 11.9의 경우
-//            let data = [7420, 7500, 7560, 7620, 7700, 7760, 7840, 7900, 7980, 8060]
-//            let data2 = [11.0, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9]
-//            per = getPersent(Money: Money, data: data, data2: data2)
+            let data = [8720, 8800, 8900, 8980, 9060, 9160, 9240, 9340, 9420, 9520]
+            let data2 = [11.0, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else if Money < 1000 {
             //12.0 ~ 12.4의 경우
-//            let data = [8140, 8220, 8300, 8380, 8440, 8520, 8600, 8700, 8780, 8860]
-//            let data2 = [12.0, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9]
-//            per = getPersent(Money: Money, data: data, data2: data2)
+            let data = [9620, 9720, 9820, 9920, 10000]
+            let data2 = [12.0, 12.1, 12.2, 12.3, 12.4]
+            per = getPersent(Money: Money, data: data, data2: data2)
         } else {
             //천만원 초과의 경우
             print("error")
