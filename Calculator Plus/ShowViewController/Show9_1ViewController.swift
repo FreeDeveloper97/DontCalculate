@@ -38,7 +38,10 @@ class Show9_1ViewController: UIViewController {
     @IBOutlet var Button_RESET: UIButton!
     
     @IBOutlet var View_View: UIView!
-    @IBOutlet var View_dottedline: UIView!
+    @IBOutlet var viewA: UIView!
+    @IBOutlet var viewB: UIView!
+    @IBOutlet var viewResult: UIView!
+    
     
     var NOW = ""
     var Plus = ""
@@ -66,7 +69,6 @@ class Show9_1ViewController: UIViewController {
         setNavigationButton()
         setInputType()
         setInputChanged()
-        setDottedLine()
     }
     
     @objc func fbButtonPressed() {
@@ -157,6 +159,9 @@ extension Show9_1ViewController {
         Button_Result_outlet.layer.cornerRadius = 4
         Button_plus_outlet.layer.cornerRadius = 4
         Button_kakao_outlet.layer.cornerRadius = 4
+        viewA.layer.cornerRadius = 12
+        viewB.layer.cornerRadius = 12
+        viewResult.layer.cornerRadius = 12
     }
     
     func setAlpha() {
@@ -170,6 +175,7 @@ extension Show9_1ViewController {
         self.View_result2_line.alpha = 0
         self.View_result3_line.alpha = 0
         self.Button_kakao_outlet.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func setTransform() {
@@ -213,11 +219,6 @@ extension Show9_1ViewController {
             for: UIControl.Event.editingChanged)
     }
     
-    func setDottedLine() {
-        View_dottedline.backgroundColor = UIColor.clear
-        View_dottedline.addDashedBorder()
-    }
-    
     func showPlusAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
             self.Button_plus_outlet.backgroundColor = self.GRAY
@@ -233,6 +234,7 @@ extension Show9_1ViewController {
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.Button_plus_outlet.backgroundColor = self.GRAY
             self.Button_Result_outlet.backgroundColor = self.GRAY
+            self.viewResult.alpha = 1
         })
         
         UIView.animate(withDuration: 0.7, animations: {
@@ -296,6 +298,7 @@ extension Show9_1ViewController {
         self.View_result2_line.alpha = 0
         self.View_result3_line.alpha = 0
         self.Button_kakao_outlet.alpha = 0
+        self.viewResult.alpha = 0
     }
     
     func resetTransform() {
