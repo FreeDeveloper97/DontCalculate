@@ -272,6 +272,7 @@ extension Show2_1ViewController {
             self.Button_RESET.transform = CGAffineTransform(translationX: 0, y: 0)
             self.View_Buttons.transform = CGAffineTransform(translationX: 0, y: 0)
             self.viewDetail.alpha = 1
+            self.viewDetail.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
         
         UIView.animate(withDuration: 0.7, animations: {
