@@ -56,7 +56,6 @@
 		93D70FF92417BE6D0040F035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D70FF72417BE6D0040F035 /* Main.storyboard */; };
 		93D70FFB2417BE6E0040F035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D70FFA2417BE6E0040F035 /* Assets.xcassets */; };
 		93D70FFE2417BE6E0040F035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D70FFC2417BE6E0040F035 /* LaunchScreen.storyboard */; };
-		ABBF8D4ACF8919393EFA70B3 /* Pods_Calculator_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25F79830CC5A9A6CC983F6E /* Pods_Calculator_Plus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,7 +125,6 @@
 				936598CA2433526600DCAC99 /* KakaoCommon.framework in Frameworks */,
 				93765C8A243366B0005C006A /* KakaoMessageTemplate.framework in Frameworks */,
 				936598CC2433526600DCAC99 /* KakaoOpenSDK.framework in Frameworks */,
-				ABBF8D4ACF8919393EFA70B3 /* Pods_Calculator_Plus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
